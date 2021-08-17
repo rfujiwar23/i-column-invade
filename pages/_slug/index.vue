@@ -20,10 +20,15 @@
             <GoBack />
             </div>
             <div class="col-lg-4 side-bar">
-
+              <ul>
+                <li>Text</li>
+              </ul>
             </div>
         </div>
     </div>
+    <footer>
+      Yes
+    </footer>
   </div>
 </template>
 
@@ -50,8 +55,8 @@ export default {
 <style lang="css">
 
 .article-page {
-    /* background: rgb(47,115,235);
-    background: linear-gradient(320deg, rgba(47,115,235,1) 0%, rgba(154,211,217,1) 100%); */
+    background: rgb(47,115,235);
+    background: linear-gradient(320deg, rgba(47,115,235,1) 0%, rgba(154,211,217,1) 100%);
     height:100vh;
 }
 
@@ -59,17 +64,32 @@ export default {
     background:url('https://res.cloudinary.com/rfujiwar23/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1606378017/background.jpg') no-repeat;
     background-position: center bottom;
     background-size: cover;
-    height:30%;
+    height:30vh;
 }
 
 .jumbotron .text-area {
     background:rgba(255, 255, 255, 0.5);
+}
+
+.container {
+  background:#fff;
 }
 .main {
   width: 100%;
   margin: 0 auto;
   background: white;
   border-right:1px dotted #ddd;
+}
+
+.side-bar ul {
+  padding:0;
+  list-style: none;
+}
+
+.side-bar ul li {
+  padding:3px 5px;
+  border-bottom:1px dotted #9a9a9a;
+  text-align:center;
 }
 
 .title {
@@ -114,6 +134,10 @@ export default {
  .post > ol {
 	 list-style-type: decimal;
 	 list-style-position: inside;
+}
+
+footer {
+  background:rgba(154,211,217,1);
 }
  
 </style>
