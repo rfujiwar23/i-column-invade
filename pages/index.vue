@@ -8,9 +8,7 @@
     <Top />
     <div class="main-contents">
       <div class="navigation-bar block-1">
-      
-
-      
+        <h1>i-column インテンス・IFINGコラムサイト</h1>      
       </div>
     <!-- main-area -->
     <div class="main-area block-2">
