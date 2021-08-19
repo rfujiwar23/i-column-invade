@@ -148,7 +148,7 @@ export default {
 
 }
 
-/* .main-area .new-information .pagination ul {
+.main-area .new-information .pagination ul {
   list-style: none;
   margin: 0 auto;
 }
@@ -156,7 +156,7 @@ export default {
 .main-area .new-information .pagination ul li {
   display: inline-block;
   width:50px;
-} */
+}
 
 
 

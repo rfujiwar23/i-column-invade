@@ -13,6 +13,7 @@
                 
                     <h2 class="title">{{ title }}</h2>
                     <p class="publishedAt"><span>投稿：</span>{{ publishedAt.substring(0,10) }}</p>
+                    <p class="category">{{ category && category.name}}</p>
                     <div class="post" v-html="body"></div>
 
                <!-- <a href="#">次</a>
