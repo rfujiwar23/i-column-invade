@@ -8,15 +8,14 @@
     <Top />
     <div class="main-contents">
       <div class="navigation-bar block-1">
-        <h1>i-column インテンス・IFINGコラムサイト</h1>      
+        <div class="title">
+          <h1>i-column インテンス・IFINGコラムサイト</h1>
+        </div>     
       </div>
     <!-- main-area -->
     <div class="main-area block-2">
       <!-- new-information -->
       <div class="new-information box-2">
-        <div class="banner">
-          B
-        </div>
         <div class="column-list">
           <h3>新着一覧</h3>
             <ul>
@@ -104,11 +103,14 @@ export default {
   flex-grow: 1;
 }
 .navigation-bar {
-  background:url("https://res.cloudinary.com/rfujiwar23/image/upload/v1628067950/ifing/dummy-bg.jpg") no-repeat;
+  /* background:url("https://res.cloudinary.com/rfujiwar23/image/upload/v1628067950/ifing/dummy-bg.jpg") no-repeat; */
+  background:url('@/assets/nile-river.png') no-repeat;
   aspect-ratio: 16/4;
   background-position: center;
   background:cover;
 }
+
+
 
 .main-area {
   display: grid;
@@ -133,13 +135,14 @@ export default {
 }
 
 .main-area .new-information .column-list ul li{
-  padding:10px 0;
+  padding:20px 0;
   border-bottom:1px dotted #9a9a9a;
 }
 
 .main-area .new-information .column-list ul li a{
   text-decoration: none;
   font-size:0.9em;
+  color:#404040;
 }
 
 .main-area .new-information .pagination {
