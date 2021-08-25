@@ -1,6 +1,7 @@
 <template>
   <div class="container-fluid p-0 article-page">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">      
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">   
+
     <div class="jumbotron mb-0">
         <div class="text-area">
             <h1>INTENSE/IFING コラムサイト</h1>
@@ -8,7 +9,7 @@
         </div>
     </div>
     <div class="container-main">
-        <div class="row main">
+        <div class="row main mx-0">
             <div class="col-lg-8">
                 
                     <h2 class="title">{{ title }}</h2>

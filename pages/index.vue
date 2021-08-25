@@ -21,7 +21,8 @@
                   <ul>
                     <li v-for="content in contents" :key="content.id">
                       <nuxt-link :to="`/${content.id}`">
-                        <strong>{{ content.publishedAt.substring(0,10) }}:</strong> {{ content.title }}
+                        <strong>{{ content.publishedAt.substring(0,10) }}:</strong> {{ content.title }}　
+                        
                       </nuxt-link>
                     </li>
                   </ul>

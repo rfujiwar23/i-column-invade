@@ -24,6 +24,7 @@
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <span class="dropdown-item" v-for="category in categories" :key="category" @click="handleMenuClick(category)">
                 {{category}}
+                <!-- {{category && category.name}} -->
               </span>
             </div>
           </li>
