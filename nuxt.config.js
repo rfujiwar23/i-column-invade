@@ -60,6 +60,29 @@ export default {
             route: `/page/${p}`,
           }))
         )
+      
+      const categories = await axios
+        .get(`https://i-column-site.microcms.io/api/v1/categories?fields=id`, {
+          headers: { 'X-API-KEY': '9719d5ef-40cc-48b3-9ac0-74292c4f5610' },
+        })
+          .then(({ data }) => {
+            return data.contents.map((content) => content.id)
+          });  
+
+      // カテゴリーページのページング
+      const categoryPages = await Promise.all(
+        categories.map((category) =>
+          axios.get(
+            `https://i-column-site.microcms.io/api/v1/post?limit=0&filters=category[equals]${category}`,
+            { headers: { 'X-API-KEY': '9719d5ef-40cc-48b3-9ac0-74292c4f5610' } }
+          )
+            .then((res) =>
+              range(1, Math.ceil(res.data.totalCount / 10)).map((p) => ({
+                route: `/category/${category}/page/${p}`,
+              })))    
+        )
+      )
+      const flattenCategoryPages = [].concat.apply([], categoryPages)
       return pages
     },
   },
@@ -70,6 +93,11 @@ export default {
         path: '/page/:p',
         component: resolve(__dirname, 'pages/index.vue'),
         name: 'page',
+      });
+      routes.push({
+        path: '/category/:categoryId/page/:p',
+        component: resolve(__dirname, 'pages/index.vue'),
+        name: 'category',
       })
     },
   },

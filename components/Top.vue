@@ -22,9 +22,9 @@
               カテゴリー
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
+              <span class="dropdown-item" v-for="category in categories" :key="category" @click="handleMenuClick(category)">
+                {{category}}
+              </span>
             </div>
           </li>
         </ul>
@@ -32,6 +32,20 @@
     </nav>
 </div>
 </template>
+<script>
+import axios from 'axios'
+
+export default {
+  props: {
+    categories: { type: Array, required: true }
+  },
+  methods: {
+    handleMenuClick(category) {
+      this.$emit('categorySelected', category)
+    }
+  },
+}
+</script>
 
 <style scoped>
 

@@ -5,52 +5,52 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <Top />
+    <Top @categorySelected="onCategorySelected" :categories="categories" />
     <div class="main-contents">
       <div class="navigation-bar block-1">
         <div class="title">
           <h1>i-column インテンス・IFINGコラムサイト</h1>
         </div>     
       </div>
-    <!-- main-area -->
-    <div class="main-area block-2">
-      <!-- new-information -->
-      <div class="new-information box-2">
-        <div class="column-list">
-          <h3>新着一覧</h3>
-            <ul>
-              <li v-for="content in contents" :key="content.id">
-                <nuxt-link :to="`/${content.id}`">
-                  <strong>{{ content.publishedAt.substring(0,10) }}:</strong> {{ content.title }}
-                </nuxt-link>
-              </li>
-            </ul>
-        </div>
-        <div class="pagination">
-            <ul>
-              <li v-if="previousPage != 0">
-                <nuxt-link :to="`/page/${previousPage}`">
-                  &lt;
-                </nuxt-link>
-              </li>
+          <!-- main-area -->
+          <div class="main-area block-2">
+            <!-- new-information -->
+            <div class="new-information box-2">
+              <div class="column-list">
+                <h3>新着一覧</h3>
+                  <ul>
+                    <li v-for="content in contents" :key="content.id">
+                      <nuxt-link :to="`/${content.id}`">
+                        <strong>{{ content.publishedAt.substring(0,10) }}:</strong> {{ content.title }}
+                      </nuxt-link>
+                    </li>
+                  </ul>
+              </div>
+              <div class="pagination">
+                  <ul>
+                    <li v-if="previousPage != 0">
+                      <nuxt-link :to="`/page/${previousPage}`">
+                        &lt;
+                      </nuxt-link>
+                    </li>
 
-              <li v-for="page in pages" :key="page">
-                <nuxt-link :to="`/page/${page}`">
-                  {{ page }}
-                </nuxt-link>
-              </li>
-              <li>
-                <nuxt-link :to="`/page/${nextPage}`">
-                 &gt;
-                </nuxt-link>
-              </li>
-            </ul>
-        </div>
-      </div>
-      <div class="sidebar box-3">
-        C
-      </div>
-    </div>
+                    <li v-for="page in pages" :key="page">
+                      <nuxt-link :to="`/page/${page}`">
+                        {{ page }}
+                      </nuxt-link>
+                    </li>
+                    <li>
+                      <nuxt-link :to="`/page/${nextPage}`">
+                      &gt;
+                      </nuxt-link>
+                    </li>
+                  </ul>
+              </div>
+            </div>
+            <div class="sidebar box-3">
+              C
+            </div>
+          </div>
 
     </div>
 
@@ -69,21 +69,49 @@ import axios from 'axios'
 export default {
   async asyncData({ params }) {
     const page = params.p || '1'
+    const categoryId = params.categoryId
     const limit = 5
     const { data } = await axios.get(
       `https://i-column-site.microcms.io/api/v1/post?limit=${limit}&offset=${(page - 1) * limit}`,
       { headers: { 'X-API-KEY': '9719d5ef-40cc-48b3-9ac0-74292c4f5610' } }
     )
+    const categories = await axios
+        .get(`https://i-column-site.microcms.io/api/v1/categories?fields=id`, {
+          headers: { 'X-API-KEY': '9719d5ef-40cc-48b3-9ac0-74292c4f5610' },
+        })
+          .then(({ data }) => {
+            return data.contents.map((content) => content.id)
+          });
+    
+    // Pagination getting the total number of pages from headless CMS site(microCMS)
     const pagelength = Math.ceil(data.totalCount / limit);
     const range = (start, end) => [...Array((end - start) + 1)].map((_, i) => start + i);
     const pages = range(1,pagelength);
     return {
       ...data,
+      categories,
       pages,
       currentPage: page,
       previousPage: page - 1,
       nextPage: page - (-1),
     }
+  },
+  data() {
+    return {
+      originalContent: [],
+    }
+  },
+  methods: {
+    onCategorySelected(category) {
+      console.log('category', category)
+      const filtered = this.originalContent.filter((content) => content.category.id === category)
+      if (filtered.length > 0) {
+        this.contents = filtered
+      }
+    }
+  },
+  mounted() {
+    this.originalContent = this.contents
   }
 }
 
@@ -100,7 +128,7 @@ export default {
 }
 
 .main-contents { 
-  flex-grow: 1;
+  flex: 1;
 }
 .navigation-bar {
   /* background:url("https://res.cloudinary.com/rfujiwar23/image/upload/v1628067950/ifing/dummy-bg.jpg") no-repeat; */
@@ -114,8 +142,8 @@ export default {
 
 .main-area {
   display: grid;
-  grid-template-columns: 3fr 1fr;
-  flex-grow: 1;
+  /* grid-template-columns: 3fr 1fr; */
+  /* flex-grow: 1; */
 }
 
 

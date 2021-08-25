@@ -7,28 +7,27 @@
             <h5>{{ title }}</h5>
         </div>
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 main">
+    <div class="container-main">
+        <div class="row main">
+            <div class="col-lg-8">
                 
                     <h2 class="title">{{ title }}</h2>
                     <p class="publishedAt"><span>投稿：</span>{{ publishedAt.substring(0,10) }}</p>
                     <p class="category">{{ category && category.name}}</p>
                     <div class="post" v-html="body"></div>
 
-               <!-- <a href="#">次</a>
-               <a href="#">前</a> -->
             <GoBack />
             </div>
-            <div class="col-lg-4 side-bar">
+            <div class="col-lg-4 p-0 side-bar">
               <ul>
-                <li>Text</li>
+                <li><a href="https://www.facebook.com/INTENSE.JAPAN">Instagram</a></li>
+                <li><a href="https://www.instagram.com/intense_4salon/">Facebook</a></li>
               </ul>
             </div>
         </div>
     </div>
-    <footer>
-      Yes
+    <footer class="text-center">
+      Invade Co. Ltd
     </footer>
   </div>
 </template>
@@ -72,8 +71,13 @@ export default {
     background:rgba(255, 255, 255, 0.5);
 }
 
-.container {
+.container-main {
   background:#fff;
+  max-width:992px;
+  width:100%;
+  margin:0 auto;
+  height:70vh;
+
 }
 .main {
   width: 100%;
