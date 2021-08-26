@@ -7,11 +7,13 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <Top @categorySelected="onCategorySelected" :categories="categories" />
     <div class="main-contents">
-      <div class="navigation-bar block-1">
-        <div class="title">
-          <h1>i-column インテンス・IFINGコラムサイト</h1>
-        </div>     
-      </div>
+      <!-- <div class="navigation-bar">
+           <ul>
+             <li><a href="#"><img src="@/assets/facebook.png" alt="Facebook" height="30"></a></li>
+             <li><a href="#"><img src="@/assets/instagram.png" alt="Facebook" height="30"></a></li>
+           </ul>
+      </div> -->
+      <SocialMedia />
           <!-- main-area -->
           <div class="main-area block-2">
             <!-- new-information -->
@@ -21,8 +23,9 @@
                   <ul>
                     <li v-for="content in contents" :key="content.id">
                       <nuxt-link :to="`/${content.id}`">
-                        <strong>{{ content.publishedAt.substring(0,10) }}:</strong> {{ content.title }}　
-                        
+                        <span>#{{content.category.name}} </span><br>
+                        <strong>{{ content.publishedAt.substring(0,10) }}:</strong> {{ content.title }}<br>
+                        {{content.category}}
                       </nuxt-link>
                     </li>
                   </ul>
@@ -66,6 +69,7 @@
 <script>
 import Top from '@/components/Top'
 import Bottom from '@/components/Bottom'
+import SocialMedia from '@/components/SocialMedia'
 import axios from 'axios'
 export default {
   async asyncData({ params }) {
@@ -168,6 +172,11 @@ export default {
   border-bottom:1px dotted #9a9a9a;
 }
 
+.main-area .new-information .column-list ul li span {
+  border-radius:5px;
+  border:rgb(0, 115, 207);
+}
+
 .main-area .new-information .column-list ul li a{
   text-decoration: none;
   font-size:0.9em;
@@ -199,7 +208,7 @@ export default {
 
 .bottom {
   background:aliceblue;
-  position: absolute;
+  /* position: absolute; */
   bottom:0;
   left:0;
   right:0;
