@@ -18,14 +18,14 @@
           <div class="main-area block-2">
             <!-- new-information -->
             <div class="new-information box-2">
-              <div class="column-list">
+              <div class="column-list col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-12">
                 <h3>新着一覧</h3>
 
                   
 
                  
                   <div class="row">
-                    <div class="section col-lg-3 col-md-6 col-sm-4" v-for="content in contents" :key="content.id">
+                    <div class="section col-xl-4 col-lg-6 col-md-6 col-sm-6" v-for="content in contents" :key="content.id">
                       <div class="card">
                       <!-- <img class="card-img-top img-fluid" src="@/assets/facebook.png" alt="Facebook"> -->
                       <div class="card-image">
@@ -33,12 +33,14 @@
                       </div>
                       <div class="card-body">
                         <h5 class="card-title"><nuxt-link :to="`/${content.id}`">{{ content.title }}</nuxt-link></h5>
+                        <small class="text-muted">{{ content.publishedAt.substring(0,10) }}</small>
                         <h6 class="card-category"><span>#{{content.category.name}}</span></h6>
                         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to...</p>
-                        <p><nuxt-link :to="`/${content.id}`">Read More</nuxt-link></p>
+                        <!-- <p class="card-text">{{content.body.replace(/<\/?[^>]+>/gi, '').substring(0,15)}}...</p> -->
+                        
                       </div>
                       <div class="card-footer">
-                        <small class="text-muted">{{ content.publishedAt.substring(0,10) }}:</small>
+                        <p><nuxt-link :to="`/${content.id}`">Read More</nuxt-link></p>
                       </div>
                     </div>
                     </div>
@@ -89,7 +91,7 @@ export default {
   async asyncData({ params }) {
     const page = params.p || '1'
     const categoryId = params.categoryId
-    const limit = 5
+    const limit = 6
     const { data } = await axios.get(
       `https://i-column-site.microcms.io/api/v1/post?limit=${limit}&offset=${(page - 1) * limit}`,
       { headers: { 'X-API-KEY': '9719d5ef-40cc-48b3-9ac0-74292c4f5610' } }
@@ -161,7 +163,7 @@ export default {
 
 
 .main-area .new-information {
-  background: #9a9a9a;
+  background: #fff;
 }
 
 .main-area .new-information .column-list {
@@ -208,20 +210,37 @@ export default {
 }
 
 
-.card-image {
+.card {
+  margin-bottom:3vh;
+}
+
+.card .card-image {
   aspect-ratio: 16/9;
   height:40vh;
   max-height: 250px; 
   
 }
 
-.card-image img {
+.card .card-image img {
   width: 100%;
   height: 100%; 
-  object-fit: contain;
+  object-fit: cover;
+}
+
+.card .card-body .card-category {
+  margin:20px auto;
 }
 
 
+
+
+.card .card-body .card-category span {
+  color:#fff;
+  background:#9a9a9a;
+  padding:5px 10px;
+  border-radius:20px;
+  font-size:0.8em;
+}
 
 .bottom {
   background:aliceblue;

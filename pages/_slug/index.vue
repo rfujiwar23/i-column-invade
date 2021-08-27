@@ -104,10 +104,10 @@ export default {
 
 
 .category span {
-  padding:10px 15px;
-  border:1px solid #9a9a9a;
+  padding:7px 10px;
+  color:white;
+  background: #9a9a9a;
   border-radius:20px;
-  /* background:blueviolet; */
 }
 
 .category span:hover {
