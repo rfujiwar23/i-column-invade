@@ -20,15 +20,31 @@
             <div class="new-information box-2">
               <div class="column-list">
                 <h3>新着一覧</h3>
-                  <ul>
-                    <li v-for="content in contents" :key="content.id">
-                      <nuxt-link :to="`/${content.id}`">
-                        <span>#{{content.category.name}} </span><br>
-                        <strong>{{ content.publishedAt.substring(0,10) }}:</strong> {{ content.title }}<br>
-                        {{content.category}}
-                      </nuxt-link>
-                    </li>
-                  </ul>
+
+                  
+
+                 
+                  <div class="row">
+                    <div class="section col-lg-3 col-md-6 col-sm-4" v-for="content in contents" :key="content.id">
+                      <div class="card">
+                      <!-- <img class="card-img-top img-fluid" src="@/assets/facebook.png" alt="Facebook"> -->
+                      <div class="card-image">
+                        <img :src="`${content.image.url}`" alt="" class="img-fluid">
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title"><nuxt-link :to="`/${content.id}`">{{ content.title }}</nuxt-link></h5>
+                        <h6 class="card-category"><span>#{{content.category.name}}</span></h6>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to...</p>
+                        <p><nuxt-link :to="`/${content.id}`">Read More</nuxt-link></p>
+                      </div>
+                      <div class="card-footer">
+                        <small class="text-muted">{{ content.publishedAt.substring(0,10) }}:</small>
+                      </div>
+                    </div>
+                    </div>
+                  </div>
+
+                  
               </div>
               <div class="pagination">
                   <ul>
@@ -51,9 +67,7 @@
                   </ul>
               </div>
             </div>
-            <div class="sidebar box-3">
-              C
-            </div>
+            
           </div>
 
     </div>
@@ -135,13 +149,7 @@ export default {
 .main-contents { 
   flex: 1;
 }
-.navigation-bar {
-  /* background:url("https://res.cloudinary.com/rfujiwar23/image/upload/v1628067950/ifing/dummy-bg.jpg") no-repeat; */
-  background:url('@/assets/nile-river.png') no-repeat;
-  aspect-ratio: 16/4;
-  background-position: center;
-  background:cover;
-}
+
 
 
 
@@ -158,7 +166,7 @@ export default {
 
 .main-area .new-information .column-list {
   background: #fff;
-  width:90%;
+  width:100%;
   margin: 0 auto;
   padding:20px 30px;
 }
@@ -200,11 +208,20 @@ export default {
 }
 
 
-
-
-.main-area .sidebar {
-  background:pink;
+.card-image {
+  aspect-ratio: 16/9;
+  height:40vh;
+  max-height: 250px; 
+  
 }
+
+.card-image img {
+  width: 100%;
+  height: 100%; 
+  object-fit: contain;
+}
+
+
 
 .bottom {
   background:aliceblue;

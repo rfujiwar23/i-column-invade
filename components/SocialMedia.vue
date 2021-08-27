@@ -9,7 +9,9 @@
 
 <style lang="scss" scoped>
 
-ul {
+.navigation-bar {
+    background:azure;
+    ul {
     list-style: none;
     padding:0 10px;
     text-align:right;
@@ -17,6 +19,7 @@ ul {
         display:inline-block;
         margin-top:2vh;
     }
+}
 }
 
 </style>

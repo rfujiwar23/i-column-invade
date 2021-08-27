@@ -2,34 +2,38 @@
   <div class="container-fluid p-0 article-page">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">   
 
-    <div class="jumbotron mb-0">
-        <div class="text-area">
+    <SocialMedia />
+
+    <div class="title-area mb-0">
+        <div class="container">
             <h1>INTENSE/IFING コラムサイト</h1>
             <h5>{{ title }}</h5>
         </div>
     </div>
+
+  
+
     <div class="container-main">
         <div class="row main mx-0">
-            <div class="col-lg-8">
+            <div class="col-lg-12">
                 
                     <h2 class="title">{{ title }}</h2>
+                    
+                    <p class="category"><span>#{{ category && category.name}}</span></p>
                     <p class="publishedAt"><span>投稿：</span>{{ publishedAt.substring(0,10) }}</p>
-                    <p class="category">{{ category && category.name}}</p>
                     <div class="post" v-html="body"></div>
+                    <div class="image col-lg-6 offset-lg-3 my-5 p-0">
+                      <img :src="`${image.url}`" alt="" class="img-fluid">
+                    </div>
+                    
+              <hr>        
 
             <GoBack />
             </div>
-            <div class="col-lg-4 p-0 side-bar">
-              <ul>
-                <li><a href="https://www.facebook.com/INTENSE.JAPAN">Instagram</a></li>
-                <li><a href="https://www.instagram.com/intense_4salon/">Facebook</a></li>
-              </ul>
-            </div>
+            
         </div>
     </div>
-    <footer class="text-center">
-      Invade Co. Ltd
-    </footer>
+    
   </div>
 </template>
 
@@ -58,26 +62,21 @@ export default {
 .article-page {
     background: rgb(47,115,235);
     background: linear-gradient(320deg, rgba(47,115,235,1) 0%, rgba(154,211,217,1) 100%);
-    height:100vh;
+    height:100%;
 }
 
-.jumbotron {
-    background:url('https://res.cloudinary.com/rfujiwar23/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1606378017/background.jpg') no-repeat;
-    background-position: center bottom;
-    background-size: cover;
-    height:30vh;
-}
+
 
 .jumbotron .text-area {
     background:rgba(255, 255, 255, 0.5);
 }
 
 .container-main {
-  background:#fff;
+  /* background:#fff; */
   max-width:992px;
   width:100%;
   margin:0 auto;
-  height:70vh;
+  /* height:70vh; */
 
 }
 .main {
@@ -85,22 +84,35 @@ export default {
   margin: 0 auto;
   background: white;
   border-right:1px dotted #ddd;
+  box-shadow: 1px 3px 6px #9a9a9a;
+  padding:2vh 3vw;
 }
 
-.side-bar ul {
-  padding:0;
-  list-style: none;
+.main h2 {
+  font-family: 'Sawarabi Gothic', sans-serif;
+  font-size:1.25em;
 }
 
-.side-bar ul li {
-  padding:3px 5px;
-  border-bottom:1px dotted #9a9a9a;
-  text-align:center;
-}
+
+
 
 .title {
   margin: 20px 0;
   text-decoration: underline;
+}
+
+
+
+.category span {
+  padding:10px 15px;
+  border:1px solid #9a9a9a;
+  border-radius:20px;
+  /* background:blueviolet; */
+}
+
+.category span:hover {
+  background:rgba(0,0,0, 0.25);
+  cursor: pointer;
 }
 
 .publishedAt {

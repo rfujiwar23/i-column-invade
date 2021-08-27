@@ -1,6 +1,6 @@
 <template>
     <span class="go-back">
-        <button @click="backOnePage">前のページへ戻る</button>
+        <button @click="backOnePage" class="btn btn-dark">前のページへ戻る</button>
     </span>
 </template>
 
@@ -20,10 +20,10 @@ export default {
     cursor: pointer;
 }
 
-button {
+/* button {
     padding: 5px 10px;
     border-radius:5px;
-}
+} */
 
 
 </style>
