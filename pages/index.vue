@@ -20,6 +20,7 @@
             <div class="new-information box-2">
               <div class="column-list col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-12">
                 <h3>新着一覧</h3>
+                <h4>New Information</h4>
 
                   
 
@@ -35,12 +36,14 @@
                         <h5 class="card-title"><nuxt-link :to="`/${content.id}`">{{ content.title }}</nuxt-link></h5>
                         <small class="text-muted">{{ content.publishedAt.substring(0,10) }}</small>
                         <h6 class="card-category"><span>#{{content.category.name}}</span></h6>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to...</p>
-                        <!-- <p class="card-text">{{content.body.replace(/<\/?[^>]+>/gi, '').substring(0,15)}}...</p> -->
+                        <!-- <p class="card-text">This is a wider card with supporting text below as a natural lead-in to...</p> -->
+                        <!-- <p class="card-text">{{content.body.replace(/(<([^>]+)>)/gi, "")}}</p> -->
+                         <p class="card-text">{{content.body}}</p>
+                       
                         
                       </div>
                       <div class="card-footer">
-                        <p><nuxt-link :to="`/${content.id}`">もっと読む</nuxt-link></p>
+                        <p><nuxt-link :to="`/${content.id}`">Read More</nuxt-link></p>
                       </div>
                     </div>
                     </div>

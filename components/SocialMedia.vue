@@ -1,5 +1,6 @@
 <template>
     <div class="navigation-bar">
+        <NuxtLink to="/">i-Column</NuxtLink>
            <ul>
              <li><a href="#"><img src="@/assets/facebook.png" alt="Facebook" height="30"></a></li>
              <li><a href="#"><img src="@/assets/instagram.png" alt="Facebook" height="30"></a></li>
