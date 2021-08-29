@@ -16,7 +16,7 @@
     <div class="container-main">
         <div class="row main mx-0">
             <div class="col-lg-12">
-                
+                <GoBack />
                     <h2 class="title">{{ title }}</h2>
                     
                     <p class="category"><span>#{{ category && category.name}}</span></p>

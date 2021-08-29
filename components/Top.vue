@@ -8,14 +8,17 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
-          <li class="nav-item active">
+          <!-- <li class="nav-item active">
             <a class="nav-link" href="#">IFING BEAUTY <span class="sr-only">(current)</span></a>
+          </li> -->
+          <li class="nav-item active">
+            <a class="nav-link" href="http://ifing-beauty.com" target="_blank">IFING BEAUTY</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">INTENSE</a>
+            <a class="nav-link" href="http://www.intense-z.com/" target="_blank">INTENSE</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">IFING</a>
+            <a class="nav-link" href="https://www.ifing.com" target="_blank">IFING</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

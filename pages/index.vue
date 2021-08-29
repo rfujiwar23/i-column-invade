@@ -40,7 +40,7 @@
                         
                       </div>
                       <div class="card-footer">
-                        <p><nuxt-link :to="`/${content.id}`">Read More</nuxt-link></p>
+                        <p><nuxt-link :to="`/${content.id}`">もっと読む</nuxt-link></p>
                       </div>
                     </div>
                     </div>
