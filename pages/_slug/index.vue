@@ -19,7 +19,7 @@
                 <GoBack />
                     <h2 class="title">{{ title }}</h2>
                     
-                    <p class="category"><span>#{{ category && category.name}}</span></p>
+                    <p class="category" v-if="category"><span>#{{category.name}}</span></p>
                     <p class="publishedAt"><span>投稿：</span>{{ publishedAt.substring(0,10) }}</p>
                     <div class="post" v-html="body"></div>
                     <div class="image col-lg-6 offset-lg-3 my-5 p-0">

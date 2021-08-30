@@ -27,6 +27,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    { src: '~/plugins/vue-carousel', ssr: false }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -66,6 +67,7 @@ export default {
           headers: { 'X-API-KEY': '9719d5ef-40cc-48b3-9ac0-74292c4f5610' },
         })
           .then(({ data }) => {
+            console.log
             return data.contents.map((content) => content.id)
           });  
 

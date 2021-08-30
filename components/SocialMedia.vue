@@ -1,10 +1,14 @@
 <template>
     <div class="navigation-bar">
-        <NuxtLink to="/">i-Column</NuxtLink>
-           <ul>
-             <li><a href="#"><img src="@/assets/facebook.png" alt="Facebook" height="30"></a></li>
-             <li><a href="#"><img src="@/assets/instagram.png" alt="Facebook" height="30"></a></li>
-           </ul>
+            <div class="element">
+                <NuxtLink to="/">i-Column</NuxtLink>
+            </div>
+            <div class="element">
+                <ul>
+                    <li><a href="#"><img src="@/assets/facebook.png" alt="Facebook" height="30"></a></li>
+                    <li><a href="#"><img src="@/assets/instagram.png" alt="Facebook" height="30"></a></li>
+                </ul>
+            </div>
       </div>
 </template>
 
@@ -12,13 +16,17 @@
 
 .navigation-bar {
     background:azure;
+    display: flex;
+    > div {
+        width: 50%;
+    }
     ul {
     list-style: none;
-    padding:0 10px;
+    
     text-align:right;
     li {
         display:inline-block;
-        margin-top:2vh;
+        
     }
 }
 }

@@ -7,13 +7,11 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <Top @categorySelected="onCategorySelected" :categories="categories" />
     <div class="main-contents">
-      <!-- <div class="navigation-bar">
-           <ul>
-             <li><a href="#"><img src="@/assets/facebook.png" alt="Facebook" height="30"></a></li>
-             <li><a href="#"><img src="@/assets/instagram.png" alt="Facebook" height="30"></a></li>
-           </ul>
-      </div> -->
+
       <SocialMedia />
+
+      <!-- <Banner /> -->
+
           <!-- main-area -->
           <div class="main-area block-2">
             <!-- new-information -->
@@ -26,7 +24,7 @@
 
                  
                   <div class="row">
-                    <div class="section col-xl-4 col-lg-6 col-md-6 col-sm-6" v-for="content in contents" :key="content.id">
+                    <div class="section col-xl-4 col-lg-6 col-md-6 col-sm-6" v-for="content in filteredContent" :key="content.id">
                       <div class="card">
                       <!-- <img class="card-img-top img-fluid" src="@/assets/facebook.png" alt="Facebook"> -->
                       <div class="card-image">
@@ -36,14 +34,17 @@
                         <h5 class="card-title"><nuxt-link :to="`/${content.id}`">{{ content.title }}</nuxt-link></h5>
                         <small class="text-muted">{{ content.publishedAt.substring(0,10) }}</small>
                         <h6 class="card-category"><span>#{{content.category.name}}</span></h6>
-                        <!-- <p class="card-text">This is a wider card with supporting text below as a natural lead-in to...</p> -->
+                        
+                        <!-- Get the body of the text, but without the html tags -->
+                        <!-- This one shows the underline underneath the (), after replace(/(<  -->
                         <!-- <p class="card-text">{{content.body.replace(/(<([^>]+)>)/gi, "")}}</p> -->
-                         <p class="card-text">{{content.body}}</p>
-                       
+                        
+                        <!-- <p class="card-text">{{content.body}}</p> -->
+                       <p class="card-text" v-html="content.body"></p>
                         
                       </div>
                       <div class="card-footer">
-                        <p><nuxt-link :to="`/${content.id}`">Read More</nuxt-link></p>
+                        <p><nuxt-link :to="`/${content.id}`">もっと読む</nuxt-link></p>
                       </div>
                     </div>
                     </div>
@@ -89,22 +90,24 @@
 import Top from '@/components/Top'
 import Bottom from '@/components/Bottom'
 import SocialMedia from '@/components/SocialMedia'
+import Banner from '@/components/Banner'
 import axios from 'axios'
 export default {
   async asyncData({ params }) {
-    const page = params.p || '1'
+    const page = Number(params.p || '1')
     const categoryId = params.categoryId
-    const limit = 6
+    const limit = 100
     const { data } = await axios.get(
       `https://i-column-site.microcms.io/api/v1/post?limit=${limit}&offset=${(page - 1) * limit}`,
       { headers: { 'X-API-KEY': '9719d5ef-40cc-48b3-9ac0-74292c4f5610' } }
     )
     const categories = await axios
-        .get(`https://i-column-site.microcms.io/api/v1/categories?fields=id`, {
+        .get(`https://i-column-site.microcms.io/api/v1/categories?fields=id,name`, {
           headers: { 'X-API-KEY': '9719d5ef-40cc-48b3-9ac0-74292c4f5610' },
         })
           .then(({ data }) => {
-            return data.contents.map((content) => content.id)
+            console.log('data', data)
+            return data.contents.map((content) => /[a-zA-Z0-9]/.test(content.name) ? content.id : content.name)
           });
     
     // Pagination getting the total number of pages from headless CMS site(microCMS)
@@ -122,20 +125,20 @@ export default {
   },
   data() {
     return {
-      originalContent: [],
+      filteredContent: [],
     }
   },
   methods: {
     onCategorySelected(category) {
       console.log('category', category)
-      const filtered = this.originalContent.filter((content) => content.category.id === category)
+      const filtered = this.contents.filter((content) => content.category.id === category)
       if (filtered.length > 0) {
-        this.contents = filtered
+        this.filteredContent = filtered
       }
     }
   },
   mounted() {
-    this.originalContent = this.contents
+    this.filteredContent = this.contents
   }
 }
 
@@ -232,6 +235,14 @@ export default {
 
 .card .card-body .card-category {
   margin:20px auto;
+}
+
+.card .card-body .card-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
 }
 
 
