@@ -126,6 +126,7 @@ export default {
   data() {
     return {
       filteredContent: [],
+
     }
   },
   methods: {
@@ -243,6 +244,7 @@ export default {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
+  font-size:12px;
 }
 
 

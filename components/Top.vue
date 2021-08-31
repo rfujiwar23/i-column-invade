@@ -3,7 +3,7 @@
 <div class="top">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <!-- <a class="navbar-brand" href="#">i-Column</a> -->
-      <NuxtLink to="/">i-Column</NuxtLink>
+      <NuxtLink to="/"><img src="@/assets/i-column.svg" alt="i-Column" class="img"></NuxtLink>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -52,6 +52,10 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 
+.img {
+  width:120px;
+  margin-left:-10px;
+}
 </style>
