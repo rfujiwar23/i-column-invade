@@ -2,14 +2,18 @@
   <div class="container-fluid p-0 article-page">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">   
 
-    <SocialMedia />
-
-    <div class="title-area mb-0">
-        <div class="container">
+    <div class="index-top">
+      <SocialMedia />
+      <!-- <Banner /> -->
+      <div class="title-area mb-0">
+        
             <h1>INTENSE/IFING コラムサイト</h1>
-            <h5>{{ title }}</h5>
-        </div>
+            <!-- <h5>{{ title }}</h5> -->
+        
     </div>
+    </div>
+
+    
 
   
 
@@ -17,7 +21,7 @@
         <div class="row main mx-0">
             <div class="col-lg-12">
                 <GoBack />
-                    <h2 class="title">{{ title }}</h2>
+                    <h2 class="title">【{{ title }}】</h2>
                     
                     <p class="category" v-if="category"><span>#{{category.name}}</span></p>
                     <p class="publishedAt"><span>投稿：</span>{{ publishedAt.substring(0,10) }}</p>
@@ -59,6 +63,16 @@ export default {
 
 <style lang="css">
 
+
+.index-top {
+  background:white;
+  aspect-ratio: 5/1;
+}
+
+.index-top .title-area h1 {
+  margin: 20px 10px;
+}
+
 .article-page {
     background: rgb(47,115,235);
     background: linear-gradient(320deg, rgba(47,115,235,1) 0%, rgba(154,211,217,1) 100%);
@@ -98,7 +112,7 @@ export default {
 
 .title {
   margin: 20px 0;
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 
 

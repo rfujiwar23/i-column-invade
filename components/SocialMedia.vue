@@ -20,8 +20,9 @@
     background:rgba(255,255,255,0.16);
     border-bottom:1px dotted rgba(187,187,187, 0.6);
     display: flex;
+    justify-content: space-between;
     > div {
-        width: 50%;
+        // width: 50%;
     }
     .element {
         margin:10px 20px;
@@ -35,22 +36,22 @@
                 background:rgb(255,255,255);
             }
         }
-    }
-
-    ul {
+        ul {
         list-style: none;
-        text-align:right;
-        li {
-            display:inline-block;
+            li {
+                display:inline-block;
+            }
         }
     }
+
+    
 }
 
 @media screen and (max-width:768px) {
     .navigation-bar {
-        display: block;
+        // display: block;
         > div {
-            width:100%;
+            
             // background:red;
             margin:0;
             padding-left:0;
@@ -63,17 +64,34 @@
 
 @media screen and (max-width:575px) {
     .navigation-bar {
-        display: block;
+        // display: block;
         > div {
-            width:100%;
+            // width:100%;
             // background:red;
-            margin:0;
-            padding-left:0;
+            // margin:0;
+            // padding-left:0;
         }
         .element {
             p {
                 text-align: center;
-                margin:10px auto;
+                margin:0px auto;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:459px) {
+    .navigation-bar {
+        // display: block;
+        > div {
+            // width:100%;
+            // background:red;
+            // margin:0;
+            // padding-left:0;
+        }
+        .element {
+            p {
+                font-size: 0.7em;
             }
         }
     }
