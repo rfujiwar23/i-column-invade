@@ -1,43 +1,37 @@
 <template>
   <div class="container-fluid p-0 article-page">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">   
-
     <div class="index-top">
-      <SocialMedia />
+      <!-- <img src="@/assets/main-bg.png" alt="" class="img-fluid"> -->
+      
       <!-- <Banner /> -->
-      <div class="title-area mb-0">
-        
-            <h1>INTENSE/IFING コラムサイト</h1>
-            <!-- <h5>{{ title }}</h5> -->
-        
+      <div class="title-area mb-0">  
+            <SocialMedia />
+            <h1>IFING BEAUTY/fofoのブログページ</h1>
+      </div>
+      
     </div>
-    </div>
-
-    
-
-  
-
     <div class="container-main">
         <div class="row main mx-0">
             <div class="col-lg-12">
                 <GoBack />
                     <h2 class="title">【{{ title }}】</h2>
-                    <fa icon="folder" />
-                    <p class="category" v-if="category"><span>#{{category.name}}</span></p>
-                    <p class="publishedAt"><span><fa icon="clock"/> 投稿：</span>{{ publishedAt.substring(0,10) }}</p>
+                    <!-- <fa icon="folder" /> -->
+                    <!-- <p class="category" v-if="category"><span>#{{category.name}}</span></p> -->
+                    <div class="post-information">
+                      <p class="publishedAt"><span><fa icon="clock" class="icon"/> 投稿：</span>{{ publishedAt.substring(0,10) }}</p>
+                      <p><fa icon="folder" class="icon" /> <span class="category" v-if="category">#{{category.name}}</span></p>
+                    </div>
+                    <!-- {{category}} -->
                     <div class="post" v-html="body"></div>
                     <div class="image col-lg-6 offset-lg-3 my-5 p-0">
                       <img :src="`${image.url}`" alt="" class="img-fluid">
                     </div>
-                    
               <hr>        
-
             <GoBack />
             </div>
-            
         </div>
     </div>
-    
   </div>
 </template>
 
@@ -61,115 +55,126 @@ export default {
 }
 </script>
 
-<style lang="css">
-
-
+<style lang="scss">
 .index-top {
-  background:white;
+  background: red;
   aspect-ratio: 5/1;
-}
-
-.index-top .title-area h1 {
-  margin: 20px 10px;
+  position:relative;
+  .title-area {
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    h1 {
+      margin: 20px 10px;
+      font-family: "ヒラギノ明朝 ProN W6", "HiraMinProN-W6", "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
+      font-size:2em;
+      z-index: 1;
+      color: #fff;
+    }
+    
+  }
 }
 
 .article-page {
-    background: rgb(47,115,235);
-    background: linear-gradient(320deg, rgba(47,115,235,1) 0%, rgba(154,211,217,1) 100%);
-    height:100%;
+  height: 100%;
 }
 
-
-
 .jumbotron .text-area {
-    background:rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .container-main {
-  /* background:#fff; */
-  max-width:992px;
-  width:100%;
-  margin:0 auto;
-  /* height:70vh; */
-
-}
-.main {
+  max-width: 992px;
   width: 100%;
   margin: 0 auto;
-  background: white;
-  border-right:1px dotted #ddd;
-  box-shadow: 1px 3px 6px #9a9a9a;
-  padding:2vh 3vw;
+  .main {
+    width: 100%;
+    margin: 0 auto;
+    background: white;
+    border-right: 1px dotted #ddd;
+    box-shadow: 1px 3px 6px #9a9a9a;
+    padding: 2vh 3vw;
+    h2 {
+      margin:20px 0;
+      font-size: 1.25em;
+    }
+    .post-information {
+      // background:rgba(154, 211, 217, 1);
+      padding-left:20px;
+      p {
+        line-height:0.9em;
+      }
+      .publishedAt {
+        margin-bottom: 10px;
+        font-size: 0.8em;
+        span {
+          font-weight: bold;
+        }
+      }
+      .category {
+        font-size:0.8em;
+        padding: 3px 5px;
+        border-radius:3px;
+        border: 1px solid #1f456E;
+        color:#1f456E;
+        &:hover {
+          color:#fff;
+          background:#1f456E;
+          cursor: pointer;
+        }
+      }
+      
+      .icon {
+        color:#343A40;
+      }
+    }
+    .post {
+        // background: pink;
+        box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.5);
+        padding: 10px 20px;
+        margin: 5vh auto;
+      > {
+        h2 {
+          font-size: 24px;
+          font-weight: bold;
+          margin: 40px 0 16px;
+          border-bottom: 1px solid #ddd;
+        }
+        p {
+          line-height: 1.8;
+          letter-spacing: 0.2px;
+        }
+      }
+    }
+  }
 }
 
-.main h2 {
-  font-family: 'Sawarabi Gothic', sans-serif;
-  font-size:1.25em;
+@media screen and (max-width:1024px) {
+  .index-top {
+    aspect-ratio:8/3;
+  }
+}
+
+@media screen and (max-width:520px) {
+  .index-top {
+    // background: white;
+    aspect-ratio: 5/3;
+    .title-area {
+      h1 {
+        margin: 20px 10px;
+        font-family: "ヒラギノ明朝 ProN W6", "HiraMinProN-W6", "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
+        font-size:1.25em;
+        text-align: center;
+      }
+    }
+}
 }
 
 
 
 
-.title {
-  margin: 20px 0;
-  /* text-decoration: underline; */
-}
 
 
 
-.category span {
-  padding:7px 10px;
-  color:white;
-  background: #9a9a9a;
-  border-radius:20px;
-}
-
-.category span:hover {
-  background:rgba(0,0,0, 0.25);
-  cursor: pointer;
-}
-
-.publishedAt {
-  margin-bottom: 10px;
-  font-size:0.9em;
-}
-
-.publishedAt span {
-    font-weight: bold;
-}
-
-.post {
-    background:pink;
-    box-shadow: 1px 3px 6px rgba(0,0,0,0.5);
-    padding:10px 20px;
-    margin:20px auto;
-}
-
-/* .post > h1 {
-	 font-size: 30px;
-	 font-weight: bold;
-	 margin: 40px 0 20px;
-	 background-color: #eee;
-	 padding: 10px 20px;
-	 border-radius: 5px;
-} */
- .post > h2 {
-	 font-size: 24px;
-	 font-weight: bold;
-	 margin: 40px 0 16px;
-	 border-bottom: 1px solid #ddd;
-}
- .post > p {
-	 line-height: 1.8;
-	 letter-spacing: 0.2px;
-}
- .post > ol {
-	 list-style-type: decimal;
-	 list-style-position: inside;
-}
-
-footer {
-  background:rgba(154,211,217,1);
-}
- 
 </style>

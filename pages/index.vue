@@ -28,6 +28,10 @@
                  
                   <div class="row">
                     <div class="section col-xl-4 col-lg-6 col-md-6 col-sm-6" v-for="content in filteredContent" :key="content.id">
+
+                      <div class="for-mobile">
+                        {{content.title}}
+                      </div>
                       <div class="card">
                       <!-- <img class="card-img-top img-fluid" src="@/assets/facebook.png" alt="Facebook"> -->
                       <div class="card-image">
@@ -150,13 +154,15 @@ export default {
 
 <style lang="scss">
 
-
-
 .container {
   display: flex;
   flex-direction: column;
 
   /* min-height: 100vh; */
+}
+
+.for-mobile {
+  display:none;
 }
 
 .main-contents {
@@ -323,5 +329,15 @@ export default {
   bottom: 0;
   left: 0;
   right: 0;
+}
+
+
+@media screen and (max-width:576px) {
+  .for-mobile {
+    display:block;
+    background:#1f456E;
+    padding:10px 20px;
+    color:#ffffff;
+  }
 }
 </style>
