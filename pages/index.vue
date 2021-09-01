@@ -17,7 +17,7 @@
             <!-- new-information -->
             <div class="new-information box-2">
               <div class="column-list col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-12">
-                <h3>新着一覧</h3>
+                <h3><span>新着一覧</span></h3>
                 <h4>New Information</h4>
 
                   
@@ -146,6 +146,9 @@ export default {
 </script>
 
 <style lang="scss">
+
+
+
 .container {
   display: flex;
   flex-direction: column;
@@ -164,7 +167,22 @@ export default {
   /* flex-grow: 1; */
 
   .new-information {
-    background: #fff;
+    // background: #fff;
+    h3 {
+      font-size:1.5em;
+      color:#fff;
+      span {
+        background:#1f456E;
+        padding:5px 10px;
+        font-family: "ヒラギノ明朝 ProN W6", "HiraMinProN-W6", "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
+      }
+    }
+    h4 {
+      font-size:0.9em;
+      margin-bottom:4vh;
+      color:#1f456E;
+
+    }
 
     .column-list {
       background: #fff;
@@ -187,7 +205,7 @@ export default {
           a {
             text-decoration: none;
             font-size: 0.9em;
-            color: #404040;
+            
           }
         }
       }
@@ -227,9 +245,24 @@ export default {
 
   .card-body {
     .card-title {
+      
+      text-decoration: none;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
       a {
-        color:#9a9a9a;
-        // background:black;
+        color: #1f456E;
+      }
+    }
+    .card-title:hover {
+      // text-decoration: underline;
+      background: #1f456E;
+      > a {
+        color:white;
+        text-decoration: none;
+        padding:0 5px;
       }
     }
     .card-category {
@@ -251,8 +284,30 @@ export default {
       padding: 5px 10px;
       border-radius: 20px;
       font-size: 0.8em;
-    }
+    }  
   }
+  .card-footer {
+      p {
+        a {
+          display: inline-block;
+          line-height: 1.5em;
+          border: 1px solid #1F456E;
+          color: #1F456E;
+          border-radius: 2px;
+          cursor: pointer;
+          padding: 5px 15px;
+          font-size: 12px;
+          text-transform: uppercase;
+          letter-spacing: .5px;
+          &:hover {
+            border: 1px solid #1F456E;
+            background: #1F456E;
+            color: #ffffff;
+            text-decoration:none;
+          }
+        }  
+      }
+    }
 }
 
 .bottom {

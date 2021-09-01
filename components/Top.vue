@@ -23,7 +23,7 @@
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Category
+              カテゴリ
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <span class="dropdown-item" v-for="category in categories" :key="category" @click="handleMenuClick(category)">
