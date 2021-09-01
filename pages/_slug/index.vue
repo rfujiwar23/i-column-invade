@@ -2,7 +2,7 @@
   <div class="container-fluid p-0 article-page">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">   
     <div class="index-top">
-      <!-- <img src="@/assets/main-bg.png" alt="" class="img-fluid"> -->
+      <!-- <img src="@/assets/bg001.png" alt="TOKIO" class="contain-img"> -->
       
       <!-- <Banner /> -->
       <div class="title-area mb-0">  
@@ -58,7 +58,8 @@ export default {
 <style lang="scss">
 .index-top {
   background: red;
-  aspect-ratio: 5/1;
+  // background-image: url('~@/assets/bg001.jpg') no-repeat;
+  aspect-ratio: 16/4;
   position:relative;
   .title-area {
     position:absolute;
@@ -150,11 +151,31 @@ export default {
   }
 }
 
+@media screen and (max-width:1200px) {
+  .index-top {
+    aspect-ratio:16/5;
+  }
+}
+
 @media screen and (max-width:1024px) {
   .index-top {
     aspect-ratio:8/3;
   }
 }
+
+@media screen and (max-width:768px) {
+  .index-top {
+    aspect-ratio:2/1;
+    .title-area {
+      h1 {
+        font-size:1.5em;
+        text-align:center;
+      }
+    }
+  }
+}
+
+
 
 @media screen and (max-width:520px) {
   .index-top {
@@ -163,12 +184,11 @@ export default {
     .title-area {
       h1 {
         margin: 20px 10px;
-        font-family: "ヒラギノ明朝 ProN W6", "HiraMinProN-W6", "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
         font-size:1.25em;
         text-align: center;
       }
     }
-}
+  } 
 }
 
 
