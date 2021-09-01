@@ -1,8 +1,10 @@
 <template>
     <div class="banner-area">
-        <div class="container">
-            インテンス・イフイングのコラムサイトです
+        <div class="inner">
+            <SocialMedia />
         </div>
+            <img src="@/assets/main-bg.png" alt="" class="img-fluid">
+        
     </div>
 </template>
 
@@ -10,12 +12,17 @@
 
 .banner-area {
     background:red;
-    .container {
-        aspect-ratio: 8/3;
-        background:('~assets/nile-river.png') no-repeat;
-        background-size: cover;
-        background-position: center;
-    }
+    // background:('../assets/main-bg.png') no-repeat;
+    aspect-ratio: 16/5;    
+    background-size: cover;
+    background-position: center;
+    position:relative;
+   .inner {
+       position: absolute;
+       top:0;
+       right:0;
+       left:0;
+   }
 }
 
 

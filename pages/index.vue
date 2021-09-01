@@ -1,5 +1,8 @@
 <template>
   <div class="container-fluid p-0">
+    <!-- font-awesome -->
+    <!-- <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/fontawesome.css" integrity="sha384-eHoocPgXsiuZh+Yy6+7DsKAerLXyJmu2Hadh4QYyt+8v86geixVYwFqUvMU8X90l" crossorigin="anonymous"/> -->
+
     <!-- adding stylesheet -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -8,9 +11,9 @@
     <Top @categorySelected="onCategorySelected" :categories="categories" />
     <div class="main-contents">
 
-      <SocialMedia />
+      
 
-      <!-- <Banner /> -->
+      <Banner />
 
           <!-- main-area -->
           <div class="main-area block-2">
@@ -44,7 +47,7 @@
                         
                       </div>
                       <div class="card-footer">
-                        <p><nuxt-link :to="`/${content.id}`">もっと読む</nuxt-link></p>
+                        <p><nuxt-link :to="`/${content.id}`">続きを読む →</nuxt-link></p>
                       </div>
                     </div>
                     </div>
@@ -252,8 +255,10 @@ export default {
       display: -webkit-box;
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 1;
+      
       a {
         color: #1f456E;
+        border: #1f456E;
       }
     }
     .card-title:hover {
@@ -288,6 +293,7 @@ export default {
   }
   .card-footer {
       p {
+        padding-bottom:0;
         a {
           display: inline-block;
           line-height: 1.5em;
