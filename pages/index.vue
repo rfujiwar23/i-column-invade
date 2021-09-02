@@ -122,7 +122,7 @@ export default {
           headers: { 'X-API-KEY': '9719d5ef-40cc-48b3-9ac0-74292c4f5610' },
         })
           .then(({ data }) => {
-            console.log('data', data)
+            // console.log('data', data)
             return data.contents.map((content) => /[a-zA-Z0-9]/.test(content.name) ? content.id : content.name)
           });
     
@@ -147,7 +147,7 @@ export default {
   },
   methods: {
     onCategorySelected(category) {
-      console.log('category', category)
+      // console.log('category', category)
       const filtered = this.contents.filter((content) => content.category.id === category)
       if (filtered.length > 0) {
         this.filteredContent = filtered
