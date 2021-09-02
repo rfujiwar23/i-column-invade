@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid p-0">
+  <div class="container-fluid page p-0">
     <!-- font-awesome -->
     <!-- <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/fontawesome.css" integrity="sha384-eHoocPgXsiuZh+Yy6+7DsKAerLXyJmu2Hadh4QYyt+8v86geixVYwFqUvMU8X90l" crossorigin="anonymous"/> -->
 
@@ -11,8 +11,7 @@
     <Top @categorySelected="onCategorySelected" :categories="categories" />
     <div class="main-contents">
 
-      
-
+    
       <Banner />
 
           <!-- main-area -->
@@ -87,7 +86,9 @@
 
     </div>
 
-    <Footer />
+    <div class="footer">
+      <Footer />
+    </div>
  
   </div>
 
@@ -159,6 +160,8 @@ export default {
    padding: 0;
 }
 
+
+
 .container {
   display: flex;
   flex-direction: column;
@@ -226,7 +229,7 @@ export default {
     }
 
     .pagination {
-      background: antiquewhite;
+      // background: antiquewhite;
       margin: 20px auto;
 
       ul {
@@ -334,6 +337,16 @@ export default {
 
 
 @media screen and (max-width:576px) {
+  .page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer {
+    margin-top: auto;
+  }
+
   .for-mobile {
     display:block;
     border:1px solid #1f456E;
@@ -342,6 +355,7 @@ export default {
     // color:#ffffff;
     color: rgba(24,24,24,1);
     margin: 10px auto;
+    background:oldlace;
     h2 {
       font-size:1.25em;
     }
@@ -359,10 +373,12 @@ export default {
         padding:3px 5px;
         background:#9a9a9a;
         color:#fff;
+        border:1px solid #000;
       }
       a {
         color:#1F456E;
         border:1px solid #1F456E;
+        background:#fff;
         padding: 3px 5px;
         &:hover {
           background:#1F456E;
@@ -377,6 +393,10 @@ export default {
     // visibility: hidden;
     display: none;
   }
+
+  
+
+
 
   
 }
