@@ -12,26 +12,26 @@
           <!-- <li class="nav-item active">
             <a class="nav-link" href="#">IFING BEAUTY <span class="sr-only">(current)</span></a>
           </li> -->
-          <li class="nav-item active">
-            <a class="nav-link" href="http://ifing-beauty.com" target="_blank">IFING BEAUTY</a>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="http://www.intense-z.com/" target="_blank">IFING BEAUTY</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="http://www.intense-z.com/" target="_blank">INTENSE</a>
+            <a class="nav-link" href="http://www.intense-z.com/" target="_blank">FOFO</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="https://www.ifing.com" target="_blank">IFING</a>
           </li>
-          <li class="nav-item dropdown">
+          <!-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               カテゴリ
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <span class="dropdown-item" v-for="category in categories" :key="category" @click="handleMenuClick(category)">
                 {{category}}
-                <!-- {{category && category.name}} -->
               </span>
             </div>
-          </li>
+          </li> -->
         </ul>
       </div>
     </nav>

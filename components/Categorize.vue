@@ -1,0 +1,38 @@
+<template>
+    <div class="categorize">
+        <div class="btn-group">
+        <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            カテゴリ別で見る
+        </button>
+        <div class="dropdown-menu">
+            <span class="dropdown-item" v-for="category in categories" :key="category" @click="handleMenuClick(category)">
+                {{category}}
+            </span>
+        </div>
+        </div>
+    </div>
+</template>
+
+<script>
+import axios from 'axios'
+
+export default {
+  props: {
+    categories: { type: Array, required: true }
+  },
+  methods: {
+    handleMenuClick(category) {
+      this.$emit('categorySelected', category)
+    }
+  },
+}
+</script>
+
+<style lang="scss">
+
+.categorize {
+    padding:2vh 0;
+}
+
+</style>
+

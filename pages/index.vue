@@ -8,7 +8,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <Top @categorySelected="onCategorySelected" :categories="categories" />
+    <Top />
     <div class="main-contents">
 
     
@@ -17,8 +17,14 @@
           <!-- main-area -->
           <div class="main-area block-2">
             <!-- new-information -->
+            
             <div class="new-information box-2">
+              
               <div class="column-list col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-12">
+                
+                <Categorize @categorySelected="onCategorySelected" :categories="categories"/>
+                
+                
                 <h3><span>新着一覧</span></h3>
                 <h4>New Information</h4>
 
@@ -96,9 +102,11 @@
 
 <script>
 import Top from '@/components/Top'
-import Bottom from '@/components/Bottom'
+import Footer from '@/components/Footer'
 import SocialMedia from '@/components/SocialMedia'
 import Banner from '@/components/Banner'
+import Categorize from '@/components/Categorize'
+
 import axios from 'axios'
 export default {
   async asyncData({ params }) {
