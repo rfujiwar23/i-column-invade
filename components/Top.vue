@@ -37,20 +37,7 @@
     </nav>
 </div>
 </template>
-<script>
-import axios from 'axios'
 
-export default {
-  props: {
-    categories: { type: Array, required: true }
-  },
-  methods: {
-    handleMenuClick(category) {
-      this.$emit('categorySelected', category)
-    }
-  },
-}
-</script>
 
 <style lang="scss" scoped>
 
