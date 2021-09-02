@@ -28,32 +28,34 @@
                  
                   <div class="row">
                     <div class="section col-xl-4 col-lg-6 col-md-6 col-sm-6" v-for="content in filteredContent" :key="content.id">
-
                       <div class="for-mobile">
-                        {{content.title}}
+                        <div class="row">
+                          <div class="col-3">
+                            <img :src="`${content.image.url}`" alt="" class="img-fluid">
+                          </div>
+                          <div class="col-9">
+                            <h2>{{content.title}}</h2>
+                            <p class="mobile-body" v-html="content.body"></p>
+                            <p class="link-to"><span>#{{content.category.name}}</span> <nuxt-link :to="`/${content.id}`">続きを読む →</nuxt-link></p>
+                          </div>
+                        </div>
                       </div>
-                      <div class="card">
-                      <!-- <img class="card-img-top img-fluid" src="@/assets/facebook.png" alt="Facebook"> -->
-                      <div class="card-image">
-                        <img :src="`${content.image.url}`" alt="" class="img-fluid">
+                      <div class="hide-on-mobile">
+                        <div class="card">
+                        <div class="card-image">
+                          <img :src="`${content.image.url}`" alt="" class="img-fluid">
+                        </div>
+                        <div class="card-body">
+                          <h5 class="card-title"><nuxt-link :to="`/${content.id}`">{{ content.title }}</nuxt-link></h5>
+                          <small class="text-muted">{{ content.publishedAt.substring(0,10) }}</small>
+                          <h6 class="card-category"><span>#{{content.category.name}}</span></h6>
+                          <p class="card-text" v-html="content.body"></p>
+                        </div>
+                        <div class="card-footer">
+                          <p><nuxt-link :to="`/${content.id}`">続きを読む →</nuxt-link></p>
+                        </div>
                       </div>
-                      <div class="card-body">
-                        <h5 class="card-title"><nuxt-link :to="`/${content.id}`">{{ content.title }}</nuxt-link></h5>
-                        <small class="text-muted">{{ content.publishedAt.substring(0,10) }}</small>
-                        <h6 class="card-category"><span>#{{content.category.name}}</span></h6>
-                        
-                        <!-- Get the body of the text, but without the html tags -->
-                        <!-- This one shows the underline underneath the (), after replace(/(<  -->
-                        <!-- <p class="card-text">{{content.body.replace(/(<([^>]+)>)/gi, "")}}</p> -->
-                        
-                        <!-- <p class="card-text">{{content.body}}</p> -->
-                       <p class="card-text" v-html="content.body"></p>
-                        
                       </div>
-                      <div class="card-footer">
-                        <p><nuxt-link :to="`/${content.id}`">続きを読む →</nuxt-link></p>
-                      </div>
-                    </div>
                     </div>
                   </div>
 
@@ -240,6 +242,9 @@ export default {
   }
 }
 
+
+
+
 .card {
   margin-bottom: 3vh;
 
@@ -325,22 +330,54 @@ export default {
     }
 }
 
-.bottom {
-  background: aliceblue;
 
-  /* position: absolute; */
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
 
 
 @media screen and (max-width:576px) {
   .for-mobile {
     display:block;
-    background:#1f456E;
-    padding:10px 20px;
-    color:#ffffff;
+    border:1px solid #1f456E;
+    border-radius: 5px;
+    padding:10px;
+    // color:#ffffff;
+    color: rgba(24,24,24,1);
+    margin: 10px auto;
+    h2 {
+      font-size:1.25em;
+    }
+    .mobile-body {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
+      font-size:0.8em;
+    }
+    p.link-to {
+      font-size:0.7em;
+      span {
+        padding:3px 5px;
+        background:#9a9a9a;
+        color:#fff;
+      }
+      a {
+        color:#1F456E;
+        border:1px solid #1F456E;
+        padding: 3px 5px;
+        &:hover {
+          background:#1F456E;
+          color:#fff;
+          text-decoration: none;
+        }
+      }
+    }
   }
+
+  .hide-on-mobile {
+    // visibility: hidden;
+    display: none;
+  }
+
+  
 }
 </style>
