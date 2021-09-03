@@ -40,8 +40,7 @@ export default {
   fontawesome: {
     component: 'fa',
     icons: {
-      solid: ['faClock', 'faFolder'],
-      brands: []
+      solid: ['faClock', 'faFolder']
     }
   },
 

@@ -30,6 +30,7 @@
                     <div class="image col-lg-6 offset-lg-3 my-5 p-0">
                       <img :src="`${image.url}`" alt="" class="img-fluid">
                     </div>
+                    <a href="https://ifing-beauty.com">IFING BEAUTYのページへ</a>
               <hr>        
             <GoBack />
             </div>
