@@ -1,6 +1,9 @@
 <template>
   <div class="container-fluid p-0 article-page">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">   
+    
+    <Top />
+    
     <div class="index-top">
       <img src="@/assets/bg001.png" alt="TOKIO" class="contain-img">
       
@@ -40,6 +43,7 @@
 <script>
 import axios from 'axios'
 import GoBack from "@/components/GoBack"
+import Top from "@/components/Top"
 import Footer from "@/components/Footer"
 
 export default {
