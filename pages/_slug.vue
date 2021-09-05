@@ -229,4 +229,19 @@ export default {
   } 
 }
 
+@media screen and (max-width:350px) {
+  .index-top {
+    // background: white;
+    aspect-ratio: 5/3;
+    .title-area {
+      h1 {
+        margin: 20px 10px;
+        font-size:1em;
+        text-align: center;
+      }
+    }
+  } 
+}
+
+
 </style>

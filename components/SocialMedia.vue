@@ -109,5 +109,16 @@
     }
 }
 
+@media screen and (max-width:350px) {
+    .navigation-bar {
+        .element {
+            p {
+                text-align: center;
+                margin:7px auto;
+                font-size:0.7em;
+            }
+        }
+    }
+}
 
 </style>
