@@ -63,7 +63,7 @@
 
                   
               </div>
-              <div class="pagination">
+              <!-- <div class="pagination">
                   <ul>
                     <li v-if="previousPage != 0">
                       <nuxt-link :to="`/page/${previousPage}`">
@@ -82,7 +82,7 @@
                       </nuxt-link>
                     </li>
                   </ul>
-              </div>
+              </div> -->
             </div>
             
           </div>
