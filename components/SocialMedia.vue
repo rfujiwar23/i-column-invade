@@ -6,8 +6,8 @@
             </div>
             <div class="element">
                 <ul>
-                    <li><a href="#"><img src="@/assets/facebook.png" alt="Facebook" height="30"></a></li>
-                    <li><a href="#"><img src="@/assets/instagram.png" alt="Facebook" height="30"></a></li>
+                    <li><a href="https://www.facebook.com/INTENSE.JAPAN" target="_blank"><img src="@/assets/facebook.png" alt="Facebook" height="30"></a></li>
+                    <li><a href="https://www.instagram.com/ifing_beauty/" target="_blank"><img src="@/assets/instagram.png" alt="Facebook" height="30"></a></li>
                 </ul>
             </div>
       </div>
