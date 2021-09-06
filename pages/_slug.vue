@@ -229,6 +229,23 @@ export default {
   } 
 }
 
+
+@media screen and (max-width:430px) {
+
+  .container-main {
+    .main {
+      .post {
+        > {
+          p {
+            font-size:0.8em;
+          }
+        }
+      }
+    }
+  }
+
+}
+
 @media screen and (max-width:350px) {
   .index-top {
     // background: white;
@@ -241,6 +258,18 @@ export default {
       }
     }
   } 
+
+  .container-main {
+    .main {
+      .post {
+        > {
+          p {
+            font-size:0.8em;
+          }
+        }
+      }
+    }
+  }
 }
 
 
