@@ -15,7 +15,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { hid: '商品等のコラムサイト', name: '商品等のコラムサイト', content: 'IFING Beauty及びfofoで販売中の商品についてのコラムサイトです。' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
