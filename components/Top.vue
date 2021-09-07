@@ -14,14 +14,14 @@
           </li> -->
           
           <li class="nav-item">
-            <a class="nav-link" href="http://www.intense-z.com/" target="_blank">IFING BEAUTY</a>
+            <a class="nav-link" href="http://ifing-beauty.com/" target="_blank">IFING BEAUTY</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="http://www.intense-z.com/" target="_blank">FOFO</a>
+            <a class="nav-link" href="#" target="_blank">FOFO</a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" href="https://www.ifing.com" target="_blank">IFING</a>
-          </li>
+          </li> -->
           <!-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               カテゴリ
