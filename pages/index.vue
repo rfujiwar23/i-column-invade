@@ -100,7 +100,7 @@ export default {
   async asyncData({ params }) {
     const page = Number(params.p || '1')
     const categoryId = params.categoryId
-    const limit = 20
+    const limit = 40
     const { data } = await axios.get(
       `https://i-column-site.microcms.io/api/v1/post?limit=${limit}&offset=${(page - 1) * limit}`,
       { headers: { 'X-API-KEY': '9719d5ef-40cc-48b3-9ac0-74292c4f5610' } }
