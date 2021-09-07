@@ -31,7 +31,7 @@
                       <img :src="`${image.url}`" alt="" class="img-fluid">
                     </div>
                     <div class="col-lg-6 offset-lg-3 col-md-6 offset-md-6 col-sm-8 offset-sm-2">
-                        <a href="https://ifing-beauty.com/" class="btn btn-primary">IFING BEAUTYの購入ページへ</a>
+                        <a href="https://ifing-beauty.com/" class="btn btn-outline-primary">IFING BEAUTYの購入ページへ</a>
                     </div>
               <hr>        
             <GoBack />
