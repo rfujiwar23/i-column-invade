@@ -30,7 +30,9 @@
                     <div class="image col-lg-6 offset-lg-3 my-5 p-0">
                       <img :src="`${image.url}`" alt="" class="img-fluid">
                     </div>
-                    <a href="https://ifing-beauty.com">IFING BEAUTYのページへ</a>
+                    <div class="col-lg-6 offset-lg-3 col-md-6 offset-md-6 col-sm-8 offset-sm-2">
+                        <a href="https://ifing-beauty.com/" class="btn btn-primary">IFING BEAUTYの購入ページへ</a>
+                    </div>
               <hr>        
             <GoBack />
             </div>
@@ -187,6 +189,9 @@ export default {
           letter-spacing: 0.2px;
         }
       }
+    }
+    .btn {
+      width:100%;
     }
   }
 }

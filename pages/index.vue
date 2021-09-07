@@ -14,20 +14,11 @@
           <!-- main-area -->
           <div class="main-area block-2">
             <!-- new-information -->
-            
             <div class="new-information box-2">
-              
               <div class="column-list col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-12">
-                
                 <Categorize @categorySelected="onCategorySelected" :categories="categories"/>
-                
-                
                 <h3><span>新着一覧</span></h3>
-                <h4>New Information</h4>
-
-                  
-
-                 
+                <h4>New Information</h4> 
                   <div class="row">
                     <div class="section col-xl-4 col-lg-6 col-md-6 col-sm-6" v-for="content in filteredContent" :key="content.id">
                       <div class="for-mobile">

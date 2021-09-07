@@ -21,9 +21,7 @@
     border-bottom:1px dotted rgba(187,187,187, 0.6);
     display: flex;
     justify-content: space-between;
-    > div {
-        // width: 50%;
-    }
+    
     .element {
         margin:10px 20px;
         p {
