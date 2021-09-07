@@ -17,6 +17,7 @@
             <div class="new-information box-2">
               <div class="column-list col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-12">
                 <Categorize @categorySelected="onCategorySelected" :categories="categories"/>
+                
                 <h3><span>新着一覧</span></h3>
                 <h4>New Information</h4> 
                   <div class="row">
