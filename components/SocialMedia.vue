@@ -2,7 +2,7 @@
     <div class="navigation-bar">
             <div class="element">
                 <!-- <NuxtLink to="/">i-Column</NuxtLink> -->
-                <p><span>IFING Beauty・fofoで販売中の商品についてのコラムサイト</span></p>
+                <!-- <p><span>IFING Beauty・fofoで販売中の商品についてのコラムサイト</span></p> -->
             </div>
             <div class="element">
                 <ul>
