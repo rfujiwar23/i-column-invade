@@ -110,8 +110,9 @@ export default {
           headers: { 'X-API-KEY': '9719d5ef-40cc-48b3-9ac0-74292c4f5610' },
         })
           .then(({ data }) => {
-            // console.log('data', data)
-            return data.contents.map((content) => /[a-zA-Z0-9]/.test(content.name) ? content.id : content.name)
+            console.log('data', data)
+            // return data.contents.map((content) => /[a-zA-Z0-9]/.test(content.name) ? content.id : content.name)
+            return data.contents.map((content) => content.name)
           });
     
     // Pagination getting the total number of pages from headless CMS site(microCMS)
