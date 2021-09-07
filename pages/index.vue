@@ -111,8 +111,8 @@ export default {
         })
           .then(({ data }) => {
             console.log('data', data)
-            // return data.contents.map((content) => /[a-zA-Z0-9]/.test(content.name) ? content.id : content.name)
-            return data.contents.map((content) => content.name)
+            return data.contents.map((content) => /[a-zA-Z0-9]/.test(content.name) ? content.id : content.name)
+            // return data.contents.map((content) => content.name)
           });
     
     // Pagination getting the total number of pages from headless CMS site(microCMS)
