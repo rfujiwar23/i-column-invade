@@ -14,7 +14,7 @@
           </li> -->
           
           <li class="nav-item">
-            <a class="nav-link" href="http://ifing-beauty.com/" target="_blank">IFING BEAUTY</a>
+            <a class="nav-link" href="http://ifing-beauty.com/" target="_blank">IFING BEAUTY ONLINE</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#" target="_blank">FOFO</a>
@@ -41,8 +41,22 @@
 
 <style lang="scss" scoped>
 
+
+.top {
+  font-family: 'Noto Sans JP',sans-serif;
+}
 .img {
   width:120px;
   margin-left:-10px;
+}
+
+@media screen and (max-width:992px) {
+  .navbar-nav {
+    .nav-item {
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
+  
 }
 </style>
