@@ -10,30 +10,11 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <nuxt-link to="/about">About</nuxt-link>
+            <nuxt-link to="/">HOME</nuxt-link>
+            <nuxt-link to="/about">ABOUT</nuxt-link>
+            <a href="http://ifing-beauty.com/">IFING BEAUTY</a>
+            <a href="http://ifing-beauty.com/">fofo</a>
           </li>
-          
-          <li class="nav-item">
-            <!-- <a class="nav-link" href="http://ifing-beauty.com/" target="_blank">IFING BEAUTY ONLINE</a> -->
-            <nuxt-link to="http://ifing-beauty.com/">IFING BEAUTY</nuxt-link>
-          </li>
-          <li class="nav-item">
-            <!-- <a class="nav-link" href="#" target="_blank">FOFO</a> -->
-            <nuxt-link to="http://ifing-beauty.com/">FOFO</nuxt-link>
-          </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link" href="https://www.ifing.com" target="_blank">IFING</a>
-          </li> -->
-          <!-- <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              カテゴリ
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <span class="dropdown-item" v-for="category in categories" :key="category" @click="handleMenuClick(category)">
-                {{category}}
-              </span>
-            </div>
-          </li> -->
         </ul>
       </div>
     </nav>
@@ -54,9 +35,10 @@
 
 .navbar-nav {
   .nav-item {
-    margin-right:20px;
+    
     a {
       color:#9a9a9a;
+      margin-right:20px;
     }
   }
 }
