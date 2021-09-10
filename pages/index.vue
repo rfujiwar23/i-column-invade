@@ -6,10 +6,12 @@
     <!-- adding stylesheet -->
     
     <Top />
+     <!-- <Categorize @categorySelected="onCategorySelected" :categories="categories"/> -->
     <div class="main-contents">
 
     
       <Banner />
+     
 
           <!-- main-area -->
           <div class="main-area block-2">

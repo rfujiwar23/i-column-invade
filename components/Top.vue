@@ -11,10 +11,18 @@
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
             <nuxt-link to="/">HOME</nuxt-link>
-            <nuxt-link to="/about">ABOUT</nuxt-link>
-            <a href="http://ifing-beauty.com/">IFING BEAUTY</a>
-            <a href="http://ifing-beauty.com/">fofo</a>
+            
           </li>
+          <li class="nav-item">
+            <nuxt-link to="/about">ABOUT</nuxt-link>
+            
+          </li>
+          <li class="nav-item">
+            <a href="http://ifing-beauty.com/">IFING BEAUTY</a>
+          </li> 
+           <li class="nav-item">
+            <a href="http://ifing-beauty.com/">fofo</a>
+          </li> 
         </ul>
       </div>
     </nav>

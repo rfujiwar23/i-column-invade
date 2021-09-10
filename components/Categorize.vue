@@ -11,6 +11,7 @@
         </div>
         </div>
     </div>
+    
 </template>
 
 <script>
@@ -43,6 +44,15 @@ export default {
   }
   span.dropdown-item:nth-last-child(0) {
     border-bottom:none;
+  }
+}
+
+@media screen and (max-width:500px){
+  .btn-group {
+    width:100%;
+    .dropdown-menu {
+      width:100%;
+    }
   }
 }
 
