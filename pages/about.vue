@@ -3,134 +3,60 @@
        <div>
            <Top />
             <div class="container-fluid p-0">
-            <div class="top-main">
-                <div class="about">
-                    <h2>紹介している製品一覧</h2>
-                    <p>このコラムサイトでは<a href="https://ifing-beauty.com/">IFING BEAUTY ONLINE</a>及び<a href="#">fofo</a>で販売している製品について紹介しています。<br>
-                    クリックすると商品の説明ページへ飛びます。
-                    </p>
+                <div class="top-main">
+                    <div class="about">
+                        <h2>紹介している製品一覧</h2>
+                        <p>このコラムサイトでは<a href="https://ifing-beauty.com/">IFING BEAUTY ONLINE</a>及び<a href="#">fofo</a>で販売している製品について紹介しています。<br>
+                        クリックすると商品の説明ページへ飛びます。
+                        </p>
+                    </div>
                 </div>
-            </div>
-            <div class="row mx-0">
-                <div class="p-0 col-xl-3 col-lg-3 col-md-6 col-sm-6 image">
-                   <a href="https://ifing-beauty.com/products/list?category_id=7">
-                    <div class="overlay"></div>
-                    <div class="top-title">
-                        トキオ・インカラミ
-                    </div>
-                    <div class="centered">
-                        <!-- TOKIO INKARAMI
-                         -->
-                        <img src="@/assets/tokio-logo.svg" alt="TOKIO INKARAMI"> 
-                    </div>
-                    <img src="@/assets/003-tokio.jpg" alt="TOKIO INKARAMI" class="fit-in-div">
-                   </a>
-                </div>
-                <div class="p-0 col-xl-3 col-lg-3 col-md-6 col-sm-6 image">
-                    <a href="#">
-                    <div class="overlay"></div>
-                    <div class="top-title">
-                        オーウェイ
-                    </div>
-                    <div class="centered">
-                        <img src="@/assets/oway-logo.png" alt="TOKIO INKARAMI">
-                        <!-- OWAY -->
-                    </div>
-                    <img src="@/assets/001-oway.jpg" alt="TOKIO INKARAMI" class="fit-in-div">
-                    </a>
-                </div>
-                <div class="p-0 col-xl-3 col-lg-3 col-md-6 col-sm-6 image">
-                    <a href="#">
-                    <div class="overlay"></div>
-                    <div class="top-title">
-                        ケビン・マーフィー
-                    </div>
-                    <div class="centered">
-                        <img src="@/assets/kevinmurphy-logo.svg" alt="TOKIO INKARAMI">
-                    </div>
-                    <img src="@/assets/004-kevinmurphy.jpg" alt="TOKIO INKARAMI" class="fit-in-div">
-                    </a>
-                </div>
-                <div class="p-0 col-xl-3 col-lg-3 col-md-6 col-sm-6 image">
-                    <a href="#">
-                    <div class="overlay"></div>
-                    <div class="top-title">
-                        アジア
-                    </div>
-                    <div class="centered">
-                      <img src="@/assets/asia-logo.svg" alt="TOKIO INKARAMI"> 
-                    </div>
-                    <img src="@/assets/002-asia.jpg" alt="TOKIO INKARAMI" class="fit-in-div">
-                    </a>
-                </div>
-                <div class="p-0 col-xl-3 col-lg-3 col-md-6 col-sm-6 image">
-                   <a href="#">
+            
+                
+
+                <div class="row mx-0">
+                    <div v-for="product in products" :key="product.product_id" class="p-0 col-xl-3 col-lg-3 col-md-6 col-sm-6 image">
+                        <a v-bind:href="product.url">
                         <div class="overlay"></div>
-                    <div class="centered">
-                        <!-- TOKIO INKARAMI
-                         -->
-                        <img src="@/assets/tokio-logo.svg" alt="TOKIO INKARAMI"> 
+                        <div class="top-title">
+                            {{product.name}}
+                        </div>
+                        <div class="centered">
+                            <img :src="product.logo" alt="TOKIO INKARAMI" class="img-fluid"> 
+                        </div>
+                            <img :src="product.image"  alt="TOKIO INKARAMI" class="fit-in-div">
+                            
+                        </a>
                     </div>
-                    <img src="@/assets/003-tokio.jpg" alt="TOKIO INKARAMI" class="fit-in-div">
-                   </a>
-                </div>
-                <div class="p-0 col-xl-3 col-lg-3 col-md-6 col-sm-6 image">
-                    <div class="overlay"></div>
-                    <div class="centered">
-                        <img src="@/assets/oway-logo.png" alt="TOKIO INKARAMI">
-                        <!-- OWAY -->
-                    </div>
-                    <img src="@/assets/001-oway.jpg" alt="TOKIO INKARAMI" class="fit-in-div">
-                </div>
-                <div class="p-0 col-xl-3 col-lg-3 col-md-6 col-sm-6 image">
-                    <div class="overlay"></div>
-                    <div class="centered">
-                        <img src="@/assets/kevinmurphy-logo.svg" alt="TOKIO INKARAMI">
-                    </div>
-                    <img src="@/assets/004-kevinmurphy.jpg" alt="TOKIO INKARAMI" class="fit-in-div">
-                </div>
-                <div class="p-0 col-xl-3 col-lg-3 col-md-6 col-sm-6 image">
-                    <div class="overlay"></div>
-                    <div class="centered">
-                      <img src="@/assets/asia-logo.svg" alt="TOKIO INKARAMI"> 
-                    </div>
-                    <img src="@/assets/002-asia.jpg" alt="TOKIO INKARAMI" class="fit-in-div">
-                </div><div class="p-0 col-xl-3 col-lg-3 col-md-6 col-sm-6 image">
-                    <div class="overlay"></div>
-                    <div class="centered">
-                        <!-- TOKIO INKARAMI
-                         -->
-                        <img src="@/assets/tokio-logo.svg" alt="TOKIO INKARAMI"> 
-                    </div>
-                    <img src="@/assets/003-tokio.jpg" alt="TOKIO INKARAMI" class="fit-in-div">
-                    
-                </div>
-                <div class="p-0 col-xl-3 col-lg-3 col-md-6 col-sm-6 image">
-                    <div class="overlay"></div>
-                    <div class="centered">
-                        <img src="@/assets/oway-logo.png" alt="TOKIO INKARAMI">
-                        <!-- OWAY -->
-                    </div>
-                    <img src="@/assets/001-oway.jpg" alt="TOKIO INKARAMI" class="fit-in-div">
-                </div>
-                <div class="p-0 col-xl-3 col-lg-3 col-md-6 col-sm-6 image">
-                    <div class="overlay"></div>
-                    <div class="centered">
-                        <img src="@/assets/kevinmurphy-logo.svg" alt="TOKIO INKARAMI">
-                    </div>
-                    <img src="@/assets/004-kevinmurphy.jpg" alt="TOKIO INKARAMI" class="fit-in-div">
-                </div>
-                <div class="p-0 col-xl-3 col-lg-3 col-md-6 col-sm-6 image">
-                    <div class="overlay"></div>
-                    <div class="centered">
-                      <img src="@/assets/asia-logo.svg" alt="TOKIO INKARAMI"> 
-                    </div>
-                    <img src="@/assets/002-asia.jpg" alt="TOKIO INKARAMI" class="fit-in-div">
                 </div>
             </div>
-        </div>
        </div>
 </template>
+
+
+<script>
+    export default {
+        data: () => {
+            return {
+                products: [
+                    {name: 'トキオインカラミ', logo: require('@/assets/tokio-logo.svg'), url: 'https://ifing-beauty.com/products/list?category_id=7', image: require('@/assets/003-tokio.jpg')},
+                    {name: 'オーウェイ', logo: require('@/assets/oway-logo1.svg'), url: 'https://ifing-beauty.com/products/list?category_id=7', image: require('@/assets/001-oway.jpg')},
+                    {name: 'ケビンマーフィー', logo: require('@/assets/km-logo.svg'), url: 'https://ifing-beauty.com/products/list?category_id=7', image: require('@/assets/004-kevinmurphy.jpg')},
+                    {name: 'アジア', logo: require('@/assets/asia-logo1.svg'), url: 'https://ifing-beauty.com/products/list?category_id=7', image: require('@/assets/002-asia.jpg')},
+                    {name: 'トキオインカラミ', logo: require('@/assets/tokio-logo.svg'), url: 'https://ifing-beauty.com/products/list?category_id=7', image: require('@/assets/003-tokio.jpg')},
+                    {name: 'オーウェイ', logo: require('@/assets/oway-logo1.svg'), url: 'https://ifing-beauty.com/products/list?category_id=7', image: require('@/assets/001-oway.jpg')},
+                    {name: 'ケビンマーフィー', logo: require('@/assets/km-logo.svg'), url: 'https://ifing-beauty.com/products/list?category_id=7', image: require('@/assets/004-kevinmurphy.jpg')},
+                    {name: 'アジア', logo: require('@/assets/asia-logo1.svg'), url: 'https://ifing-beauty.com/products/list?category_id=7', image: require('@/assets/002-asia.jpg')},
+                ]
+            }
+            
+        }
+
+    }
+    
+    
+</script>
+
 
 
 <style lang="scss">
@@ -186,7 +112,9 @@
         text-align: center;
         // color:rgb(255,255,255);
         color: white;
-        font-size:1.25em;
+        font-size:1.15em;
+        padding:5px 0;
+        text-shadow:1px 1px 3px rgba(20,20,20,0.4);
     }
     .overlay {
         height:100%;
@@ -203,8 +131,8 @@
     }
     .centered { 
         position:absolute;
-        top:50%;
-        bottom:50%;
+        top:25%;
+        bottom:25%;
         left:25%;
         right:25%;
         // transform: (-50%,-50%);
@@ -212,8 +140,25 @@
         color:#fff;
         z-index:999;
         font-weight:bold;
+        display: flex;
+        justify-content: center;
+        width:50%;
+        margin:0 auto;
+        // background:red;
         
     }
+}
+
+@media screen and (max-width:1200px){
+
+    .image {
+        .top-title {
+            font-size:1.0em;
+            padding:5px 0;
+        }
+        
+    }
+    
 }
 
 @media screen and (max-width:768px) {
