@@ -24,8 +24,7 @@
                         <div class="centered">
                             <img :src="product.logo" alt="TOKIO INKARAMI" class="img-fluid"> 
                         </div>
-                            <img :src="product.image"  alt="TOKIO INKARAMI" class="fit-in-div">
-                            
+                            <img :src="product.image"  alt="TOKIO INKARAMI" class="fit-in-div">   
                         </a>
                     </div>
                 </div>
@@ -40,8 +39,8 @@
             return {
                 products: [
                     {name: 'トキオインカラミ', logo: require('@/assets/tokio-logo.svg'), url: 'https://ifing-beauty.com/products/list?category_id=7', image: require('@/assets/003-tokio.jpg')},
-                    {name: 'オーウェイ', logo: require('@/assets/oway-logo1.svg'), url: 'https://ifing-beauty.com/products/list?category_id=7', image: require('@/assets/001-oway.jpg')},
-                    {name: 'ケビンマーフィー', logo: require('@/assets/km-logo.svg'), url: 'https://ifing-beauty.com/products/list?category_id=7', image: require('@/assets/004-kevinmurphy.jpg')},
+                    {name: 'オーウェイ', logo: require('@/assets/oway-logo1.svg'), url: 'https://ifing-beauty.com/products/list?category_id=12', image: require('@/assets/001-oway.jpg')},
+                    {name: 'ケビンマーフィー', logo: require('@/assets/km-logo.svg'), url: 'https://ifing-beauty.com/products/list?category_id=13', image: require('@/assets/004-kevinmurphy.jpg')},
                     {name: 'アジア', logo: require('@/assets/asia-logo1.svg'), url: 'https://ifing-beauty.com/products/list?category_id=7', image: require('@/assets/002-asia.jpg')},
                     {name: 'トキオインカラミ', logo: require('@/assets/tokio-logo.svg'), url: 'https://ifing-beauty.com/products/list?category_id=7', image: require('@/assets/003-tokio.jpg')},
                     {name: 'オーウェイ', logo: require('@/assets/oway-logo1.svg'), url: 'https://ifing-beauty.com/products/list?category_id=7', image: require('@/assets/001-oway.jpg')},
