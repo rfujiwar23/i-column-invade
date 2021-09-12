@@ -5,7 +5,7 @@
             <div class="container-fluid p-0">
                 <div class="top-main">
                     <div class="about">
-                        <h2>紹介している製品一覧</h2>
+                        <h2>製品一覧</h2>
                         <p>このコラムサイトでは<a href="https://ifing-beauty.com/">IFING BEAUTY ONLINE</a>及び<a href="#">fofo</a>で販売している製品について紹介しています。<br>
                         クリックすると商品の説明ページへ飛びます。
                         </p>
