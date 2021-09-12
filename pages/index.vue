@@ -107,10 +107,16 @@ export default {
     const { data } = await axios.get(
       `https://i-column-site.microcms.io/api/v1/post?limit=${limit}&offset=${(page - 1) * limit}`,
       { headers: { 'X-API-KEY': '9719d5ef-40cc-48b3-9ac0-74292c4f5610' } }
+      // Official and Paid Account on the Bottom (Comment Out to Use)
+      // `https://i-column.microcms.io/api/v1/post?limit=${limit}&offset=${(page - 1) * limit}`,
+      // { headers: { 'X-API-KEY': 'b5ed7888-2fb9-4bae-b660-ff9cfe324de4' } }
     )
     const categories = await axios
         .get(`https://i-column-site.microcms.io/api/v1/categories?fields=id,name`, {
           headers: { 'X-API-KEY': '9719d5ef-40cc-48b3-9ac0-74292c4f5610' },
+        // Official and Paid Account on the Bottom (Comment Out to Use)
+        //  .get(`https://i-column.microcms.io/api/v1/categories?fields=id,name`, {
+        //   headers: { 'X-API-KEY': 'b5ed7888-2fb9-4bae-b660-ff9cfe324de4' },
         })
           .then(({ data }) => {
             console.log('data', data)
