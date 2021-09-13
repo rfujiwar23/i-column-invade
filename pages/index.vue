@@ -37,7 +37,7 @@
                           </div>
                           <div class="col-9">
                             <h2>{{content.title}}</h2>
-                            <p class="mobile-body" v-html="content.body"></p>
+                            <!-- <p class="mobile-body" v-html="content.body"></p> -->
                             <p class="link-to"><span>#{{content.category.name}}</span></p>
                             <p class="link-to"><nuxt-link :to="`/${content.id}`">続きを読む →</nuxt-link></p>
                           </div>
