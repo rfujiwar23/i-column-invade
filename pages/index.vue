@@ -12,13 +12,19 @@
     
       <Banner />
      
-
+          <!-- <Categorize @categorySelected="onCategorySelected" :categories="categories"/>  -->
           <!-- main-area -->
           <div class="main-area block-2">
             <!-- new-information -->
+             
             <div class="new-information box-2">
-              <div class="column-list col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-12">
+              <div class="bg-light">
+                <div class="col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-12 mb-3">
                 <Categorize @categorySelected="onCategorySelected" :categories="categories"/>
+                </div>
+              </div>
+              <div class="column-list col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-12">
+                
                 
                 <h3><span>新着一覧</span></h3>
                 <h4>New Information</h4> 
@@ -104,16 +110,15 @@ export default {
     const page = Number(params.p || '1')
     const categoryId = params.categoryId
     const limit = 100
+    const max = 70
     const { data } = await axios.get(
-      `https://i-column-site.microcms.io/api/v1/post?limit=${limit}&offset=${(page - 1) * limit}`,
-      { headers: { 'X-API-KEY': '9719d5ef-40cc-48b3-9ac0-74292c4f5610' } }
-      // Official and Paid Account on Bear (Comment Out to Use)
+      `https://i-column.microcms.io/api/v1/post?limit=${limit}&offset=${(page - 1) * limit}`,
+      { headers: { 'X-API-KEY': 'b5ed7888-2fb9-4bae-b660-ff9cfe324de4' } }
+      
     )
     const categories = await axios
-        .get(`https://i-column-site.microcms.io/api/v1/categories?fields=id,name`, {
-          headers: { 'X-API-KEY': '9719d5ef-40cc-48b3-9ac0-74292c4f5610' },
-        // Official and Paid Account on Bear (Comment Out to Use)
-        
+        .get(`https://i-column.microcms.io/api/v1/categories?limit=${max}&fields=id,name`, {
+        headers: { 'X-API-KEY': 'b5ed7888-2fb9-4bae-b660-ff9cfe324de4' },
         })
           .then(({ data }) => {
             console.log('data', data)
@@ -209,7 +214,7 @@ export default {
       background: #fff;
       width: 100%;
       margin: 0 auto;
-      padding: 20px 30px;
+      padding: 0px 30px 20px;
 
       ul {
         list-style: none;
@@ -275,7 +280,7 @@ export default {
       text-overflow: ellipsis;
       display: -webkit-box;
       -webkit-box-orient: vertical;
-      -webkit-line-clamp: 2;
+      -webkit-line-clamp: 1;
       
       a {
         color: #1f456E;
@@ -361,7 +366,13 @@ export default {
     margin: 10px auto;
     background:oldlace;
     h2 {
-      font-size:1.25em;
+      font-size:1.1em;
+      text-decoration: none;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
     }
     .mobile-body {
       overflow: hidden;

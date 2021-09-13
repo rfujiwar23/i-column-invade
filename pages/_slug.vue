@@ -30,9 +30,14 @@
                     <div class="image col-lg-6 offset-lg-3 my-5 p-0">
                       <img :src="`${image.url}`" alt="" class="img-fluid">
                     </div>
-                    <div class="col-lg-6 offset-lg-3 col-md-6 offset-md-6 col-sm-8 offset-sm-2">
+                   <div class="row">
+                      <div class="col-lg-6 col-md-6 col-sm-6">
                         <a href="https://ifing-beauty.com/" class="btn btn-outline-primary">IFING BEAUTYの購入ページへ</a>
                     </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <a href="https://ifing-beauty.com/" class="btn btn-outline-secondary">fofoの購入ページへ</a>
+                    </div>
+                   </div>
               <hr>        
             <GoBack />
             </div>
@@ -52,9 +57,9 @@ import Footer from "@/components/Footer"
 export default {
   async asyncData({ params }) {
     const { data } = await axios.get(
-      `https://i-column-site.microcms.io/api/v1/post/${params.slug}`,
+      `https://i-column.microcms.io/api/v1/post/${params.slug}`,
       {
-        headers: { 'X-API-KEY': '9719d5ef-40cc-48b3-9ac0-74292c4f5610' }
+        headers: { 'X-API-KEY': 'b5ed7888-2fb9-4bae-b660-ff9cfe324de4' }
       }
     )
     return data
@@ -231,7 +236,15 @@ export default {
         text-align: center;
       }
     }
-  } 
+  }
+  
+  .container-main {
+    .main {
+      h2 {
+        font-size:1em;
+      }
+    }
+  }
 }
 
 

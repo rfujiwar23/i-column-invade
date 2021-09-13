@@ -1,6 +1,31 @@
 <template>
     <div class="categorize">
-        <div class="btn-group">
+
+<nav class="navbar navbar-light bg-light">
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown1" aria-controls="navbarNavDropdown1" aria-expanded="" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#">メーカー一覧</a>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown1">
+    <ul class="navbar-nav">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          メーカー別でフィルターする
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+           <span class="dropdown-item" v-for="category in categories" :key="category" @click="handleMenuClick(category)">
+                {{category}}
+            </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+
+        <!-- <div class="btn-group">
         <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             カテゴリ別で見る
         </button>
@@ -9,7 +34,7 @@
                 {{category}}
             </span>
         </div>
-        </div>
+        </div> -->
     </div>
     
 </template>
@@ -31,8 +56,26 @@ export default {
 
 <style lang="scss">
 
+
+
+.navbar {
+  .navbar-brand {
+    font-size:0.9em;
+  }
+  .navbar-toggler {
+    border-color: rgba(0,0,0,0);
+  }
+  .navbar-nav {
+    .nav-item {
+      .nav-link {
+        font-size:0.8em;
+      }
+    }
+  }
+}
+
 .categorize {
-    padding:2vh 0;
+    // padding:0 0 2vh;
     font-family: 'Noto Sans JP',sans-serif;
 }
 
