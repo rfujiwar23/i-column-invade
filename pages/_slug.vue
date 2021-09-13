@@ -26,6 +26,9 @@
                       <p><fa icon="folder" class="icon" /> <span class="category" v-if="category">#{{category.name}}</span></p>
                     </div>
                     <!-- {{category}} -->
+                    <div class="mt-5">
+                      <h6 class="p-2">{{ preview }}</h6>
+                    </div>
                     <div class="post" v-html="body"></div>
                     <div class="image col-lg-6 offset-lg-3 my-5 p-0">
                       <img :src="`${image.url}`" alt="" class="img-fluid">
@@ -129,6 +132,11 @@ export default {
     h2 {
       margin:20px 0;
       font-size: 1.25em;
+    }
+    h6 {
+      font-weight:bold;
+      font-size:0.9em;
+      line-height:1.5em;
     }
     .previous {
       a {
