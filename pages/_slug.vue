@@ -31,22 +31,12 @@
                       <img :src="`${image.url}`" alt="" class="img-fluid">
                     </div>
                     
-                    <div class="" v-if="site.includes('FOFO')">
-                      <a href="http://www.intense-z.com/product-proposal/fofo/" class="btn btn-outline-secondary">fofoの購入ページへ</a>
+                    <div class="show-btn" v-if="site.includes('FOFO')">
+                      <a href="http://www.intense-z.com/product-proposal/fofo/" class="btn go-to-ecsite">購入ページはこちら</a>
                     </div>
-                    <div class="" v-else-if="site.includes('IB')">
-                      <a href="https://ifing-beauty.com/" class="btn btn-outline-primary">IFING BEAUTYの購入ページへ</a>
+                    <div class="show-btn" v-else-if="site.includes('IB')">
+                      <a href="https://ifing-beauty.com/" class="btn go-to-ecsite">購入ページはこちら</a>
                     </div>
-
-                    
-                   <div class="row" v-else>
-                    <div class="col-lg-6 col-md-6 col-sm-6 ib-and-fofo">
-                        <a href="https://ifing-beauty.com/" class="btn btn-outline-primary">IFING BEAUTYの購入ページへ</a>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 ib-and-fofo">
-                        <a href="http://www.intense-z.com/product-proposal/fofo/" class="btn btn-outline-secondary">fofoの購入ページへ</a>
-                    </div>
-                   </div>
               <hr>        
             <GoBack />
             </div>
@@ -202,6 +192,22 @@ export default {
         p {
           line-height: 1.8;
           letter-spacing: 0.2px;
+          img {
+            object-fit: contain;
+            max-width: 100%;
+            // height: 100%;
+          }
+        }
+      }
+    }
+    .show-btn {
+      .go-to-ecsite {
+        border-radius:2px;
+        color:#1f456e;
+        border:1px solid #1f456E;
+        &:hover {
+          background:#1f456e;
+          color: #fff;
         }
       }
     }

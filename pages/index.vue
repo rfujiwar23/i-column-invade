@@ -33,7 +33,7 @@
                       <div class="for-mobile">
                         <div class="row">
                           <div class="col-3">
-                            <img :src="`${content.image.url}`" alt="" class="img-fluid">
+                            <img :src="`${content.image.url}`" alt="" class="img">
                           </div>
                           <div class="col-9">
                             <h2>{{content.title}}</h2>
@@ -50,8 +50,9 @@
                         <div class="card-body">
                           <h5 class="card-title"><nuxt-link :to="`/${content.id}`">{{ content.title }}</nuxt-link></h5>
                           <small class="text-muted">{{ content.publishedAt.substring(0,10) }}</small>
-                          <h6 class="card-category"><span>#{{content.category.name}}</span></h6>
+                          <h6 class="card-category"><span>#{{content.category.name}}</span></h6> 
                           <p class="card-text" v-html="content.body"></p>
+                          <!-- <p v-html="content.body" class="text-me"></p> -->
                         </div>
                         <div class="card-footer">
                           <p><nuxt-link :to="`/${content.id}`">続きを読む →</nuxt-link></p>
@@ -307,7 +308,22 @@ export default {
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 1;
       font-size: 12px;
+      img {
+        object-fit: contain;
+            max-width: 100%;
+      }
+      
     }
+
+    .text-me {
+      color:red;
+      img {
+        // display:none;
+        width:100px;
+      }
+    }
+
+
 
     .card-category span {
       color: #fff;
@@ -365,6 +381,11 @@ export default {
     color: rgba(24,24,24,1);
     margin: 10px auto;
     background:oldlace;
+    img {
+      object-fit: contain;
+            max-width: 100%;
+            max-height:100%;
+    }
     h2 {
       font-size:1.1em;
       text-decoration: none;
