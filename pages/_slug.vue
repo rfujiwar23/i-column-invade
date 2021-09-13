@@ -30,12 +30,21 @@
                     <div class="image col-lg-6 offset-lg-3 my-5 p-0">
                       <img :src="`${image.url}`" alt="" class="img-fluid">
                     </div>
-                   <div class="row">
+                    
+                    <div class="" v-if="site.includes('FOFO')">
+                      <a href="http://www.intense-z.com/product-proposal/fofo/" class="btn btn-outline-secondary">fofoの購入ページへ</a>
+                    </div>
+                    <div class="" v-else-if="site.includes('IB')">
+                      <a href="https://ifing-beauty.com/" class="btn btn-outline-primary">IFING BEAUTYの購入ページへ</a>
+                    </div>
+
+                    
+                   <div class="row" v-else>
                       <div class="col-lg-6 col-md-6 col-sm-6">
                         <a href="https://ifing-beauty.com/" class="btn btn-outline-primary">IFING BEAUTYの購入ページへ</a>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6">
-                        <a href="https://ifing-beauty.com/" class="btn btn-outline-secondary">fofoの購入ページへ</a>
+                        <a href="http://www.intense-z.com/product-proposal/fofo/" class="btn btn-outline-secondary">fofoの購入ページへ</a>
                     </div>
                    </div>
               <hr>        
@@ -62,7 +71,8 @@ export default {
         headers: { 'X-API-KEY': 'b5ed7888-2fb9-4bae-b660-ff9cfe324de4' }
       }
     )
-    return data
+    return data;
+    console.log(data)
   },
   components: {
     GoBack
