@@ -40,10 +40,10 @@
 
                     
                    <div class="row" v-else>
-                      <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="col-lg-6 col-md-6 col-sm-6 ib-and-fofo">
                         <a href="https://ifing-beauty.com/" class="btn btn-outline-primary">IFING BEAUTYの購入ページへ</a>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="col-lg-6 col-md-6 col-sm-6 ib-and-fofo">
                         <a href="http://www.intense-z.com/product-proposal/fofo/" class="btn btn-outline-secondary">fofoの購入ページへ</a>
                     </div>
                    </div>
@@ -254,6 +254,10 @@ export default {
         font-size:1em;
       }
     }
+  }
+
+  .ib-and-fofo {
+    margin:2vh auto;
   }
 }
 
