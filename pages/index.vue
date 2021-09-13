@@ -38,7 +38,8 @@
                           <div class="col-9">
                             <h2>{{content.title}}</h2>
                             <p class="mobile-body" v-html="content.body"></p>
-                            <p class="link-to"><span>#{{content.category.name}}</span> <nuxt-link :to="`/${content.id}`">続きを読む →</nuxt-link></p>
+                            <p class="link-to"><span>#{{content.category.name}}</span></p>
+                            <p class="link-to"><nuxt-link :to="`/${content.id}`">続きを読む →</nuxt-link></p>
                           </div>
                         </div>
                       </div>
@@ -51,7 +52,7 @@
                           <h5 class="card-title"><nuxt-link :to="`/${content.id}`">{{ content.title }}</nuxt-link></h5>
                           <small class="text-muted">{{ content.publishedAt.substring(0,10) }}</small>
                           <h6 class="card-category"><span>#{{content.category.name}}</span></h6> 
-                          <p class="card-text" v-html="content.body"></p>
+                          <!-- <p class="card-text" v-html="content.body"></p> -->
                           <!-- <p v-html="content.body" class="text-me"></p> -->
                         </div>
                         <div class="card-footer">
