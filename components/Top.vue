@@ -12,9 +12,9 @@
             <nuxt-link to="/">HOME</nuxt-link>
             
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <nuxt-link to="/about">ABOUT</nuxt-link>
-          </li>
+          </li> -->
           <li class="nav-item">
             <a href="http://ifing-beauty.com/">IFING BEAUTY</a>
           </li> 
