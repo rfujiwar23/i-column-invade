@@ -331,7 +331,7 @@ export default {
       color: #fff;
       background: #9a9a9a;
       padding: 5px 10px;
-      border-radius: 20px;
+      border-radius: 5px;
       font-size: 0.8em;
     }  
   }
