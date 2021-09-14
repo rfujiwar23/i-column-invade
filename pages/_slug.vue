@@ -28,8 +28,9 @@
                     <!-- {{category}} -->
                     <div class="mt-5">
                       <h6 class="p-2">{{ preview }}</h6>
+                      <div class="post" v-html="body"></div>
                     </div>
-                    <div class="post" v-html="body"></div>
+                    
                     <div class="image col-lg-6 offset-lg-3 my-5 p-0">
                       <img :src="`${image.url}`" alt="" class="img-fluid">
                     </div>
@@ -135,7 +136,7 @@ export default {
     }
     h6 {
       font-weight:bold;
-      font-size:0.9em;
+      font-size:1.2em;
       line-height:1.5em;
     }
     .previous {
@@ -187,7 +188,7 @@ export default {
     }
     .post {
         // background: pink;
-        box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.5);
+        // box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.5);
         padding: 10px 20px;
         margin: 4vh auto;
       > {
@@ -266,6 +267,14 @@ export default {
     .main {
       h2 {
         font-size:1em;
+      }
+      h6 {
+        font-size:1em;
+      }
+      .post {
+        > p {
+          font-size:0.9em;
+        }
       }
     }
   }

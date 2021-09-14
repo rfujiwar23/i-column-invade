@@ -38,6 +38,7 @@
                           <div class="col-9">
                             <h2>{{content.title}}</h2>
                             <p class="mobile-body">{{content.preview}}</p>
+                            
                             <p class="link-to"><span>#{{content.category.name}}</span> <nuxt-link :to="`/${content.id}`">続きを読む →</nuxt-link></p>
                             
                           </div>
@@ -403,6 +404,8 @@ export default {
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 1;
       font-size:0.8em;
+      line-height: 1.5em;
+      // margin-bottom:0.5rem;
     }
     p.link-to {
       font-size:0.7em;
@@ -431,12 +434,36 @@ export default {
   .hide-on-mobile {
     // visibility: hidden;
     display: none;
-  }
-
-  
-
-
-
-  
+  }  
 }
+
+@media screen and (max-width:379px) {
+  .for-mobile {
+    h2 {
+      font-size:0.9em;
+    }
+    .mobile-body {
+      font-size:0.7em;
+    }
+    p.link-to {
+      font-size:0.6em;
+    }
+  }
+}
+
+@media screen and (max-width:350px) {
+  .for-mobile {
+    h2 {
+      font-size:0.9em;
+    }
+    .mobile-body {
+      font-size:0.7em;
+    }
+    p.link-to {
+      font-size:0.5em;
+    }
+  }
+}
+
+
 </style>
