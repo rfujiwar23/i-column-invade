@@ -47,7 +47,9 @@
                       <div class="hide-on-mobile">
                         <div class="card">
                         <div class="card-image">
+                          <nuxt-link :to="`/${content.id}`">
                           <img :src="`${content.image.url}`" alt="" class="img-fluid">
+                          </nuxt-link>
                         </div>
                         <div class="card-body">
                           <h5 class="card-title"><nuxt-link :to="`/${content.id}`">{{ content.title }}</nuxt-link></h5>
