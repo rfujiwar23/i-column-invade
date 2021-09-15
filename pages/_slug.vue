@@ -25,10 +25,13 @@
                       <p class="publishedAt"><span><fa icon="clock" class="icon"/> 投稿：</span>{{ publishedAt.substring(0,10) }}</p>
                       <p><fa icon="folder" class="icon" /> <span class="category" v-if="category">#{{category.name}}</span></p>
                     </div>
+
+                    
                     <!-- {{category}} -->
                     <div class="mt-5">
                       <h6 class="p-2">{{ preview }}</h6>
                       <div class="post" v-html="body"></div>
+                      
                     </div>
                     
                     <div class="image col-lg-6 offset-lg-3 my-5 p-0">
@@ -191,6 +194,7 @@ export default {
         // box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.5);
         padding: 10px 20px;
         margin: 4vh auto;
+        position:relative;
       > {
         h2 {
           font-size: 24px;
@@ -206,6 +210,11 @@ export default {
             max-width: 100%;
             // height: 100%;
           }
+        }
+        iframe {
+          width: 100%;
+          // height: 100%;
+          aspect-ratio: 16/9;
         }
       }
     }
