@@ -61,8 +61,6 @@ import Top from "@/components/Top"
 import Footer from "@/components/Footer"
 
 
-Vue.use(Meta);
-
 export default {
   async asyncData({ params }) {
     const { data } = await axios.get(
@@ -72,7 +70,7 @@ export default {
       }
     )
     return data;
-    console.log(data)
+    // console.log(data)
   },
   components: {
     GoBack
