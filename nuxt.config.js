@@ -8,7 +8,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'i-Column 美容　シャンプーのコラムページ',
+    title: 'i-Column || 美容・シャンプーについてのコラムページ IFING BEAUTY & fofo',
     htmlAttrs: {
       lang: 'ja'
     },
