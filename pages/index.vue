@@ -13,7 +13,10 @@
       <!-- <Banner /> -->
       <div class="banner-area">
         <div class="top">
-          <img src="@/assets/i-column-text-logo.png" alt="美容・コラムサイト i-Column background" class="img-fluid">
+          <div class="logo">
+            <img src="@/assets/i-column-text-logo.png" alt="美容・コラムサイト i-Column background" class="img-fluid">
+          </div>
+          <p class="mt-2">美容業界の製品についてのコラムページ</p>
         </div>
         <div class="inner">
             <SocialMedia />
@@ -215,8 +218,12 @@ export default {
       top:50%;
       left:50%;
       transform: translate(-50%, -50%);
-      background:rgba(24,24,24,0.3);
-      padding:20px;
+      background:rgba(24,24,24,0.1);
+      padding:10px;
+      text-align:center;
+      p {
+        color:rgb(255,255,255);
+      }
     } 
     .inner {
        position: absolute;
@@ -355,13 +362,6 @@ export default {
       
     }
 
-    .text-me {
-      color:red;
-      img {
-        // display:none;
-        width:100px;
-      }
-    }
 
 
 
@@ -420,8 +420,16 @@ export default {
         top:50%;
         left:50%;
         transform: translate(-50%, -50%);
-        width:30%;
+        width:60%;
         padding:10px;
+        .logo {
+          width:50%;
+          margin:0 auto;
+        }
+        p {
+          font-size:0.8em;
+          margin:0;
+        }
       } 
       .inner {
         position: absolute;
@@ -499,7 +507,41 @@ export default {
   }  
 }
 
+@media screen and (max-width:428px) {
+  .main-contents {
+    .banner-area {
+
+      .top {
+        .logo {
+          width:50%;
+          margin:0 auto;
+        }
+        p {
+          font-size:0.7em;
+          margin:0;
+        }
+      } 
+    }
+  }
+}
+
 @media screen and (max-width:379px) {
+
+  .main-contents {
+    .banner-area {
+
+      .top {
+        .logo {
+          width:50%;
+          margin:0 auto;
+        }
+        p {
+          font-size:0.65em;
+          margin:0;
+        }
+      } 
+    }
+  }
   .for-mobile {
     h2 {
       font-size:0.9em;
