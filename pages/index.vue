@@ -9,8 +9,18 @@
      <!-- <Categorize @categorySelected="onCategorySelected" :categories="categories"/> -->
     <div class="main-contents">
 
-    
-      <Banner />
+      
+      <!-- <Banner /> -->
+      <div class="banner-area">
+        <div class="top">
+          <img src="@/assets/i-column-text-logo.png" alt="美容・コラムサイト i-Column background" class="img-fluid">
+        </div>
+        <div class="inner">
+            <SocialMedia />
+        </div>
+            <img src="@/assets/main-bg.png" alt="美容・コラムサイト i-Column background" class="img-fluid">
+        
+    </div>
      
           <!-- <Categorize @categorySelected="onCategorySelected" :categories="categories"/>  -->
           <!-- main-area -->
@@ -189,6 +199,32 @@ export default {
 
 .main-contents {
   flex: 1;
+  .banner-area {
+    // background:red;
+    // background:('../assets/main-bg.png') no-repeat;
+    aspect-ratio: 16/5;    
+    background-size: cover;
+    background-position: center;
+    position:relative;
+    .top {
+      // display: flex;
+      // justify-content: center;
+      // align-content: center;
+      position:absolute;
+      z-index: 999;
+      top:50%;
+      left:50%;
+      transform: translate(-50%, -50%);
+      background:rgba(24,24,24,0.3);
+      padding:20px;
+    } 
+    .inner {
+       position: absolute;
+       top:0;
+       right:0;
+       left:0;
+    }
+  }
 }
 
 .main-area {
@@ -370,6 +406,30 @@ export default {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+  }
+
+  .main-contents {
+    .banner-area {
+
+      .top {
+        // display: flex;
+        // justify-content: center;
+        // align-content: center;
+        position:absolute;
+        z-index: 999;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        width:30%;
+        padding:10px;
+      } 
+      .inner {
+        position: absolute;
+        top:0;
+        right:0;
+        left:0;
+      }
+    }
   }
 
   .footer {

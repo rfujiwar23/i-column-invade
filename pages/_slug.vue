@@ -74,6 +74,16 @@ export default {
   },
   components: {
     GoBack
+  },
+  head: {
+    title: 'Home page',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: '美容、サロン業界のシャンプーなどについてのコラムサイト。IFING Beauty及びfofoで販売中の商品についてのコラムサイトです。'
+      }
+    ],
   }
 }
 </script>
