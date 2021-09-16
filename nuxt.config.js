@@ -15,7 +15,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: '商品等のコラムサイト', name: '商品等のコラムサイト', content: '美容、サロン業界のシャンプーなどについてのコラムサイト。IFING Beauty及びfofoで販売中の商品についてのコラムサイトです。' },
+      { hid: 'description', name: 'description', content: '美容、サロン業界のシャンプーなどについてのコラムサイト。IFING Beauty及びfofoで販売中の商品についてのコラムサイトです。' },
       { name: 'format-detection', content: 'telephone=no'},
       { hid: 'og:site_name', property: 'og:site_name', content: 'i-Column' },
       { hid: 'og:type', property: 'og:type', content: 'コラムサイト' },
