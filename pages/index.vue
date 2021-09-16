@@ -9,8 +9,9 @@
      <!-- <Categorize @categorySelected="onCategorySelected" :categories="categories"/> -->
     <div class="main-contents">
 
-    
+      
       <Banner />
+      
      
           <!-- <Categorize @categorySelected="onCategorySelected" :categories="categories"/>  -->
           <!-- main-area -->
@@ -21,6 +22,7 @@
               <div class="bg-light">
                 <div class="col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-12 mb-3">
                 <Categorize @categorySelected="onCategorySelected" :categories="categories"/>
+                
                 </div>
               </div>
               <div class="column-list col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-12">
@@ -189,6 +191,9 @@ export default {
 
 .main-contents {
   flex: 1;
+  position: relative;
+  z-index: 1;
+  
 }
 
 .main-area {
