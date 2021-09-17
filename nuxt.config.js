@@ -15,8 +15,8 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '美容、サロン業界のシャンプーなどについてのコラムサイト。IFING Beauty及びfofoで販売中の商品についてのコラムサイトです。' },
-      { hid: 'keywords', name: 'keywords', content: 'TOKIO インカラミ, 美容室, サロン, シャンプー, OWAY, KEVIN.MURPHY, トリートメント, コラムサイト' },
+      { hid: 'description', name: 'description', content: '美容、サロン業界のシャンプーなどについてのコラムサイトです。主にIFING Beauty及びfofoで販売している商品について紹介しています。' },
+      { hid: 'keywords', name: 'keywords', content: 'TOKIO インカラミ, 美容室, 美容, サロン, シャンプー, OWAY, KEVIN.MURPHY, トリートメント, コラムサイト' },
       { name: 'format-detection', content: 'telephone=no'},
       { hid: 'og:site_name', property: 'og:site_name', content: 'i-Column' },
       { hid: 'og:type', property: 'og:type', content: 'コラムサイト' },
