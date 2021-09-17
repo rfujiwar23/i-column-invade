@@ -76,7 +76,6 @@ export default {
     GoBack
   },
   head: {
-    title: 'Home page',
     meta: [
       {
         hid: 'description',
