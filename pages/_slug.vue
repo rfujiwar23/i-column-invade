@@ -40,7 +40,7 @@
                     </div>
                     
                     <div class="show-btn">
-                      <a v-bind:href="link" class="btn go-to-ecsite">購入ページはこちら</a>
+                      <a v-bind:href="link" target="_blank" class="btn go-to-ecsite">購入ページはこちら</a>
                     </div>
                     <!-- <div class="show-btn" v-if="site.includes('FOFO')">
                       <a href="http://www.intense-z.com/product-proposal/fofo/" class="btn go-to-ecsite">購入ページはこちら</a>
