@@ -18,7 +18,7 @@
         <div class="row main mx-0">
             <div class="col-lg-12">
                     <p class="previous"><NuxtLink to="/">&lt; トップへ</NuxtLink></p>
-                    <h2 class="title">【{{ title }}】</h2>
+                    <h2 class="title">{{ title }}</h2>
                     <!-- <fa icon="folder" /> -->
                     <!-- <p class="category" v-if="category"><span>#{{category.name}}</span></p> -->
                     <div class="post-information">
@@ -30,6 +30,7 @@
                     <!-- {{category}} -->
                     <div class="mt-5">
                       <h6 class="p-2">{{ preview }}</h6>
+                      <hr>
                       <div class="post" v-html="body"></div>
                       
                     </div>
