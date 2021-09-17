@@ -47,10 +47,7 @@
 
 @media screen and (max-width:768px) {
     .navigation-bar {
-        // display: block;
         > div {
-            
-            // background:red;
             margin:0;
             padding-left:0;
         }
@@ -62,13 +59,6 @@
 
 @media screen and (max-width:575px) {
     .navigation-bar {
-        // display: block;
-        > div {
-            // width:100%;
-            // background:red;
-            // margin:0;
-            // padding-left:0;
-        }
         .element {
             p {
                 text-align: center;
@@ -80,13 +70,6 @@
 
 @media screen and (max-width:459px) {
     .navigation-bar {
-        // display: block;
-        > div {
-            // width:100%;
-            // background:red;
-            // margin:0;
-            // padding-left:0;
-        }
         .element {
             p {
                 font-size: 0.7em;

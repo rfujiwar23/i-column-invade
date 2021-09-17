@@ -20,10 +20,4 @@ export default {
     cursor: pointer;
 }
 
-/* button {
-    padding: 5px 10px;
-    border-radius:5px;
-} */
-
-
 </style>

@@ -11,8 +11,6 @@
 <style lang="scss" scoped>
 
 .banner-area {
-    // background:red;
-    // background:('../assets/main-bg.png') no-repeat;
     aspect-ratio: 16/5;    
     background-size: cover;
     background-position: center;

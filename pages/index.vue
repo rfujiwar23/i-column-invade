@@ -192,8 +192,6 @@ export default {
 .container {
   display: flex;
   flex-direction: column;
-
-  /* min-height: 100vh; */
 }
 
 .for-mobile {
@@ -203,16 +201,11 @@ export default {
 .main-contents {
   flex: 1;
   .banner-area {
-    // background:red;
-    // background:('../assets/main-bg.png') no-repeat;
     aspect-ratio: 16/5;    
     background-size: cover;
     background-position: center;
     position:relative;
     .top {
-      // display: flex;
-      // justify-content: center;
-      // align-content: center;
       position:absolute;
       z-index: 999;
       top:50%;
@@ -236,12 +229,7 @@ export default {
 
 .main-area {
   display: grid;
-
-  /* grid-template-columns: 3fr 1fr; */
-  /* flex-grow: 1; */
-
   .new-information {
-    // background: #fff;
     h3 {
       font-size:1.5em;
       color:#fff;
@@ -286,7 +274,6 @@ export default {
     }
 
     .pagination {
-      // background: antiquewhite;
       margin: 20px auto;
 
       ul {
@@ -475,7 +462,6 @@ export default {
       -webkit-line-clamp: 1;
       font-size:0.8em;
       line-height: 1.5em;
-      // margin-bottom:0.5rem;
     }
     p.link-to {
       font-size:0.7em;
@@ -502,7 +488,6 @@ export default {
   }
 
   .hide-on-mobile {
-    // visibility: hidden;
     display: none;
   }  
 }

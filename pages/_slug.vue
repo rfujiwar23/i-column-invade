@@ -95,8 +95,6 @@ export default {
 }
 
 .index-top {
-  // background-image: linear-gradient(to bottom, #2d68c0, #4365b2, #4f62a3, #576095, #5b5e88);
-  // background-image: url('assets/bg001.jpg') no-repeat;
   aspect-ratio: 16/4;
   position:relative;
   .contain-img {
