@@ -207,7 +207,7 @@ export default {
     position:relative;
     .top {
       position:absolute;
-      z-index: 999;
+      z-index: 990;
       top:50%;
       left:50%;
       transform: translate(-50%, -50%);
@@ -403,7 +403,7 @@ export default {
         // justify-content: center;
         // align-content: center;
         position:absolute;
-        z-index: 999;
+        // z-index: 999;
         top:50%;
         left:50%;
         transform: translate(-50%, -50%);

@@ -1,41 +1,38 @@
 <template>
     <div class="categorize">
 
-<nav class="navbar navbar-light bg-light">
+  <nav class="navbar navbar-light bg-light">
   
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown1" aria-controls="navbarNavDropdown1" aria-expanded="" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <a class="navbar-brand" href="#">メーカー一覧</a>
-  <div class="collapse navbar-collapse" id="navbarNavDropdown1">
-    <ul class="navbar-nav">
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          メーカー別でフィルターする
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-           <span class="dropdown-item" v-for="category in categories" :key="category" @click="handleMenuClick(category)">
-                {{category}}
-                
-            </span>
-        </div>
-      </li>
-    </ul>
-  </div>
-</nav>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown1" aria-controls="navbarNavDropdown1" aria-expanded="" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">メーカー一覧</a>
+    
+      <div class="collapse navbar-collapse" id="navbarNavDropdown1">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              メーカー別でフィルターする
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <span class="dropdown-item" v-for="category in categories" :key="category" @click="handleMenuClick(category)">
+                    {{category}}
+                    
+                </span>
+            </div>
+          </li>
+        </ul>
+      </div>
+  </nav>
+
+    <!-- <select v-model="selected">
+      <option value="Choose">Select</option>
+      <option v-for="category in categories" :key="category" :value="category" @select="handleMenuClick(category)">{{ category }}</option>
+    </select> -->
+
+    
 
 
-
-        <!-- <div class="btn-group">
-        <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            カテゴリ別で見る
-        </button>
-        <div class="dropdown-menu">
-            <span class="dropdown-item" v-for="category in categories" :key="category" @click="handleMenuClick(category)">
-                {{category}}
-            </span>
-        </div>
-        </div> -->
     </div>
     
 </template>

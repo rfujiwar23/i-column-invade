@@ -10,11 +10,7 @@
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
             <nuxt-link to="/">HOME</nuxt-link>
-            
           </li>
-          <!-- <li class="nav-item">
-            <nuxt-link to="/about">ABOUT</nuxt-link>
-          </li> -->
           <li class="nav-item">
             <a href="http://ifing-beauty.com/">IFING BEAUTY</a>
           </li> 
@@ -24,6 +20,10 @@
         </ul>
       </div>
     </nav>
+
+<!-- <NuxtLink to="/"><img src="@/assets/i-column1.png" alt="i-Column" class="img"></NuxtLink> -->
+
+    
 
 </div>
 </template>
@@ -42,6 +42,7 @@
 
 .top {
   font-family: 'Noto Sans JP',sans-serif;
+  // height:60px;
 }
 .img {
   width:120px;
@@ -61,6 +62,7 @@
     }
   }
 }
+
 
 @media screen and (max-width:992px) {
   .navbar-nav {
