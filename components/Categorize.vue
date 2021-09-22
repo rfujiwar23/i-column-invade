@@ -1,18 +1,18 @@
 <template>
     <div class="categorize">
 
-  <nav class="navbar navbar-light bg-light">
+  <!-- <nav class="navbar navbar-light bg-light">
   
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown1" aria-controls="navbarNavDropdown1" aria-expanded="" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="#">メーカー一覧</a>
+    <a class="navbar-brand" href="#">Manufacturer List</a>
     
       <div class="collapse navbar-collapse" id="navbarNavDropdown1">
         <ul class="navbar-nav">
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              メーカー別でフィルターする
+              Filter By:
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <span class="dropdown-item" v-for="category in categories" :key="category" @click="handleMenuClick(category)">
@@ -23,12 +23,13 @@
           </li>
         </ul>
       </div>
-  </nav>
+  </nav> -->
 
-    <!-- <select v-model="selected">
-      <option value="Choose">Select</option>
-      <option v-for="category in categories" :key="category" :value="category" @select="handleMenuClick(category)">{{ category }}</option>
-    </select> -->
+      <h6>メーカー一覧</h6>
+      <select @change="handleMenuClick($event)">
+        <option value="Choose">Select</option>
+        <option v-for="category in categories" :key="category" :value="category" >{{ category }}</option>
+      </select>
 
     
 
@@ -45,8 +46,8 @@ export default {
     categories: { type: Array, required: true }
   },
   methods: {
-    handleMenuClick(category) {
-      this.$emit('categorySelected', category)
+    handleMenuClick(event) {
+      this.$emit('categorySelected', event.target.value)
     }
   },
 }
@@ -73,7 +74,7 @@ export default {
 }
 
 .categorize {
-    // padding:0 0 2vh;
+    padding:2vh 0;
     font-family: 'Noto Sans JP',sans-serif;
 }
 
