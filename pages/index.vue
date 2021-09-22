@@ -332,7 +332,7 @@ export default {
       }
     }
     .card-category {
-      margin: 10px auto;
+      margin: 5px auto 10px;
     }
 
     .card-text {
