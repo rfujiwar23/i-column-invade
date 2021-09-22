@@ -1,7 +1,7 @@
 <template>
     
 <div class="top">
-    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-light">
       <NuxtLink to="/"><img src="@/assets/i-column1.png" alt="i-Column" class="img"></NuxtLink>
       <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -49,13 +49,16 @@
   margin-left:-10px;
 }
 
+.navbar {
+  background:#255a92;
+}
+
 .navbar-toggler {
   border-color: rgba(0,0,0,0);
 }
 
 .navbar-nav {
   .nav-item {
-    
     a {
       color:#fff;
       margin-right:20px;
@@ -67,7 +70,7 @@
 @media screen and (max-width:992px) {
   .navbar-nav {
     .nav-item {
-      margin: 0 auto;
+      margin:1vh auto;
       text-align: center;
     }
   }

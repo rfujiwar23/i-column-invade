@@ -25,11 +25,13 @@
       </div>
   </nav> -->
 
-      <h6>メーカー一覧</h6>
-      <select @change="handleMenuClick($event)">
-        <option value="Choose">Select</option>
-        <option v-for="category in categories" :key="category" :value="category" >{{ category }}</option>
-      </select>
+      <div class="select-menu">
+        <h6>メーカー一覧</h6>
+        <select @change="handleMenuClick($event)">
+          <option value="Choose" disabled selected>メーカーを選択</option>
+          <option v-for="category in categories" :key="category" :value="category" >{{ category }}</option>
+        </select>
+      </div>
 
     
 
@@ -74,8 +76,29 @@ export default {
 }
 
 .categorize {
-    padding:2vh 0;
+    padding:3vh 0;
     font-family: 'Noto Sans JP',sans-serif;
+    .select-menu {
+      width:50%;
+      margin:0 auto;
+      // background:red;
+      h6 {
+        text-align:center;
+        font-size:1.25em;
+      }
+      select {
+        width:100%;
+        background-color: #255a92;
+        border: none;
+        font-size: 16px;
+        padding:3px 5px;
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+        -webkit-appearance: button;
+        appearance: button;
+        outline: none;
+        color:white;
+      }
+    }
 }
 
 .dropdown-menu {
@@ -89,11 +112,26 @@ export default {
   }
 }
 
-@media screen and (max-width:500px){
+@media screen and (max-width:520px){
   .btn-group {
     width:100%;
     .dropdown-menu {
       width:100%;
+    }
+  }
+
+  .categorize {
+    padding:2vh 0;
+    .select-menu {
+      width:56%;
+      margin:0 auto;
+      // background:red;
+      h6 {
+        text-align:center;
+      }
+      select {
+        width:100%;
+      }
     }
   }
 }
