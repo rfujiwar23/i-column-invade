@@ -59,6 +59,7 @@
 
 .navbar-nav {
   .nav-item {
+    
     a {
       color:#fff;
       margin-right:20px;
@@ -71,7 +72,11 @@
   .navbar-nav {
     .nav-item {
       margin:1vh auto;
-      text-align: center;
+      // text-align: center;
+      a {
+        text-align: center;
+      }
+      
     }
   }
   
