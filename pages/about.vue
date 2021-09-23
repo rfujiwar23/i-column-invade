@@ -22,7 +22,7 @@
                             {{product.name}}
                         </div>
                         <div class="centered">
-                            <img :src="product.logo" alt="TOKIO INKARAMI" class="img-fluid"> 
+                            <img :src="product.logo" class="img-fluid"> 
                         </div>
                             <img :src="product.image"  alt="TOKIO INKARAMI" class="fit-in-div">   
                         </a>
@@ -43,7 +43,7 @@
                     {name: 'オーウェイ', logo: require('@/assets/oway-logo1.svg'), url: 'https://ifing-beauty.com/products/list?category_id=12', image: require('@/assets/001-oway.jpg')},
                     {name: 'ケビンマーフィー', logo: require('@/assets/km-logo.svg'), url: 'https://ifing-beauty.com/products/list?category_id=13', image: require('@/assets/004-kevinmurphy.jpg')},
                     {name: 'アジア', logo: require('@/assets/asia-logo1.svg'), url: 'https://ifing-beauty.com/products/list?category_id=7', image: require('@/assets/002-asia.jpg')},
-                    {name: 'トキオインカラミ', logo: require('@/assets/tokio-logo.svg'), url: 'https://ifing-beauty.com/products/list?category_id=7', image: require('@/assets/003-tokio.jpg')},
+                    {name: 'アジュバン', url: 'https://ifing-beauty.com/products/list?category_id=7', image: require('@/assets/005-adjuvant.jpg')},
                     {name: 'オーウェイ', logo: require('@/assets/oway-logo1.svg'), url: 'https://ifing-beauty.com/products/list?category_id=7', image: require('@/assets/001-oway.jpg')},
                     {name: 'ケビンマーフィー', logo: require('@/assets/km-logo.svg'), url: 'https://ifing-beauty.com/products/list?category_id=7', image: require('@/assets/004-kevinmurphy.jpg')},
                     {name: 'アジア', logo: require('@/assets/asia-logo1.svg'), url: 'https://ifing-beauty.com/products/list?category_id=7', image: require('@/assets/002-asia.jpg')},
