@@ -22,8 +22,8 @@ export default {
       { hid: 'og:type', property: 'og:type', content: 'コラムサイト' },
       { hid: 'og:url', property: 'og:url', content: 'https://i-column.com' },
       { hid: 'og:title', property: 'og:title', content: 'i-column' },
-      { hid: 'og:description', property: 'og:description', content: '美容、サロン業界のシャンプーなどのコラムページです。' },
-      { hid: 'og:image', property: 'og:image', content: 'https://i-column.com' },
+      { hid: 'og:description', property: 'og:description', content: '美容、サロン業界のシャンプーなどについてのコラムサイトです。主にIFING Beauty及びfofoで販売している商品について紹介しています。' },
+      { hid: 'og:image', property: 'og:image', content: 'https://i-column-online.netlify.app/_nuxt/img/main-bg.b53cd3c.png' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
