@@ -1,7 +1,7 @@
 <template>
     <footer class="footer">
         <div class="container">
-            <h6>INVADE Co., Ltd. Copyright &copy; All Rights Reserved.</h6> 
+            <h6>INVADE Co., Ltd. Copyright &copy; 2021 All Rights Reserved.</h6> 
         </div>
     </footer>
 </template>

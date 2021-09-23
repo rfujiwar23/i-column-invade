@@ -76,7 +76,7 @@ export default {
 }
 
 .categorize {
-    padding:3vh 0;
+    // padding:0 0 3vh;
     font-family: 'Noto Sans JP',sans-serif;
     .select-menu {
       width:50%;

@@ -31,8 +31,9 @@
             <!-- new-information -->
              
             <div class="new-information box-2">
+              <!-- <InfoSection /> -->
               <div class="bg-light">
-                <div class="col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-12 mb-3">
+                <div class="col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-12 mb-3 py-4">
                 <Categorize @categorySelected="onCategorySelected" :categories="categories"/>
                 </div>
               </div>
