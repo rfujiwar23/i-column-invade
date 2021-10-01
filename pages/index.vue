@@ -71,6 +71,7 @@
                           <h6 class="card-category"><span>#{{content.category.name}}</span></h6> 
                           <p class="card-text">{{content.preview}}</p>
                           <!-- <p v-html="content.body" class="text-me"></p> -->
+                          
                         </div>
                         <div class="card-footer">
                           <p><nuxt-link :to="`/${content.id}`">続きを読む →</nuxt-link></p>
