@@ -36,10 +36,13 @@
                 <div class="col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-12 mb-3 py-4">
                 <Categorize @categorySelected="onCategorySelected" :categories="categories"/>
                 </div>
+                
               </div>
               <div class="column-list col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-12">
                 
                 
+                
+                <div class="text-center" id="myId" ref="myId"></div>
                 <h3><span>新着一覧</span></h3>
                 <h4>New Information</h4> 
                   <div class="row">
@@ -162,7 +165,6 @@ export default {
   data() {
     return {
       filteredContent: [],
-
     }
   },
   methods: {
@@ -172,7 +174,12 @@ export default {
       const filtered = this.contents.filter((content) => content.category.name === category)
       if (filtered.length > 0) {
         this.filteredContent = filtered
-      }
+      } else {
+        // Erase this part if not needed (also delete/comment out line 42 (myId))
+        alert(category + "のコラムは未だに投稿されていません。")
+        // this.$refs.myId.style.display = 'block';
+        // this.$refs.myId.innerText = category + "のコラムは未だに投稿されていません。";
+      } 
     }
   },
   mounted() {
