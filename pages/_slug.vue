@@ -217,6 +217,7 @@ export default {
         p {
           line-height: 1.8;
           letter-spacing: 0.2px;
+          font-size:1.25em;
           img {
             object-fit: contain;
             max-width: 100%;
@@ -294,7 +295,7 @@ export default {
       }
       .post {
         > p {
-          font-size:0.9em;
+          font-size:1.1em;
         }
       }
     }
