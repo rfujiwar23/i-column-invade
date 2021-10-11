@@ -220,11 +220,12 @@ export default {
       top:50%;
       left:50%;
       transform: translate(-50%, -50%);
-      background:rgba(24,24,24,0.1);
+      background:rgba(255,255,255,0.6);
       padding:10px;
       text-align:center;
       p {
-        color:rgb(255,255,255);
+        color:rgb(112,130,115);
+        font-weight: bold;
       }
     } 
     .inner {
