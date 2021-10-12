@@ -14,7 +14,7 @@
       <div class="banner-area">
         <div class="top">
           <div class="logo">
-            <img src="@/assets/i-column-text-logo.png" alt="美容・コラムサイト i-Column background" class="img-fluid">
+            <h1><img src="@/assets/i-column-text-logo.png" alt="美容・コラムサイト i-Column" class="img-fluid"></h1>
           </div>
           <p class="mt-2">美容業界の製品についてのコラムページ</p>
         </div>
