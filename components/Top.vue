@@ -50,7 +50,7 @@
 }
 
 .navbar {
-  background:#255a92;
+  background:rgb(112,130,115);
 }
 
 .navbar-toggler {

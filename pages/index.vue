@@ -220,7 +220,7 @@ export default {
       top:50%;
       left:50%;
       transform: translate(-50%, -50%);
-      background:rgba(255,255,255,0.6);
+      background:rgba(255,255,255,0.8);
       padding:10px;
       text-align:center;
       p {
@@ -244,7 +244,7 @@ export default {
       font-size:1.5em;
       color:#fff;
       span {
-        background:#1f456E;
+        background:rgb(112,130,115);
         padding:5px 10px;
         font-family: "ヒラギノ明朝 ProN W6", "HiraMinProN-W6", "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
       }
@@ -252,7 +252,7 @@ export default {
     h4 {
       font-size:0.9em;
       margin-bottom:4vh;
-      color:#1f456E;
+      color:rgb(112,130,115);
 
     }
 

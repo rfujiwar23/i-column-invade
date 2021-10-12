@@ -85,10 +85,12 @@ export default {
       h6 {
         text-align:center;
         font-size:1.25em;
+        color:rgb(112,130,115);
+        // text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
       }
       select {
         width:100%;
-        background-color: #255a92;
+        background-color: rgb(112,130,115);
         border: none;
         font-size: 16px;
         padding:3px 5px;
