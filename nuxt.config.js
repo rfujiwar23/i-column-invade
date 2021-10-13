@@ -8,7 +8,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'i-Column || 美容・シャンプーについてのコラムページ IFING BEAUTY & fofo',
+    title: '美容室のシャンプー、トリートメント選びならi-column 髪を綺麗にするための美容メディア',
     htmlAttrs: {
       lang: 'ja'
     },
