@@ -22,6 +22,7 @@
                     <!-- <fa icon="folder" /> -->
                     <!-- <p class="category" v-if="category"><span>#{{category.name}}</span></p> -->
                     <div class="post-information">
+                      
                       <p class="publishedAt"><span><fa icon="clock" class="icon"/> 投稿：</span>{{ publishedAt.substring(0,10) }}</p>
                       <p><fa icon="folder" class="icon" /> <span class="category" v-if="category">#{{category.name}}</span></p>
                     </div>
@@ -29,7 +30,15 @@
                     
                     <!-- {{category}} -->
                     <div class="mt-5">
+                      
+
+                      
+                      
+                      <!-- <ul>{{tag.map(s => <li key=`${s}`> {name} </li>)}}</ul> -->
+                                        
+
                       <h6 class="p-2">{{ preview }}</h6>
+                      
                       <hr>
                       <div class="post" v-html="body"></div>
                       
@@ -199,6 +208,13 @@ export default {
       
       .icon {
         color:#343A40;
+      }
+    }
+
+    .tag {
+      span {
+        border:1px solid #1f456E;
+        margin:0 3px;
       }
     }
     .post {

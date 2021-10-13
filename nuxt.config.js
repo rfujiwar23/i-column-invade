@@ -15,14 +15,14 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '美容、サロン業界のシャンプーなどについてのコラムサイトです。主にIFING Beauty及びfofoで販売している商品について紹介しています。' },
-      { hid: 'keywords', name: 'keywords', content: 'TOKIO インカラミ, 美容室, 美容, サロン, シャンプー, OWAY, KEVIN.MURPHY, トリートメント, コラムサイト' },
+      { hid: 'description', name: 'description', content: 'プロならではの目線で美容室のシャンプー、トリートメントだけでなく、さらにカラー剤やパーマ剤など厳選した情報をお届けします！数多くある美容室のシャンプー、トリートメントの選び方に悩んでいるあなたへ、豊富な種類のヘアケアからあなたに合うヘアケアを探せます！' },
+      { hid: 'keywords', name: 'keywords', content: 'IFING BEAUTY, TOKIO インカラミ 口コミ, アイコラム, 美容, 美容コラムサイト, サロン, シャンプー, OWAY, KEVIN.MURPHY, トリートメント' },
       { name: 'format-detection', content: 'telephone=no'},
       { hid: 'og:site_name', property: 'og:site_name', content: 'i-Column' },
       { hid: 'og:type', property: 'og:type', content: 'コラムサイト' },
       { hid: 'og:url', property: 'og:url', content: 'https://i-column.com' },
       { hid: 'og:title', property: 'og:title', content: 'i-column' },
-      { hid: 'og:description', property: 'og:description', content: '美容、サロン業界のシャンプーなどについてのコラムサイトです。主にIFING Beauty及びfofoで販売している商品について紹介しています。' },
+      { hid: 'og:description', property: 'og:description', content: 'プロならではの目線で美容室のシャンプー、トリートメントだけでなく、さらにカラー剤やパーマ剤など厳選した情報をお届けします！数多くある美容室のシャンプー、トリートメントの選び方に悩んでいるあなたへ、豊富な種類のヘアケアからあなたに合うヘアケアを探せます！' },
       { hid: 'og:image', property: 'og:image', content: 'https://i-column-online.netlify.app/_nuxt/img/main-bg.b53cd3c.png' },
     ],
     link: [

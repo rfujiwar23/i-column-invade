@@ -41,13 +41,16 @@
               <div class="column-list col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-12">
                 
                 
-                
+              
                 <div class="text-center" id="myId" ref="myId"></div>
                 <h3><span>新着一覧</span></h3>
                 <h4>New Information</h4> 
                   <div class="row">
                     <div class="section col-xl-4 col-lg-6 col-md-6 col-sm-6" v-for="content in filteredContent" :key="content.id">
                       <div class="for-mobile">
+                        <div class="new" v-if="filteredContent[0].id === content.id">
+                            <p>新着</p>
+                          </div>
                         <div class="row">
                           <div class="col-3">
                             <img :src="`${content.image.url}`" alt="" class="img">
@@ -57,18 +60,25 @@
                             <p class="mobile-body">{{content.preview}}</p>
                             
                             <p class="link-to"><span>#{{content.category.name}}</span> <nuxt-link :to="`/${content.id}`">続きを読む →</nuxt-link></p>
-                            
+                           
                           </div>
                         </div>
                       </div>
+                      
                       <div class="hide-on-mobile">
+                        <!-- {{ content }} -->
                         <div class="card">
+                          <div class="new" v-if="filteredContent[0].id === content.id">
+                            <p>新着</p>
+                          </div>
                         <div class="card-image">
                           <nuxt-link :to="`/${content.id}`">
                           <img :src="`${content.image.url}`" alt="" class="img-fluid">
                           </nuxt-link>
                         </div>
                         <div class="card-body">
+                          <!-- {{content}} -->
+                          
                           <h5 class="card-title"><nuxt-link :to="`/${content.id}`">{{ content.title }}</nuxt-link></h5>
                           <small class="text-muted">{{ content.publishedAt.substring(0,10) }}</small>
                           <h6 class="card-category"><span>#{{content.category.name}}</span></h6> 
@@ -165,7 +175,7 @@ export default {
   data() {
     return {
       filteredContent: [],
-    }
+    }  
   },
   methods: {
     onCategorySelected(category) {
@@ -304,7 +314,21 @@ export default {
 
 .card {
   margin-bottom: 3vh;
-
+  position:relative;
+  .new {
+    position:absolute;
+    top:0;
+    left:-3%;
+    background:#CF1225;
+    box-shadow: 1px 3px 6px rgba(0,0,0,0.6);
+    padding:3px 10px;
+    transform: rotate(-20deg);
+    p {
+      font-weight:bold;
+      color:#fff;
+      margin-bottom: 0;
+    }
+  }  
   .card-image {
     aspect-ratio: 16/9;
     height: 40vh;
@@ -398,6 +422,8 @@ export default {
 
 
 
+
+
 @media screen and (max-width:576px) {
   .page {
     min-height: 100vh;
@@ -450,6 +476,7 @@ export default {
     color: rgba(24,24,24,1);
     margin: 10px auto;
     background:oldlace;
+    position: relative;
     img {
       object-fit: contain;
             max-width: 100%;
@@ -464,6 +491,20 @@ export default {
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 1;
     }
+    .new {
+    position:absolute;
+    top:0;
+    left:-3%;
+    background:#CF1225;
+    box-shadow: 1px 3px 6px rgba(0,0,0,0.6);
+    padding:3px 10px;
+    transform: rotate(-20deg);
+      p {
+        font-weight:bold;
+        color:#fff;
+        margin-bottom: 0;
+      }
+    } 
     .mobile-body {
       overflow: hidden;
       text-overflow: ellipsis;
