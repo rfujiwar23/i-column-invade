@@ -16,7 +16,7 @@
           <div class="logo">
             <h1><img src="@/assets/i-column-text-logo.png" alt="美容・コラムサイト i-Column" class="img-fluid"></h1>
           </div>
-          <p class="mt-2">美容業界の製品についてのコラムページ</p>
+          <p class="mt-2">美容室のシャンプー、トリートメント選びならi-Column<br>髪を綺麗にするための美容メディア</p>
         </div>
         <div class="inner">
             <SocialMedia />
