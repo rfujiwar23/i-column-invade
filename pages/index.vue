@@ -323,6 +323,7 @@ export default {
     box-shadow: 1px 3px 6px rgba(0,0,0,0.6);
     padding:3px 10px;
     transform: rotate(-20deg);
+    z-index: 999;
     p {
       font-weight:bold;
       color:#fff;
