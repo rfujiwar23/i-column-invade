@@ -10,7 +10,7 @@
       <!-- <Banner /> -->
       <div class="title-area mb-0">  
             <SocialMedia />
-            <h1>IFING BEAUTY/fofoのブログページ</h1>
+            <h1>IFING BEAUTY/fofoのコラムページ</h1>
       </div>
       
     </div>
