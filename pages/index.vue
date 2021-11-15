@@ -85,6 +85,7 @@
                   </div>
                 </div>
 
+                <!-- For PC -->
                 <div class="hide-on-mobile">
                   <!-- {{ content }} -->
                   <div class="card">
@@ -133,7 +134,7 @@
               </div>
             </div>
           </div>
-          <!-- <div class="pagination">
+              <!-- <div class="pagination">
                   <ul>
                     <li v-if="previousPage != 0">
                       <nuxt-link :to="`/page/${previousPage}`">
