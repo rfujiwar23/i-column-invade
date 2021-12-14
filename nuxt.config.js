@@ -8,7 +8,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: '美容室のシャンプー、トリートメント選びならi-column 髪を綺麗にするための美容メディア',
+    title: '美容室のシャンプー、トリートメント・スタイリング剤選びならi-Column | 髪を綺麗にするための美容メディア',
     htmlAttrs: {
       lang: 'ja'
     },

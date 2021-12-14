@@ -51,9 +51,7 @@
               />
             </div>
           </div>
-          <div
-            class="column-list col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-12"
-          >
+          <div class="column-list col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-12">
             <div class="text-center" id="myId" ref="myId"></div>
             <h3><span>新着一覧</span></h3>
             <h4>New Information</h4>
@@ -84,6 +82,8 @@
                     </div>
                   </div>
                 </div>
+
+                
 
                 <!-- For PC -->
                 <div class="hide-on-mobile">
@@ -132,7 +132,100 @@
                   </div>
                 </div>
               </div>
+
+             
+
+              
             </div>
+            <div class="box row">
+              <div
+                class="col-xl-3 col-lg-3 col-md-4 col-sm-6 p-0 mx-0"
+                v-for="content in filteredContent"
+                
+                :key="content.id"
+              >
+              
+               <!--v-if="content.audience === false"  -->
+                      <template v-if="content.audience === true">
+                        <div class="pro-or-not">
+                        <div class="article">
+                            <!--  -->
+                              <img
+                                :src="`${content.image.url}`"
+                                alt=""
+                                class="img-fluid"
+                              />
+                            <!--  -->
+                            <div class="overlay">
+                              <div class="text">
+                                <h5 class="card-title">
+                                <nuxt-link :to="`/${content.id}`">{{ content.title }}</nuxt-link>
+                                </h5>
+                                <p><span>{{content.publishedAt.substring(0, 10)}}</span></p>
+                                <h6 class="category">
+                                  <span>#{{ content.category.name }}</span>
+                                </h6>
+                                <p class="card-text">{{ content.preview }}</p>
+                                <nuxt-link :to="`/${content.id}`">記事を読む</nuxt-link>
+                              </div>
+                            </div>
+                        </div>
+                      </div>
+                      </template>
+                    
+                    
+                    
+                  <!-- </div> -->
+                <!-- </div> -->
+              </div>
+
+            </div>
+            <div class="box row">
+              <div
+                class="col-xl-3 col-lg-3 col-md-4 col-sm-6 p-0 mx-0"
+                v-for="content in filteredContent"
+                
+                :key="content.id"
+              >
+
+              
+              
+               <!--v-if="content.audience === false"  -->
+                      <template v-if="content.audience === false">
+                        <div class="pro-or-not">
+                        <div class="article">
+                            <!--  -->
+                              <img
+                                :src="`${content.image.url}`"
+                                alt=""
+                                class="img-fluid"
+                              />
+                            <!--  -->
+                            <div class="overlay">
+                              <div class="text">
+                                <h5 class="card-title">
+                                <nuxt-link :to="`/${content.id}`">{{ content.title }}</nuxt-link>
+                                </h5>
+                                <p><span>{{content.publishedAt.substring(0, 10)}}</span></p>
+                                <h6 class="category">
+                                  <span>#{{ content.category.name }}</span>
+                                </h6>
+                                <p class="card-text">{{ content.preview }}</p>
+                                <nuxt-link :to="`/${content.id}`">記事を読む</nuxt-link>
+                              </div>
+                            </div>
+                        </div>
+                      </div>
+                      </template>
+                    
+                    
+                    
+                  <!-- </div> -->
+                <!-- </div> -->
+              </div>
+
+            </div>
+            
           </div>
               <!-- <div class="pagination">
                   <ul>
@@ -448,6 +541,54 @@ export default {
       }
     }
   }
+}
+
+.article {
+  
+    position:relative;
+    &:hover .overlay {
+      opacity:1;
+    }
+    .overlay {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      transition: .5s ease;
+      background-color: rgba(50,50,50,0.6);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      .text {
+        padding:10px 20px;
+        h5 {
+          a {
+            color:#fff;
+          }
+        }
+        p {
+          font-size:0.9em;
+          color:#fff;
+        }
+        small {
+          color: #fff;
+        }
+        .category {
+          span {
+            background:#fff;
+            color:#1f456e;
+            padding:5px 7px;
+            border:1px solid #1f456e;
+          }
+        }
+      }
+    }
+    
+  
 }
 
 @media screen and (max-width: 576px) {
