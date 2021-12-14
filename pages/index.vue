@@ -137,7 +137,9 @@
 
               
             </div>
-            <div class="box row">
+            
+            
+            <!-- <div class="box row">
               <div
                 class="col-xl-3 col-lg-3 col-md-4 col-sm-6 p-0 mx-0"
                 v-for="content in filteredContent"
@@ -145,17 +147,17 @@
                 :key="content.id"
               >
               
-               <!--v-if="content.audience === false"  -->
+               
                       <template v-if="content.audience === true">
                         <div class="pro-or-not">
                         <div class="article">
-                            <!--  -->
+                            
                               <img
                                 :src="`${content.image.url}`"
                                 alt=""
                                 class="img-fluid"
                               />
-                            <!--  -->
+                            
                             <div class="overlay">
                               <div class="text">
                                 <h5 class="card-title">
@@ -175,32 +177,27 @@
                     
                     
                     
-                  <!-- </div> -->
-                <!-- </div> -->
+                
               </div>
 
-            </div>
-            <div class="box row">
+            </div> -->
+            <!-- <div class="box row">
               <div
                 class="col-xl-3 col-lg-3 col-md-4 col-sm-6 p-0 mx-0"
                 v-for="content in filteredContent"
-                
                 :key="content.id"
               >
 
-              
-              
-               <!--v-if="content.audience === false"  -->
                       <template v-if="content.audience === false">
                         <div class="pro-or-not">
                         <div class="article">
-                            <!--  -->
+                            
                               <img
                                 :src="`${content.image.url}`"
                                 alt=""
                                 class="img-fluid"
                               />
-                            <!--  -->
+                            
                             <div class="overlay">
                               <div class="text">
                                 <h5 class="card-title">
@@ -218,13 +215,9 @@
                       </div>
                       </template>
                     
-                    
-                    
-                  <!-- </div> -->
-                <!-- </div> -->
               </div>
 
-            </div>
+            </div> -->
             
           </div>
               <!-- <div class="pagination">
