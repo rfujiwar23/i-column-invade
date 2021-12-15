@@ -26,9 +26,9 @@
   </nav> -->
 
       <div class="select-menu">
-        <h6>メーカー一覧</h6>
+        <h6>項目一覧</h6>
         <select @change="handleMenuClick($event)">
-          <option value="Choose" disabled selected>メーカーを選択</option>
+          <option value="Choose" disabled selected>気になる項目を選択してください</option>
           <option v-for="category in categories" :key="category" :value="category" >{{ category }}</option>
         </select>
       </div>

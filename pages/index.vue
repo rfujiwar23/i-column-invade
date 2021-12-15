@@ -53,8 +53,8 @@
           </div>
           <div class="column-list col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-12">
             <div class="text-center" id="myId" ref="myId"></div>
-            <h3><span>新着一覧</span></h3>
-            <h4>New Information</h4>
+            <h3><span>記事一覧</span></h3>
+            <h4>Articles</h4>
             <div class="row">
               <div
                 class="section col-xl-4 col-lg-6 col-md-6 col-sm-6"
