@@ -79,6 +79,12 @@
                           >続きを読む →</nuxt-link
                         >
                       </p>
+
+                      <div class="card-hashtags">
+                        <ul style="list-style-type:none;">
+                          <li v-for="tag in content.tags" :key="tag.id">#{{tag.type}}</li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -107,6 +113,8 @@
                     <div class="card-body">
                       <!-- {{content}} -->
 
+
+
                       <h5 class="card-title">
                         <nuxt-link :to="`/${content.id}`">{{
                           content.title
@@ -117,10 +125,22 @@
                         
                       }}</small>
                       <h6 class="card-category">
-                        <span>#{{ content.category.name }}</span>
+                        <span>{{ content.category.name }}</span>
                       </h6>
+
+                      <div class="card-hashtags">
+                        <ul style="list-style-type:none;">
+                        <li v-for="tag in content.tags" :key="tag.id">#{{tag.type}}</li>
+                      </ul>
+                      </div>
+                      
                       <p class="card-text">{{ content.preview }}</p>
-                      <!-- <p v-html="content.body" class="text-me"></p> -->
+                      
+                      
+                      
+                      
+                   
+                     
                     </div>
                     <div class="card-footer">
                       <p>
@@ -397,24 +417,24 @@ export default {
       margin: 0 auto;
       padding: 0px 30px 20px;
 
-      ul {
-        list-style: none;
+      // ul {
+      //   list-style: none;
 
-        li {
-          padding: 20px 0;
-          border-bottom: 1px dotted #9a9a9a;
+      //   li {
+      //     padding: 20px 0;
+      //     border-bottom: 1px dotted #9a9a9a;
 
-          span {
-            border-radius: 5px;
-            border: rgb(0, 115, 207);
-          }
+      //     span {
+      //       border-radius: 5px;
+      //       border: rgb(0, 115, 207);
+      //     }
 
-          a {
-            text-decoration: none;
-            font-size: 0.9em;
-          }
-        }
-      }
+      //     a {
+      //       text-decoration: none;
+      //       font-size: 0.9em;
+      //     }
+      //   }
+      // }
     }
 
     .pagination {
@@ -505,11 +525,31 @@ export default {
 
     .card-category span {
       color: #fff;
-      background: #9a9a9a;
+      background: #b8b8b8;
       padding: 5px 10px;
       border-radius: 5px;
       font-size: 0.8em;
     }
+    h4 {
+      background:#cf1225;
+      
+      span {
+        border: 1px solid #9a9a9a;
+      }
+    }
+    .card-hashtags {
+      ul {
+        li {
+          font-size: 0.8em;
+          display: inline-block;
+          background:rgb(112,130,115);
+          margin-right: 5px;
+          padding:3px 5px;
+          color:#fff;
+        }
+      }
+    }
+
   }
   .card-footer {
     p {
@@ -696,6 +736,19 @@ export default {
         }
       }
     }
+    .card-hashtags {
+      ul {
+        li {
+          font-size: 0.6em;
+          display: inline-block;
+          background:rgb(112,130,115);
+          margin-right: 5px;
+          padding:3px 5px;
+          color:#fff;
+        }
+      }
+    }
+
   }
 
   .hide-on-mobile {

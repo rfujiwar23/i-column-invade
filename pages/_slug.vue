@@ -25,13 +25,18 @@
                       
                       <p class="publishedAt"><span><fa icon="clock" class="icon"/> 投稿：</span>{{ publishedAt.substring(0,10) }}</p>
                       <p><fa icon="folder" class="icon" /> <span class="category" v-if="category">#{{category.name}}</span></p>
+                      <ul>
+                        <li v-for="tag in tags" :key="tag.id">#{{tag.type}}</li>
+                      </ul>
                     </div>
 
                     
                     <!-- {{category}} -->
                     <div class="mt-5">
                       
-
+                      <!-- <h4>{{hash.map(type => `#${type}`).join(" ")}}</h4> -->
+                      <!-- <h2>#{{tags[0].type}}</h2> -->
+                      
                       
                       
                       <!-- <ul>{{tag.map(s => <li key=`${s}`> {name} </li>)}}</ul> -->
@@ -203,6 +208,17 @@ export default {
           color:#fff;
           background:#1f456E;
           cursor: pointer;
+        }
+      }
+      ul {
+        list-style-type: none;
+        li {
+          display: inline-block;
+          margin-right: 10px;
+          font-size: 0.9em;
+          background:#9a9a9a;
+          padding:3px 10px;
+          color:#fff;
         }
       }
       
