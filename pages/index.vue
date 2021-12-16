@@ -51,7 +51,9 @@
               />
             </div>
           </div>
-          <div class="column-list col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-12">
+          <div
+            class="column-list col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-12"
+          >
             <div class="text-center" id="myId" ref="myId"></div>
             <h3><span>記事一覧</span></h3>
             <h4>Articles</h4>
@@ -68,19 +70,24 @@
                   <div class="row">
                     <div class="col-3">
                       <img :src="`${content.image.url}`" alt="" class="img" />
-                      <p class="continue"><nuxt-link :to="`/${content.id}`"
+                      <p class="continue">
+                        <nuxt-link :to="`/${content.id}`"
                           >続きを読む →</nuxt-link
-                        ></p>
+                        >
+                      </p>
                     </div>
                     <div class="col-9">
+                      <h2>
+                        <nuxt-link :to="`/${content.id}`">{{
+                          content.title
+                        }}</nuxt-link>
+                      </h2>
 
-                      <h2><nuxt-link :to="`/${content.id}`">{{ content.title }}</nuxt-link></h2>
-                      
                       <p class="mobile-body">{{ content.preview }}</p>
-                      <p class="published-at"><fa icon="clock" class="icon"/> {{
-                        content.publishedAt.substring(0, 10)
-                        
-                      }}</p>
+                      <p class="published-at">
+                        <fa icon="clock" class="icon" />
+                        {{ content.publishedAt.substring(0, 10) }}
+                      </p>
                       <p class="link-to">
                         <span>{{ content.category.name }}</span>
                         <!-- <nuxt-link :to="`/${content.id}`"
@@ -88,17 +95,16 @@
                         > -->
                       </p>
 
-
                       <div class="card-hashtags">
                         <ul style="list-style-type:none;">
-                          <li v-for="tag in content.tags" :key="tag.id">#{{tag.type}}</li>
+                          <li v-for="tag in content.tags" :key="tag.id">
+                            #{{ tag.type }}
+                          </li>
                         </ul>
                       </div>
                     </div>
                   </div>
                 </div>
-
-                
 
                 <!-- For PC -->
                 <div class="hide-on-mobile">
@@ -122,8 +128,6 @@
                     <div class="card-body">
                       <!-- {{content}} -->
 
-
-
                       <h5 class="card-title">
                         <nuxt-link :to="`/${content.id}`">{{
                           content.title
@@ -131,7 +135,6 @@
                       </h5>
                       <small class="text-muted">{{
                         content.publishedAt.substring(0, 10)
-                        
                       }}</small>
                       <h6 class="card-category">
                         <span>{{ content.category.name }}</span>
@@ -139,17 +142,13 @@
 
                       <div class="card-hashtags">
                         <ul style="list-style-type:none;">
-                        <li v-for="tag in content.tags" :key="tag.id">#{{tag.type}}</li>
-                      </ul>
+                          <li v-for="tag in content.tags" :key="tag.id">
+                            #{{ tag.type }}
+                          </li>
+                        </ul>
                       </div>
-                      
+
                       <p class="card-text">{{ content.preview }}</p>
-                      
-                      
-                      
-                      
-                   
-                     
                     </div>
                     <div class="card-footer">
                       <p>
@@ -161,13 +160,8 @@
                   </div>
                 </div>
               </div>
-
-             
-
-              
             </div>
-            
-            
+
             <!-- <div class="box row">
               <div
                 class="col-xl-3 col-lg-3 col-md-4 col-sm-6 p-0 mx-0"
@@ -247,9 +241,8 @@
               </div>
 
             </div> -->
-            
           </div>
-              <!-- <div class="pagination">
+          <!-- <div class="pagination">
                   <ul>
                     <li v-if="previousPage != 0">
                       <nuxt-link :to="`/page/${previousPage}`">
@@ -540,8 +533,8 @@ export default {
       font-size: 0.8em;
     }
     h4 {
-      background:#cf1225;
-      
+      background: #cf1225;
+
       span {
         border: 1px solid #9a9a9a;
       }
@@ -551,14 +544,13 @@ export default {
         li {
           font-size: 0.8em;
           display: inline-block;
-          background:rgb(112,130,115);
+          background: rgb(112, 130, 115);
           margin-right: 5px;
-          padding:3px 5px;
-          color:#fff;
+          padding: 3px 5px;
+          color: #fff;
         }
       }
     }
-
   }
   .card-footer {
     p {
@@ -586,51 +578,48 @@ export default {
 }
 
 .article {
-  
-    position:relative;
-    &:hover .overlay {
-      opacity:1;
-    }
-    .overlay {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 100%;
-      width: 100%;
-      opacity: 0;
-      transition: .5s ease;
-      background-color: rgba(50,50,50,0.6);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      .text {
-        padding:10px 20px;
-        h5 {
-          a {
-            color:#fff;
-          }
-        }
-        p {
-          font-size:0.9em;
-          color:#fff;
-        }
-        small {
+  position: relative;
+  &:hover .overlay {
+    opacity: 1;
+  }
+  .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: 0.5s ease;
+    background-color: rgba(50, 50, 50, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .text {
+      padding: 10px 20px;
+      h5 {
+        a {
           color: #fff;
         }
-        .category {
-          span {
-            background:#fff;
-            color:#1f456e;
-            padding:5px 7px;
-            border:1px solid #1f456e;
-          }
+      }
+      p {
+        font-size: 0.9em;
+        color: #fff;
+      }
+      small {
+        color: #fff;
+      }
+      .category {
+        span {
+          background: #fff;
+          color: #1f456e;
+          padding: 5px 7px;
+          border: 1px solid #1f456e;
         }
       }
     }
-    
-  
+  }
 }
 
 @media screen and (max-width: 576px) {
@@ -691,13 +680,13 @@ export default {
       max-height: 100%;
     }
     .continue {
-      color:#00f;
+      color: #00f;
       font-size: 0.7em;
-      margin-top:5px;
-      background:#fff;
+      margin-top: 5px;
+      background: #fff;
       text-align: center;
-      padding:3px 5px;
-      border:1px solid #9a9a9a;
+      padding: 3px 5px;
+      border: 1px solid #9a9a9a;
     }
     h2 {
       font-size: 1.1em;
@@ -736,8 +725,8 @@ export default {
       line-height: 1.5em;
     }
     p.published-at {
-      color:#9a9a9a;
-      font-size:0.8em;
+      color: #9a9a9a;
+      font-size: 0.8em;
     }
     p.link-to {
       font-size: 0.7em;
@@ -766,22 +755,19 @@ export default {
         li {
           font-size: 0.6em;
           display: inline-block;
-          background:rgb(112,130,115);
+          background: rgb(112, 130, 115);
           margin-right: 5px;
-          padding:3px 5px;
-          color:#fff;
+          padding: 3px 5px;
+          color: #fff;
         }
       }
     }
-
   }
 
   .hide-on-mobile {
     display: none;
   }
 }
-
-
 
 @media screen and (max-width: 428px) {
   .main-contents {
