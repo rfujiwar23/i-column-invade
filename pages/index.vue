@@ -68,17 +68,26 @@
                   <div class="row">
                     <div class="col-3">
                       <img :src="`${content.image.url}`" alt="" class="img" />
+                      <p class="continue"><nuxt-link :to="`/${content.id}`"
+                          >続きを読む →</nuxt-link
+                        ></p>
                     </div>
                     <div class="col-9">
-                      <h2>{{ content.title }}</h2>
-                      <p class="mobile-body">{{ content.preview }}</p>
 
+                      <h2><nuxt-link :to="`/${content.id}`">{{ content.title }}</nuxt-link></h2>
+                      
+                      <p class="mobile-body">{{ content.preview }}</p>
+                      <p class="published-at"><fa icon="clock" class="icon"/> {{
+                        content.publishedAt.substring(0, 10)
+                        
+                      }}</p>
                       <p class="link-to">
-                        <span>#{{ content.category.name }}</span>
-                        <nuxt-link :to="`/${content.id}`"
+                        <span>{{ content.category.name }}</span>
+                        <!-- <nuxt-link :to="`/${content.id}`"
                           >続きを読む →</nuxt-link
-                        >
+                        > -->
                       </p>
+
 
                       <div class="card-hashtags">
                         <ul style="list-style-type:none;">
@@ -681,6 +690,15 @@ export default {
       max-width: 100%;
       max-height: 100%;
     }
+    .continue {
+      color:#00f;
+      font-size: 0.7em;
+      margin-top:5px;
+      background:#fff;
+      text-align: center;
+      padding:3px 5px;
+      border:1px solid #9a9a9a;
+    }
     h2 {
       font-size: 1.1em;
       text-decoration: none;
@@ -689,6 +707,9 @@ export default {
       display: -webkit-box;
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 1;
+      a {
+        color: #000;
+      }
     }
     .new {
       position: absolute;
@@ -713,6 +734,10 @@ export default {
       -webkit-line-clamp: 1;
       font-size: 0.8em;
       line-height: 1.5em;
+    }
+    p.published-at {
+      color:#9a9a9a;
+      font-size:0.8em;
     }
     p.link-to {
       font-size: 0.7em;
@@ -755,6 +780,8 @@ export default {
     display: none;
   }
 }
+
+
 
 @media screen and (max-width: 428px) {
   .main-contents {

@@ -114,6 +114,26 @@ export default {
   }
 }
 
+@media screen and (max-width:576px){
+  .categorize {
+    padding:2vh 0;
+    .select-menu {
+      width:100%;
+      max-width:350px;
+      margin:0 auto;
+      // background:red;
+      h6 {
+        text-align:center;
+        
+      }
+      select {
+        width:100%;
+        font-size:0.9em;
+      }
+    }
+  }
+}
+
 @media screen and (max-width:520px){
   .btn-group {
     width:100%;
@@ -130,13 +150,36 @@ export default {
       // background:red;
       h6 {
         text-align:center;
+        
       }
       select {
         width:100%;
+        font-size:0.9em;
       }
     }
   }
 }
+
+@media screen and (max-width:500px){
+
+  .categorize {
+    .select-menu {
+      width:100%;
+      max-width:320px;
+      margin:0 auto;
+      // background:red;
+      h6 {
+        text-align:center;
+        
+      }
+      select {
+        width:100%;
+        font-size:0.9em;
+      }
+    }
+  }
+}
+
 
 </style>
 
