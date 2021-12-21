@@ -110,6 +110,8 @@
                 <div class="hide-on-mobile">
                   <!-- {{ content }} -->
                   <div class="card">
+                    
+                    
                     <div
                       class="new"
                       v-if="filteredContent[0].id === content.id"
@@ -124,9 +126,17 @@
                           class="img-fluid"
                         />
                       </nuxt-link>
+                      <div class="for-professionals"
+                         v-if="content.audience === true"
+                      >
+                          
+                            美容師向け
+                          
+                      </div>
                     </div>
-                    <div class="card-body">
-                      <!-- {{content}} -->
+                    <div class="card-body" v-bind:class="{ 'for-pro' : content.audience === true}">
+                      
+                      
 
                       <h5 class="card-title">
                         <nuxt-link :to="`/${content.id}`">{{
@@ -149,6 +159,7 @@
                       </div>
 
                       <p class="card-text">{{ content.preview }}</p>
+                      
                     </div>
                     <div class="card-footer">
                       <p>
@@ -458,6 +469,7 @@ export default {
 .card {
   margin-bottom: 3vh;
   position: relative;
+  
   .new {
     position: absolute;
     top: 0;
@@ -477,15 +489,25 @@ export default {
     aspect-ratio: 16/9;
     height: 40vh;
     max-height: 250px;
-
+    position:relative;
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
+    .for-professionals {
+      position: absolute;
+      bottom:0;
+      right:0;
+      padding:3px 5px;
+      color:#fff;
+      background:#708273;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+    }
   }
 
   .card-body {
+    position: relative;
     .card-title {
       text-decoration: none;
       overflow: hidden;
@@ -551,6 +573,7 @@ export default {
         }
       }
     }
+    
   }
   .card-footer {
     p {
@@ -575,6 +598,10 @@ export default {
       }
     }
   }
+}
+
+.for-pro {
+  background:#fbf0cf;
 }
 
 .article {
