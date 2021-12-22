@@ -59,7 +59,7 @@
             <h4>Articles</h4>
             <div class="row">
               <div
-                class="section col-xl-4 col-lg-6 col-md-6 col-sm-6"
+                class="section col-xl-4 col-lg-6 col-md-6 col-sm-6 "
                 v-for="content in filteredContent"
                 :key="content.id"
               >
@@ -110,46 +110,25 @@
                 <div class="hide-on-mobile">
                   <!-- {{ content }} -->
                   <div class="card">
-                    
-                    
-                    <div
-                      class="new"
-                      v-if="filteredContent[0].id === content.id"
-                    >
+                    <div class="new" v-if="filteredContent[0].id === content.id">
                       <p>新着</p>
                     </div>
                     <div class="card-image">
                       <nuxt-link :to="`/${content.id}`">
-                        <img
-                          :src="`${content.image.url}`"
-                          alt=""
-                          class="img-fluid"
-                        />
+                        <img :src="`${content.image.url}`" :alt="content.category.name" class="img-fluid"/>
                       </nuxt-link>
-                      <div class="for-professionals"
-                         v-if="content.audience === true"
-                      >
-                          
-                            美容師向け
-                          
+                      <div class="for-professionals" v-if="content.audience === true">
+                        美容師向け  
                       </div>
                     </div>
                     <div class="card-body" v-bind:class="{ 'for-pro' : content.audience === true}">
-                      
-                      
-
                       <h5 class="card-title">
-                        <nuxt-link :to="`/${content.id}`">{{
-                          content.title
-                        }}</nuxt-link>
+                        <nuxt-link :to="`/${content.id}`">{{content.title}}</nuxt-link>
                       </h5>
-                      <small class="text-muted">{{
-                        content.publishedAt.substring(0, 10)
-                      }}</small>
+                      <small class="text-muted">{{content.publishedAt.substring(0, 10)}}</small>
                       <h6 class="card-category">
                         <span>{{ content.category.name }}</span>
                       </h6>
-
                       <div class="card-hashtags">
                         <ul style="list-style-type:none;">
                           <li v-for="tag in content.tags" :key="tag.id">
@@ -157,101 +136,17 @@
                           </li>
                         </ul>
                       </div>
-
                       <p class="card-text">{{ content.preview }}</p>
-                      
                     </div>
                     <div class="card-footer">
-                      <p>
-                        <nuxt-link :to="`/${content.id}`"
-                          >続きを読む →</nuxt-link
-                        >
-                      </p>
+                      <p><nuxt-link :to="`/${content.id}`">続きを読む →</nuxt-link></p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- <div class="box row">
-              <div
-                class="col-xl-3 col-lg-3 col-md-4 col-sm-6 p-0 mx-0"
-                v-for="content in filteredContent"
-                
-                :key="content.id"
-              >
-              
-               
-                      <template v-if="content.audience === true">
-                        <div class="pro-or-not">
-                        <div class="article">
-                            
-                              <img
-                                :src="`${content.image.url}`"
-                                alt=""
-                                class="img-fluid"
-                              />
-                            
-                            <div class="overlay">
-                              <div class="text">
-                                <h5 class="card-title">
-                                <nuxt-link :to="`/${content.id}`">{{ content.title }}</nuxt-link>
-                                </h5>
-                                <p><span>{{content.publishedAt.substring(0, 10)}}</span></p>
-                                <h6 class="category">
-                                  <span>#{{ content.category.name }}</span>
-                                </h6>
-                                <p class="card-text">{{ content.preview }}</p>
-                                <nuxt-link :to="`/${content.id}`">記事を読む</nuxt-link>
-                              </div>
-                            </div>
-                        </div>
-                      </div>
-                      </template>
-                    
-                    
-                    
-                
-              </div>
-
-            </div> -->
-            <!-- <div class="box row">
-              <div
-                class="col-xl-3 col-lg-3 col-md-4 col-sm-6 p-0 mx-0"
-                v-for="content in filteredContent"
-                :key="content.id"
-              >
-
-                      <template v-if="content.audience === false">
-                        <div class="pro-or-not">
-                        <div class="article">
-                            
-                              <img
-                                :src="`${content.image.url}`"
-                                alt=""
-                                class="img-fluid"
-                              />
-                            
-                            <div class="overlay">
-                              <div class="text">
-                                <h5 class="card-title">
-                                <nuxt-link :to="`/${content.id}`">{{ content.title }}</nuxt-link>
-                                </h5>
-                                <p><span>{{content.publishedAt.substring(0, 10)}}</span></p>
-                                <h6 class="category">
-                                  <span>#{{ content.category.name }}</span>
-                                </h6>
-                                <p class="card-text">{{ content.preview }}</p>
-                                <nuxt-link :to="`/${content.id}`">記事を読む</nuxt-link>
-                              </div>
-                            </div>
-                        </div>
-                      </div>
-                      </template>
-                    
-              </div>
-
-            </div> -->
+            
           </div>
           <!-- <div class="pagination">
                   <ul>
@@ -466,9 +361,17 @@ export default {
   }
 }
 
+.row-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .card {
   margin-bottom: 3vh;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  
   
   .new {
     position: absolute;
@@ -508,6 +411,8 @@ export default {
 
   .card-body {
     position: relative;
+    flex:1;
+    // height:100%;
     .card-title {
       text-decoration: none;
       overflow: hidden;
@@ -562,10 +467,17 @@ export default {
       }
     }
     .card-hashtags {
+      // min-height:40px;
+      // height:100%;
+      height:60px;
+      
       ul {
+        //  display: flex;
+        
         li {
           font-size: 0.8em;
           display: inline-block;
+         
           background: rgb(112, 130, 115);
           margin-right: 5px;
           padding: 3px 5px;
