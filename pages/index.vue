@@ -51,19 +51,52 @@
               />
             </div>
           </div>
-          <div
-            class="column-list col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-12"
-          >
+          <div class="column-list col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-12">
             <div class="text-center" id="myId" ref="myId"></div>
             <h3><span>記事一覧</span></h3>
             <h4>Articles</h4>
             <div class="row">
               <div
-                class="section col-xl-4 col-lg-6 col-md-6 col-sm-6 "
+                class="section col-xl-4 col-lg-6 col-md-6 col-sm-6 col-6"
                 v-for="content in filteredContent"
                 :key="content.id"
               >
-                <div class="for-mobile">
+
+              <div class="imaged-divs p-0">
+                  <div class="bottom">
+                    <div class="maker">
+                      <!-- <ul style="list-style-type:none;">
+                          <li v-for="tag in content.tags" :key="tag.id">
+                            <span>#{{ tag.type }}</span>
+                          </li>
+                        </ul> -->
+                      <p><span>{{content.category.name}}</span></p>
+                      <ul style="list-style-type:none;">
+                          <li v-for="tag in content.tags" :key="tag.id">
+                            <span>#{{ tag.type }}</span>
+                          </li>
+                        </ul>
+                      </div>
+                    
+                  </div>
+                <nuxt-link :to="`/${content.id}`">
+                  
+                  <div class="title-top">
+                    <p>{{content.title}}</p>
+                    <!-- {{ new Date() }} -->
+                    <p class="date"><fa icon="clock" class="icon"/> {{ content.publishedAt.substring(0, 10) }}</p>
+                    
+                    
+                    <h6 class="text-center for-prof" v-if="content.audience === true"><span>For Professionals</span></h6> 
+                    
+                  </div>
+                  <div class="overlay"></div>  
+                  <img :src="`${content.image.url}`" :alt="content.category.name" class="fit-in-div"/>
+                </nuxt-link>    
+              </div>
+
+
+                <!-- <div class="for-mobile">
                   <div class="new" v-if="filteredContent[0].id === content.id">
                     <p>新着</p>
                   </div>
@@ -90,9 +123,6 @@
                       </p>
                       <p class="link-to">
                         <span>{{ content.category.name }}</span>
-                        <!-- <nuxt-link :to="`/${content.id}`"
-                          >続きを読む →</nuxt-link
-                        > -->
                       </p>
 
                       <div class="card-hashtags">
@@ -104,7 +134,7 @@
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> -->
 
                 <!-- For PC -->
                 <div class="hide-on-mobile">
@@ -118,7 +148,7 @@
                         <img :src="`${content.image.url}`" :alt="content.category.name" class="img-fluid"/>
                       </nuxt-link>
                       <div class="for-professionals" v-if="content.audience === true">
-                        美容師向け  
+                        For Professionals  
                       </div>
                     </div>
                     <div class="card-body" v-bind:class="{ 'for-pro' : content.audience === true}">
@@ -268,6 +298,10 @@ export default {
 
 .for-mobile {
   display: none;
+}
+
+.imaged-divs {
+  display:none;
 }
 
 .main-contents {
@@ -601,6 +635,114 @@ export default {
 
   .footer {
     margin-top: auto;
+  }
+
+  .main-area {
+    .new-information {
+      .column-list {
+        // padding:0;
+        .section {
+          margin:0;
+          padding:0;
+          .imaged-divs {
+            display: block;
+            position: relative;
+            .overlay {
+               height:100%;
+                background:rgba(20,20,20,0.1);
+                // z-index:899;
+                position:absolute;
+                top:0;
+                bottom:0;
+                left:0;
+                right:0;
+                &:hover {
+                    background:rgba(20,20,20,0.5);
+                    
+                }
+            }
+            .fit-in-div {
+                width:100%;
+                height:100%;
+                z-index: -1;
+            }
+            
+            .title-top {
+              position:absolute;
+              top:0;
+              background-color: rgba(112,130,115,0.8);
+              width: 100%;
+              z-index: 999;
+              p {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                font-size:0.8em;
+                // padding:5px 10px;
+                color: #fff;
+                margin:0;
+                margin-left:5px;
+              }
+              p.date {
+                text-align: right;
+                font-size:0.66em;
+                margin-top:5px;
+                margin-right: 5px;
+              }
+              // text-align: center;
+              .for-prof {
+                position:absolute;
+                // bottom:-20%;
+                left:0%;
+                color:white;
+                font-style: italic;
+                font-size:0.7em;
+                padding:3px 5px;
+                z-index: 999;
+                background:rgba(241, 56, 44, 0.6);
+              }
+            }
+            
+            .bottom {
+              position:absolute;
+              bottom:0%;
+              right:0%;
+              left:0%;
+              z-index: 999;
+              
+              .maker {
+                font-size:0.7em;
+                
+                text-align: right;
+                ul {
+                  margin:0;
+                  background:rgba(0,0,0,0.8);
+                  li {
+                    line-height:1.5em;
+                    // padding:3px 0;
+                    display:inline-block;
+                    margin-right:10px;
+                    color:#fff;
+                    font-size:0.7em;
+                  }
+                }
+              
+                p {
+                  margin-bottom:0;
+                  background:rgba(0,0,0,0.8);
+                  span {
+                    // margin-right: 5px;
+                    
+                    color:#fff;
+                    padding:5px 10px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 
   .for-mobile {

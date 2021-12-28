@@ -16,7 +16,7 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'プロならではの目線で美容室のシャンプー、トリートメントだけでなく、さらにカラー剤やパーマ剤など厳選した情報をお届けします！数多くある美容室のシャンプー、トリートメントの選び方に悩んでいるあなたへ、豊富な種類のヘアケアからあなたに合うヘアケアを探せます！' },
-      { hid: 'keywords', name: 'keywords', content: '美容, 美容コラムサイト, IFING BEAUTY, TOKIO インカラミ, TOKIO INKARAMI, アイコラム, 口コミ, 美容室専売品, サロン, シャンプー, OWAY, KEVIN.MURPHY, トリートメント' },
+      { hid: 'keywords', name: 'keywords', content: '美容, 美容コラムサイト, IFING BEAUTY, TOKIO インカラミ, TOKIO INKARAMI, OWAY, KEVIN.MURPHY, アイコラム, 口コミ, 美容室専売品, サロン, シャンプー, トリートメント' },
       { name: 'format-detection', content: 'telephone=no'},
       { hid: 'og:site_name', property: 'og:site_name', content: 'i-Column' },
       { hid: 'og:type', property: 'og:type', content: 'コラムサイト' },
