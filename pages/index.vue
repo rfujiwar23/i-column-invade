@@ -868,7 +868,7 @@ export default {
   .main-area {
     .new-information {
       .column-list {
-        padding:0;
+        padding:0px 20px 20px;
         .section {
           .imaged-divs {
             .bottom {
