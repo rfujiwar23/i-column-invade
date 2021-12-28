@@ -865,6 +865,35 @@ export default {
       }
     }
   }
+  .main-area {
+    .new-information {
+      .column-list {
+        .section {
+          .imaged-divs {
+            .bottom {
+              .maker {
+                font-size:0.6em;
+                
+                text-align: right;
+                ul {
+                  margin:0;
+                  background:rgba(0,0,0,0.8);
+                  li {
+                    line-height:1.5em;
+                    // padding:3px 0;
+                    display:inline-block;
+                    margin-right:10px;
+                    color:#fff;
+                    font-size:0.6em;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 379px) {
