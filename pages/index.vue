@@ -868,6 +868,7 @@ export default {
   .main-area {
     .new-information {
       .column-list {
+        padding:0;
         .section {
           .imaged-divs {
             .bottom {
@@ -884,7 +885,7 @@ export default {
                     display:inline-block;
                     margin-right:10px;
                     color:#fff;
-                    font-size:0.6em;
+                    font-size:0.7em;
                   }
                 }
               }
