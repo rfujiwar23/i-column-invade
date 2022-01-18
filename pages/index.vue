@@ -883,7 +883,7 @@ export default {
                     line-height:1.5em;
                     // padding:3px 0;
                     display:inline-block;
-                    margin-right:5px;
+                    margin-right:5  px;
                     color:#fff;
                     font-size:0.7em;
                   }
