@@ -8,7 +8,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: '美容室のシャンプー、トリートメント・スタイリング剤選びならi-Column | 髪を綺麗にするための美容メディア',
+    title: '美容室のシャンプー、トリートメント・スタイリング剤選びならi-Column (アイコラム) | 髪を綺麗にするための美容メディア',
     htmlAttrs: {
       lang: 'ja'
     },
@@ -16,7 +16,7 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'プロならではの目線で美容室のシャンプー、トリートメントだけでなく、さらにカラー剤やパーマ剤など厳選した情報をお届けします！数多くある美容室のシャンプー、トリートメントの選び方に悩んでいるあなたへ、豊富な種類のヘアケアからあなたに合うヘアケアを探せます！' },
-      { hid: 'keywords', name: 'keywords', content: 'アイコラム, 美容, 美容コラムサイト, IFING BEAUTY, TOKIO インカラミ, TOKIO INKARAMI, OWAY, KEVIN.MURPHY, 口コミ, 美容室専売品, サロン, シャンプー, トリートメント' },
+      { hid: 'keywords', name: 'keywords', content: 'アイコラム, 美容, 美容コラムサイト, IFING BEAUTY, TOKIO インカラミ, TOKIO INKARAMI, ASIA インピタリ, ASIA INPITARI, OWAY, KEVIN.MURPHY, 口コミ, 美容室専売品, サロン, シャンプー, トリートメント' },
       { name: 'format-detection', content: 'telephone=no'},
       { hid: 'og:site_name', property: 'og:site_name', content: 'i-Column' },
       { hid: 'og:type', property: 'og:type', content: 'コラムサイト' },
