@@ -42,7 +42,8 @@
                       <!-- <ul>{{tag.map(s => <li key=`${s}`> {name} </li>)}}</ul> -->
                                         
 
-                      <h6 class="p-2">{{ preview }}</h6>
+                      <!-- <h6 class="p-2">{{ preview }}</h6> -->
+                       <h6 class="p-2" v-html="preview"></h6>
                       
                       <hr>
                       <div class="post" v-html="body"></div>
