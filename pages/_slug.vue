@@ -10,7 +10,7 @@
       <!-- <Banner /> -->
       <div class="title-area mb-0">  
             <SocialMedia />
-            <h1>IFING BEAUTYのコラムページ</h1>
+            <h2> 美容室のシャンプー、トリートメント・スタイリング剤選びならi-Column<br />髪を綺麗にするための美容メディア</h2>
       </div>
       
     </div>
@@ -128,7 +128,7 @@ export default {
     top:0;
     left:0;
     right:0;
-    h1 {
+    h2 {
       margin: 20px 10px;
       font-family: "ヒラギノ明朝 ProN W6", "HiraMinProN-W6", "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
       font-size:2em;
