@@ -10,7 +10,7 @@
       <!-- <Banner /> -->
       <div class="title-area mb-0">  
             <SocialMedia />
-            <h2> 美容室のシャンプー、トリートメント・スタイリング剤選びならi-Column<br />髪を綺麗にするための美容メディア</h2>
+            <h2> 美容室のシャンプー、<br>トリートメント・スタイリング剤選びなら<br>i-Column<br />髪を綺麗にするための美容メディア</h2>
       </div>
       
     </div>
@@ -128,6 +128,7 @@ export default {
     top:0;
     left:0;
     right:0;
+    text-align: center;
     h2 {
       margin: 20px 10px;
       font-family: "ヒラギノ明朝 ProN W6", "HiraMinProN-W6", "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
@@ -297,7 +298,7 @@ export default {
   .index-top {
     aspect-ratio:2/1;
     .title-area {
-      h1 {
+      h2 {
         font-size:1.5em;
         text-align:center;
       }
@@ -310,7 +311,7 @@ export default {
     // background: white;
     aspect-ratio: 5/3;
     .title-area {
-      h1 {
+      h2 {
         margin: 20px 10px;
         font-size:1.25em;
         text-align: center;
