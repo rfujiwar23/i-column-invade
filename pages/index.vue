@@ -77,22 +77,22 @@
                           </li>
                         </ul>
                       </div>
-                    
+
                   </div>
                 <nuxt-link :to="`/${content.id}`">
-                  
+
                   <div class="title-top">
                     <p>{{content.title}}</p>
                     <!-- {{ new Date() }} -->
                     <p class="date"><fa icon="clock" class="icon"/> {{ content.publishedAt.substring(0, 10) }}</p>
-                    
-                    
-                    <h6 class="text-center for-prof" v-if="content.audience === true"><span>For Professionals</span></h6> 
-                    
+
+
+                    <h6 class="text-center for-prof" v-if="content.audience === true"><span>For Professionals</span></h6>
+
                   </div>
-                  <div class="overlay"></div>  
+                  <div class="overlay"></div>
                   <img :src="`${content.image.url}`" :alt="content.category.name" class="fit-in-div"/>
-                </nuxt-link>    
+                </nuxt-link>
               </div>
 
 
@@ -148,7 +148,7 @@
                         <img :src="`${content.image.url}`" :alt="content.category.name" class="img-fluid"/>
                       </nuxt-link>
                       <div class="for-professionals" v-if="content.audience === true">
-                        For Professionals  
+                        For Professionals
                       </div>
                     </div>
                     <div class="card-body" v-bind:class="{ 'for-pro' : content.audience === true}">
@@ -176,7 +176,7 @@
               </div>
             </div>
 
-            
+
           </div>
           <!-- <div class="pagination">
                   <ul>
@@ -405,8 +405,8 @@ export default {
   position: relative;
   display: flex;
   flex-direction: column;
-  
-  
+
+
   .new {
     position: absolute;
     top: 0;
@@ -504,14 +504,14 @@ export default {
       // min-height:40px;
       // height:100%;
       height:60px;
-      
+
       ul {
         //  display: flex;
-        
+
         li {
           font-size: 0.8em;
           display: inline-block;
-         
+
           background: rgb(112, 130, 115);
           margin-right: 5px;
           padding: 3px 5px;
@@ -519,7 +519,7 @@ export default {
         }
       }
     }
-    
+
   }
   .card-footer {
     p {
@@ -658,7 +658,7 @@ export default {
                 right:0;
                 &:hover {
                     background:rgba(20,20,20,0.5);
-                    
+
                 }
             }
             .fit-in-div {
@@ -666,7 +666,7 @@ export default {
                 height:100%;
                 z-index: -1;
             }
-            
+
             .title-top {
               position:absolute;
               top:0;
@@ -702,17 +702,17 @@ export default {
                 background:rgba(241, 56, 44, 0.6);
               }
             }
-            
+
             .bottom {
               position:absolute;
               bottom:0%;
               right:0%;
               left:0%;
               z-index: 999;
-              
+
               .maker {
                 font-size:0.7em;
-                
+
                 text-align: right;
                 ul {
                   margin:0;
@@ -726,13 +726,13 @@ export default {
                     font-size:0.7em;
                   }
                 }
-              
+
                 p {
                   margin-bottom:0;
                   background:rgba(0,0,0,0.8);
                   span {
                     // margin-right: 5px;
-                    
+
                     color:#fff;
                     padding:5px 10px;
                   }
@@ -874,7 +874,7 @@ export default {
             .bottom {
               .maker {
                 font-size:0.6em;
-                
+
                 text-align: right;
                 ul {
                   margin:0;
