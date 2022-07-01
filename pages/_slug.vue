@@ -50,12 +50,14 @@
                       
                     </div>
                     
-                    <div class="image col-lg-6 offset-lg-3 my-5 p-0">
-                      <img :src="`${image.url}`" alt="" class="img-fluid">
-                    </div>
+                    
                     
                     <div class="show-btn">
                       <a v-bind:href="link" target="_blank" class="btn go-to-ecsite">もっと詳しく見る</a>
+                    </div>
+
+                    <div class="image col-lg-6 offset-lg-3 my-5 p-0">
+                      <img :src="`${image.url}`" alt="" class="img-fluid">
                     </div>
                     <!-- <div class="show-btn" v-if="site.includes('FOFO')">
                       <a href="http://www.intense-z.com/product-proposal/fofo/" class="btn go-to-ecsite">購入ページはこちら</a>
