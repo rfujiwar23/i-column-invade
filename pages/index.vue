@@ -64,11 +64,7 @@
                 <div class="imaged-divs p-0">
                   <div class="bottom">
                     <div class="maker">
-                      <!-- <ul style="list-style-type:none;">
-                          <li v-for="tag in content.tags" :key="tag.id">
-                            <span>#{{ tag.type }}</span>
-                          </li>
-                        </ul> -->
+                     
                       <p>
                         <span>{{ content.category.name }}</span>
                       </p>
@@ -82,7 +78,7 @@
                   <nuxt-link :to="`/${content.id}`">
                     <div class="title-top">
                       <p>{{ content.title }}</p>
-                      <!-- {{ new Date() }} -->
+                      
                       <p class="date">
                         <fa icon="clock" class="icon" />
                         {{ content.publishedAt.substring(0, 10) }}
@@ -121,7 +117,7 @@
                   <div class="card">
                      <!-- <p v-if="content.createdAt == '2022-07-01T04:11:45.598Z'">YES</p> -->
                     <div class="card-status">
-                      <p class="new" v-if="diffDate(content.publishedAt, new Date()) < 7">新規</p>
+                      <p class="new" v-if="diffDate(content.publishedAt, new Date()) < 7">NEW</p>
                       <!-- <p class="week" v-else-if="diffDate(content.publishedAt, new Date()) > 7 && diffDate(content.publishedAt, new Date()) < 31">1週間以上</p>
                       <p class="month" v-else>1ヶ月以上</p> -->
                     </div>
@@ -647,7 +643,7 @@ export default {
     }
   }
 
-  /* .card {
+  .card {
     position:relative;
     .card-status {
       top:0;
@@ -661,6 +657,7 @@ export default {
       }
     }
     .card-body {
+      
       position:absolute;
       top:0;
       bottom:0;
@@ -671,11 +668,11 @@ export default {
       align-items: center;
       justify-content: center;
       .body-contents {
-        background:rgba(255,255,255,0.8);
+        background:rgba(255,255,255,0.9);
         width:100%;
         padding:10px;
         h5 {
-          font-size: 1em;
+          font-size: 0.8em;
         }
       }
       .card-hashtags {
@@ -690,7 +687,7 @@ export default {
     .card-footer {
       display: none;
     }
-  } */
+  }
   /* .card {
     position:relative;
     .card-image {
