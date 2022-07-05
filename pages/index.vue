@@ -42,16 +42,16 @@
         <div class="new-information box-2">
           <!-- <InfoSection /> -->
           <div class="bg-light">
-            <div
-              class="col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-12 mb-3 py-4"
-            >
+            <div class="col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-12 mb-3 py-4">
               <Categorize
                 @categorySelected="onCategorySelected"
                 :categories="categories"
               />
             </div>
           </div>
-          <div class="column-list col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-12">
+          <div
+            class="column-list col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-12"
+          >
             <div class="text-center" id="myId" ref="myId"></div>
             <h3><span>記事一覧</span></h3>
             <h4>Articles</h4>
@@ -61,8 +61,7 @@
                 v-for="content in filteredContent"
                 :key="content.id"
               >
-
-              <div class="imaged-divs p-0">
+                <div class="imaged-divs p-0">
                   <div class="bottom">
                     <div class="maker">
                       <!-- <ul style="list-style-type:none;">
@@ -70,113 +69,116 @@
                             <span>#{{ tag.type }}</span>
                           </li>
                         </ul> -->
-                      <p><span>{{content.category.name}}</span></p>
+                      <p>
+                        <span>{{ content.category.name }}</span>
+                      </p>
                       <ul style="list-style-type:none;">
+                        <li v-for="tag in content.tags" :key="tag.id">
+                          <span>#{{ tag.type }}</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <nuxt-link :to="`/${content.id}`">
+                    <div class="title-top">
+                      <p>{{ content.title }}</p>
+                      <!-- {{ new Date() }} -->
+                      <p class="date">
+                        <fa icon="clock" class="icon" />
+                        {{ content.publishedAt.substring(0, 10) }}
+                      </p>
+
+                      <h6
+                        class="text-center for-prof"
+                        v-if="content.audience === true"
+                      >
+                        <span>For Professionals</span>
+                      </h6>
+                      <p class="new-article" v-if="diffDate(content.publishedAt, new Date()) < 7">NEW</p>
+                    </div>
+                    <div class="overlay"></div>
+                    <img
+                      :src="`${content.image.url}`"
+                      :alt="content.category.name"
+                      class="fit-in-div"
+                    />
+                  </nuxt-link>
+                </div>
+
+               
+
+                <!-- For PC -->
+                <!-- {{content.createdAt}} -->
+                <div class="hide-on-mobile">
+                  <!-- {{articleDate(content.publishedAt)}}
+                   
+                   <p>{{curDate()}}</p> -->
+                   
+
+                   <!-- <p>{{testMoment()}}</p> -->
+                   <!-- Get difference the above two dates, if less than a week, show NEW (class = new) -->
+                  
+                  <div class="card">
+                     <!-- <p v-if="content.createdAt == '2022-07-01T04:11:45.598Z'">YES</p> -->
+                    <div class="card-status">
+                      <p class="new" v-if="diffDate(content.publishedAt, new Date()) < 7">新規</p>
+                      <!-- <p class="week" v-else-if="diffDate(content.publishedAt, new Date()) > 7 && diffDate(content.publishedAt, new Date()) < 31">1週間以上</p>
+                      <p class="month" v-else>1ヶ月以上</p> -->
+                    </div>
+                    
+                    <div class="card-image">
+                      <nuxt-link :to="`/${content.id}`">
+                        <img
+                          :src="`${content.image.url}`"
+                          :alt="content.category.name"
+                          class="img-fluid"
+                        />
+                      </nuxt-link>
+                      <div
+                        class="for-professionals"
+                        v-if="content.audience === true"
+                      >
+                        For Professionals
+                      </div>
+                    </div>
+                    <div
+                      class="card-body"
+                      v-bind:class="{ 'for-pro': content.audience === true }"
+                    >
+                      <div class="body-contents">
+                        <h5 class="card-title">
+                        <nuxt-link :to="`/${content.id}`">{{
+                          content.title
+                        }}</nuxt-link>
+                      </h5>
+                      <small class="text-muted"><fa icon="clock" class="icon" /> {{
+                        content.publishedAt.substring(0, 10)
+                      }}</small>
+                      <h6 class="card-category">
+                        <span>{{ content.category.name }}</span>
+                      </h6>
+                      <p class="card-text">{{ content.preview }}</p>
+                      <div class="card-hashtags">
+                        <ul style="list-style-type:none;">
                           <li v-for="tag in content.tags" :key="tag.id">
-                            <span>#{{ tag.type }}</span>
+                            #{{ tag.type }}
                           </li>
                         </ul>
                       </div>
-
-                  </div>
-                <nuxt-link :to="`/${content.id}`">
-
-                  <div class="title-top">
-                    <p>{{content.title}}</p>
-                    <!-- {{ new Date() }} -->
-                    <p class="date"><fa icon="clock" class="icon"/> {{ content.publishedAt.substring(0, 10) }}</p>
-
-
-                    <h6 class="text-center for-prof" v-if="content.audience === true"><span>For Professionals</span></h6>
-
-                  </div>
-                  <div class="overlay"></div>
-                  <img :src="`${content.image.url}`" :alt="content.category.name" class="fit-in-div"/>
-                </nuxt-link>
-              </div>
-
-
-                <!-- <div class="for-mobile">
-                  <div class="new" v-if="filteredContent[0].id === content.id">
-                    <p>新着</p>
-                  </div>
-                  <div class="row">
-                    <div class="col-3">
-                      <img :src="`${content.image.url}`" alt="" class="img" />
-                      <p class="continue">
+                      </div>
+                      
+                    </div>
+                    <div class="card-footer">
+                      <p>
                         <nuxt-link :to="`/${content.id}`"
                           >続きを読む →</nuxt-link
                         >
                       </p>
                     </div>
-                    <div class="col-9">
-                      <h2>
-                        <nuxt-link :to="`/${content.id}`">{{
-                          content.title
-                        }}</nuxt-link>
-                      </h2>
-
-                      <p class="mobile-body">{{ content.preview }}</p>
-                      <p class="published-at">
-                        <fa icon="clock" class="icon" />
-                        {{ content.publishedAt.substring(0, 10) }}
-                      </p>
-                      <p class="link-to">
-                        <span>{{ content.category.name }}</span>
-                      </p>
-
-                      <div class="card-hashtags">
-                        <ul style="list-style-type:none;">
-                          <li v-for="tag in content.tags" :key="tag.id">
-                            #{{ tag.type }}
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div> -->
-
-                <!-- For PC -->
-                <div class="hide-on-mobile">
-                  <!-- {{ content }} -->
-                  <div class="card">
-                    <div class="new" v-if="filteredContent[0].id === content.id">
-                      <p>新着</p>
-                    </div>
-                    <div class="card-image">
-                      <nuxt-link :to="`/${content.id}`">
-                        <img :src="`${content.image.url}`" :alt="content.category.name" class="img-fluid"/>
-                      </nuxt-link>
-                      <div class="for-professionals" v-if="content.audience === true">
-                        For Professionals
-                      </div>
-                    </div>
-                    <div class="card-body" v-bind:class="{ 'for-pro' : content.audience === true}">
-                      <h5 class="card-title">
-                        <nuxt-link :to="`/${content.id}`">{{content.title}}</nuxt-link>
-                      </h5>
-                      <small class="text-muted">{{content.publishedAt.substring(0, 10)}}</small>
-                      <h6 class="card-category">
-                        <span>{{ content.category.name }}</span>
-                      </h6>
-                      <div class="card-hashtags">
-                        <ul style="list-style-type:none;">
-                          <li v-for="tag in content.tags" :key="tag.id">
-                            #{{ tag.type }}
-                          </li>
-                        </ul>
-                      </div>
-                      <p class="card-text">{{ content.preview }}</p>
-                    </div>
-                    <div class="card-footer">
-                      <p><nuxt-link :to="`/${content.id}`">続きを読む →</nuxt-link></p>
-                    </div>
                   </div>
                 </div>
               </div>
             </div>
-
-
           </div>
           <!-- <div class="pagination">
                   <ul>
@@ -216,11 +218,15 @@ import Banner from "@/components/Banner";
 import Categorize from "@/components/Categorize";
 
 import axios from "axios";
+import moment from 'moment';
+
+
+
 export default {
   async asyncData({ params }) {
     const page = Number(params.p || "1");
     const categoryId = params.categoryId;
-    const limit = 100;
+    const limit = 140;
     const max = 70;
     const {
       data
@@ -263,6 +269,24 @@ export default {
     };
   },
   methods: {
+    curDate() {
+      return moment().format('MMM DD, yyyy HH:mm:ss');
+    },
+    diffDate(oldDate, newDate) {
+      let oldDateMoment = moment(oldDate);
+      let newDateMoment = moment(newDate);
+
+      let diff = newDateMoment.diff(oldDateMoment, "days");
+      return diff;
+    },
+    articleDate(val) {
+      if (val) {
+        return moment(val).format('MMM DD, yyyy HH:mm:ss');
+      }
+
+      return '';
+      
+    },
     onCategorySelected(category) {
       console.log("category", category);
       // const filtered = this.contents.filter((content) => content.category.id === category)
@@ -281,6 +305,7 @@ export default {
   },
   mounted() {
     this.filteredContent = this.contents;
+
   }
 };
 </script>
@@ -301,7 +326,7 @@ export default {
 }
 
 .imaged-divs {
-  display:none;
+  display: none;
 }
 
 .main-contents {
@@ -406,27 +431,40 @@ export default {
   display: flex;
   flex-direction: column;
 
-
-  .new {
+  .card-status {
     position: absolute;
     top: 0;
-    left: -3%;
-    background: #cf1225;
-    box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.6);
-    padding: 3px 10px;
-    transform: rotate(-20deg);
+    left: 0;
+    
+    
+    
     z-index: 999;
     p {
       font-weight: bold;
       color: #fff;
       margin-bottom: 0;
+      padding: 3px 10px;
+    }
+    .new {
+      
+      background: rgb(207, 18, 37);
+      transform: rotate(-20deg);
+      box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.6);
+    }
+    .week {
+      background:rgb(14, 137, 178);
+      box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.6);
+    }
+    .month {
+      background:rgb(5, 170, 82);
+      box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.6);
     }
   }
   .card-image {
     aspect-ratio: 16/9;
     height: 40vh;
     max-height: 250px;
-    position:relative;
+    position: relative;
     img {
       width: 100%;
       height: 100%;
@@ -434,18 +472,18 @@ export default {
     }
     .for-professionals {
       position: absolute;
-      bottom:0;
-      right:0;
-      padding:3px 5px;
-      color:#fff;
-      background:#708273;
+      bottom: 0;
+      right: 0;
+      padding: 3px 5px;
+      color: #fff;
+      background: #708273;
       text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
     }
   }
 
   .card-body {
     position: relative;
-    flex:1;
+    flex: 1;
     // height:100%;
     .card-title {
       text-decoration: none;
@@ -503,7 +541,7 @@ export default {
     .card-hashtags {
       // min-height:40px;
       // height:100%;
-      height:60px;
+      height: 60px;
 
       ul {
         //  display: flex;
@@ -519,7 +557,6 @@ export default {
         }
       }
     }
-
   }
   .card-footer {
     p {
@@ -547,7 +584,7 @@ export default {
 }
 
 .for-pro {
-  background:#fbf0cf;
+  background: #fbf0cf;
 }
 
 .article {
@@ -594,6 +631,91 @@ export default {
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  body, html {
+    overflow-x: hidden;
+  }
+  .main-area {
+    .new-information {
+      .column-list {
+        /* padding:0; */
+        .row {
+          /* padding:0; */
+        }
+      }
+    }
+  }
+
+  /* .card {
+    position:relative;
+    .card-status {
+      top:0;
+    }
+    .card-image {
+      height:100%;
+      max-height:none;
+      aspect-ratio: 1;
+      .for-professionals {
+        z-index: 999;
+      }
+    }
+    .card-body {
+      position:absolute;
+      top:0;
+      bottom:0;
+      left:0;
+      right:0;
+      background:rgba(0, 0, 0, 0.2);
+      display:flex;
+      align-items: center;
+      justify-content: center;
+      .body-contents {
+        background:rgba(255,255,255,0.8);
+        width:100%;
+        padding:10px;
+        h5 {
+          font-size: 1em;
+        }
+      }
+      .card-hashtags {
+        ul {
+          li {
+            font-size: 0.6em;
+          }
+        }
+      }
+
+    }
+    .card-footer {
+      display: none;
+    }
+  } */
+  /* .card {
+    position:relative;
+    .card-image {
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      width:100%;
+      .for-professionals {
+        top:0;
+        right:0;
+        height:32px;
+      }
+      
+    }
+    .card-body {
+      
+      
+    }
+    .card-footer {
+      display:none;
+    }
+  } */
+}
+
 
 @media screen and (max-width: 576px) {
   .page {
@@ -642,99 +764,108 @@ export default {
       .column-list {
         // padding:0;
         .section {
-          margin:0;
-          padding:0;
+          margin: 0;
+          padding: 0;
           .imaged-divs {
             display: block;
             position: relative;
             .overlay {
-               height:100%;
-                background:rgba(20,20,20,0.1);
-                // z-index:899;
-                position:absolute;
-                top:0;
-                bottom:0;
-                left:0;
-                right:0;
-                &:hover {
-                    background:rgba(20,20,20,0.5);
-
-                }
+              height: 100%;
+              background: rgba(20, 20, 20, 0.1);
+              // z-index:899;
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              &:hover {
+                background: rgba(20, 20, 20, 0.5);
+              }
             }
             .fit-in-div {
-                width:100%;
-                height:100%;
-                z-index: -1;
+              width: 100%;
+              height: 100%;
+              z-index: -1;
             }
 
             .title-top {
-              position:absolute;
-              top:0;
-              background-color: rgba(112,130,115,0.8);
+              position: absolute;
+              top: 0;
+              background-color: rgba(112, 130, 115, 0.8);
               width: 100%;
               z-index: 999;
               p {
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
-                font-size:0.8em;
+                font-size: 0.8em;
                 // padding:5px 10px;
                 color: #fff;
-                margin:0;
-                margin-left:5px;
+                margin: 0;
+                margin-left: 5px;
               }
               p.date {
                 text-align: right;
-                font-size:0.66em;
-                margin-top:5px;
+                font-size: 0.66em;
+                margin-top: 5px;
                 margin-right: 5px;
               }
               // text-align: center;
               .for-prof {
-                position:absolute;
+                position: absolute;
                 // bottom:-20%;
-                left:0%;
-                color:white;
+                right: 0%;
+                color: white;
                 font-style: italic;
-                font-size:0.7em;
-                padding:3px 5px;
+                font-size: 0.7em;
+                padding: 3px 5px;
                 z-index: 999;
-                background:rgba(241, 56, 44, 0.6);
+                background: rgba(241, 56, 44, 0.6);
+              }
+              .new-article {
+                position:absolute;
+                left:0;
+                bottom:0;
+                color:#fff;
+                font-weight:bold;
+                font-size: 0.7em;
+                padding:0 3px;
+                background:#cf1225;
               }
             }
 
             .bottom {
-              position:absolute;
-              bottom:0%;
-              right:0%;
-              left:0%;
+              position: absolute;
+              bottom: 0%;
+              right: 0%;
+              left: 0%;
               z-index: 999;
 
               .maker {
-                font-size:0.7em;
+                font-size: 0.7em;
 
                 text-align: right;
                 ul {
-                  margin:0;
-                  background:rgba(0,0,0,0.8);
+                  margin: 0;
+                  background: rgba(0, 0, 0, 0.8);
                   li {
-                    line-height:1.5em;
+                    line-height: 1.5em;
                     // padding:3px 0;
-                    display:inline-block;
-                    margin-right:10px;
-                    color:#fff;
-                    font-size:0.7em;
+                    display: inline-block;
+                    margin-right: 10px;
+                    color: #fff;
+                    font-size: 0.7em;
                   }
                 }
 
                 p {
-                  margin-bottom:0;
-                  background:rgba(0,0,0,0.8);
+                  margin-bottom: 0;
+                  background: rgba(0, 0, 0, 0.8);
                   span {
                     // margin-right: 5px;
 
-                    color:#fff;
-                    padding:5px 10px;
+                    color: #fff;
+                    padding: 5px 10px;
                   }
                 }
               }
@@ -868,24 +999,24 @@ export default {
   .main-area {
     .new-information {
       .column-list {
-        padding:0px 25px 20px;
+        padding: 0px 25px 20px;
         .section {
           .imaged-divs {
             .bottom {
               .maker {
-                font-size:0.6em;
+                font-size: 0.6em;
 
                 text-align: right;
                 ul {
-                  margin:0;
-                  background:rgba(0,0,0,0.8);
+                  margin: 0;
+                  background: rgba(0, 0, 0, 0.8);
                   li {
-                    line-height:1.5em;
+                    line-height: 1.5em;
                     // padding:3px 0;
-                    display:inline-block;
-                    margin-right:5  px;
-                    color:#fff;
-                    font-size:0.7em;
+                    display: inline-block;
+                    margin-right: 5 px;
+                    color: #fff;
+                    font-size: 0.7em;
                   }
                 }
               }
