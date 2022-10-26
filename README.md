@@ -1,5 +1,8 @@
 # icolumn
 
+
+nvm use 16.18.0 to make the app work, and be able to show up on localhost.
+
 ## Build Setup
 
 ```bash
