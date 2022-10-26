@@ -10,20 +10,20 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
-    "axios": "^0.21.1",
+    "@nuxtjs/axios": "^5.13.6",
     "core-js": "^3.15.1",
     "moment": "^2.29.3",
     "node-sass": "^6.0.1",
-    "nuxt": "^2.15.7",
+    "nuxt": "^2.15.8",
     "vue-carousel": "^0.18.0",
     "vue-meta": "^2.4.0",
-    "webpack": "^4.46.0"
+    "webpack": "^4.46.0",
+    "sass-loader": "^10.1.1"
   },
   "devDependencies": {
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@nuxtjs/fontawesome": "^1.1.2",
-    "sass": "^1.37.5",
-    "sass-loader": "^10.1.1"
+    "sass": "^1.37.5"
   }
 }
