@@ -783,6 +783,8 @@ export default {
               width: 100%;
               height: 100%;
               z-index: -1;
+              aspect-ratio: 1;
+              object-fit: cover;
             }
 
             .title-top {
