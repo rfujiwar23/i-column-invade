@@ -55,7 +55,7 @@
             <div class="text-center" id="myId" ref="myId"></div>
             <h3><span>記事一覧</span></h3>
             <h4>Articles</h4>
-            <div class="row">
+            <div class="row mx-0">
               <div
                 class="section col-xl-4 col-lg-6 col-md-6 col-sm-6 col-6"
                 v-for="content in filteredContent"
@@ -637,7 +637,7 @@ export default {
       .column-list {
         /* padding:0; */
         .row {
-          /* padding:0; */
+          padding:0;
         }
       }
     }
@@ -760,6 +760,7 @@ export default {
     .new-information {
       .column-list {
         // padding:0;
+        padding:0px 0px 20px;
         .section {
           margin: 0;
           padding: 0;
@@ -998,7 +999,7 @@ export default {
   .main-area {
     .new-information {
       .column-list {
-        padding: 0px 25px 20px;
+        padding: 0px 0px 20px;
         .section {
           .imaged-divs {
             .bottom {
