@@ -379,25 +379,6 @@ export default {
       width: 100%;
       margin: 0 auto;
       padding: 0px 30px 20px;
-
-      // ul {
-      //   list-style: none;
-
-      //   li {
-      //     padding: 20px 0;
-      //     border-bottom: 1px dotted #9a9a9a;
-
-      //     span {
-      //       border-radius: 5px;
-      //       border: rgb(0, 115, 207);
-      //     }
-
-      //     a {
-      //       text-decoration: none;
-      //       font-size: 0.9em;
-      //     }
-      //   }
-      // }
     }
 
     .pagination {
@@ -766,6 +747,7 @@ export default {
           padding: 0;
           .imaged-divs {
             display: block;
+            aspect-ratio: 4/3;
             position: relative;
             .overlay {
               height: 100%;
