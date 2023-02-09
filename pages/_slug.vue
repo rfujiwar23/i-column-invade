@@ -46,7 +46,20 @@
                        <!-- <h6 class="p-2" v-html="preview"></h6> -->
                       
                       <hr>
+
+                      <div>
+                        <!-- <ul class="lists">
+                          <li :class="`list ${item.name}`" v-for="item in toc" :key="item.id">
+                          <n-link v-scroll-to="`#${item.id}`" to>
+                              {{ item.text }}
+                            </n-link>
+                          </li>
+                        </ul> -->
+                        
+                        
+                      </div>
                       <div class="post" v-html="body"></div>
+                      {{ body }}
                       
                     </div>
                     
@@ -80,18 +93,36 @@ import axios from 'axios'
 import GoBack from "@/components/GoBack"
 import Top from "@/components/Top"
 import Footer from "@/components/Footer"
+//import cheerio from "cheerio"
+
 
 
 export default {
   async asyncData({ params }) {
+    const res = await axios.get(`http://localhost:3000/api?slug=${params.slug}`)
+   console.log('res', res.data)
     const { data } = await axios.get(
       `https://i-column.microcms.io/api/v1/post/${params.slug}`,
       {
         headers: { 'X-API-KEY': 'b5ed7888-2fb9-4bae-b660-ff9cfe324de4' }
       }
     )
+    console.log('data--', data)
+
+    console.log(res.data.h2Elements)
+
+   
+
+    const slug = "fy5j-6daxf";
+    // const slug = "j2p81g0_es3m";
+   
+
+    
     return data;
-    // console.log(data)
+    console.log(data)
+    
+    
+    
   },
   components: {
     GoBack
